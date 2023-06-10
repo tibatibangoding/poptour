@@ -13,7 +13,9 @@ const ContainerHome: FC = () => {
       />
 
       <MainLayout>
-        <section className="max-w-7xl mx-auto"></section>
+        <section className="max-w-7xl mx-auto">
+          <h1>HALOOOO</h1>
+        </section>
       </MainLayout>
     </>
   );
