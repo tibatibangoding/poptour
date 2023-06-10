@@ -2,7 +2,6 @@ import { FC } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
-import MainLayout from '@/layouts/MainLayout';
 
 const ContainerHome: FC = () => {
   return (
@@ -12,11 +11,11 @@ const ContainerHome: FC = () => {
         description={siteMetadata.description}
       />
 
-      <MainLayout>
+      <main className="py-24 my-40">
         <section className="max-w-7xl mx-auto">
           <h1>HALOOOO</h1>
         </section>
-      </MainLayout>
+      </main>
     </>
   );
 };
