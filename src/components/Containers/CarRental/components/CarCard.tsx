@@ -281,7 +281,7 @@ const CarCard: FC = () => {
           </div>
         </div>
 
-        <div className="rounded-lg overflow-hidden  shadow-md">
+        <div className="rounded-lg overflow-hidden shadow-md">
           <img
             className="w-full h-[200px] object-cover object-center"
             src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
@@ -335,7 +335,7 @@ const CarCard: FC = () => {
           </div>
         </div>
 
-        <div className="rounded-lg overflow-hidden  shadow-md">
+        <div className="rounded-lg overflow-hidden shadow-md">
           <img
             className="w-full h-[200px] object-cover object-center"
             src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
@@ -389,7 +389,7 @@ const CarCard: FC = () => {
           </div>
         </div>
 
-        <div className="rounded-lg overflow-hidden  shadow-md">
+        <div className="rounded-lg overflow-hidden shadow-md">
           <img
             className="w-full h-[200px] object-cover object-center"
             src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
@@ -444,8 +444,8 @@ const CarCard: FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-20 mt-5 md:mx-20">
-        <div className="rounded-lg overflow-hidden  shadow-md">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-20 mt-7 md:mx-20">
+        <div className="rounded-lg overflow-hidden shadow-md">
           <img
             className="w-full h-[350px] object-cover object-center"
             src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
@@ -499,7 +499,7 @@ const CarCard: FC = () => {
           </div>
         </div>
 
-        <div className="rounded-lg overflow-hidden  shadow-md">
+        <div className="rounded-lg overflow-hidden shadow-md">
           <img
             className="w-full h-[350px] object-cover object-center"
             src="https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?auto=format&q=75&fit=crop&crop=top&w=600&h=700"
