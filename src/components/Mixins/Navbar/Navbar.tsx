@@ -20,10 +20,10 @@ const Navbar: FC = () => {
       const fixNav = header?.offsetTop ?? 0;
 
       if (window.pageYOffset > fixNav) {
-        header?.classList.add(styles.navbarFixed);
+        // header?.classList.add(styles.navbarFixed);
         setIsAbsolute(false);
       } else {
-        header?.classList.remove(styles.navbarFixed);
+        // header?.classList.remove(styles.navbarFixed);
         setIsAbsolute(true);
       }
     };
@@ -59,7 +59,7 @@ const Navbar: FC = () => {
   return (
     <header
       className={`${
-        isAbsolute ? 'absolute' : ''
+        isAbsolute ? 'absolute' : 'fixed shadow-md'
       } bg-white top-0 left-0 w-full flex items-center z-10`}
     >
       <div className="container">
