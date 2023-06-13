@@ -8,6 +8,7 @@ import { classNames } from '@/lib/classNames';
 
 const Navbar: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isAbsolute, setIsAbsolute] = useState<boolean>(false);
 
   const router = useRouter();
   const { pathname } = router;
@@ -18,13 +19,15 @@ const Navbar: FC = () => {
       const header = document.querySelector('header');
       const fixNav = header?.offsetTop ?? 0;
 
-      if (window.pageYOffset >= fixNav) {
+      if (window.pageYOffset > fixNav) {
         header?.classList.add(styles.navbarFixed);
+        setIsAbsolute(false);
       } else {
         header?.classList.remove(styles.navbarFixed);
+        setIsAbsolute(true);
       }
     };
-  }, []);
+  }, [isAbsolute]);
 
   // Hamburger menu handler
   const hamburgerHandler = () => {
@@ -54,7 +57,11 @@ const Navbar: FC = () => {
   };
 
   return (
-    <header className="bg-transparent absolute top-0 left-0 w-full flex items-center z-10">
+    <header
+      className={`${
+        isAbsolute ? 'absolute' : ''
+      } bg-white top-0 left-0 w-full flex items-center z-10`}
+    >
       <div className="container">
         <div className="max-w-7xl mx-auto">
           <div className="flex items-center justify-between relative">
