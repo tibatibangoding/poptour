@@ -5,3 +5,42 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Accordion */
+details {
+  user-select: none;
+}
+
+details summary .svg_close {
+  display: none;
+}
+
+details[open] summary .svg_close {
+  display: block;
+}
+
+details[open] summary .svg_open {
+  display: none;
+}
+
+details[open] summary ~ * {
+  animation: ease-opacity-t-b 0.5s ease;
+}
+
+summary {
+  cursor: pointer;
+}
+
+svg {
+  transition: all 0.3s;
+}
+
+/* TO JE TO - TO JE TAJ */
+summary::-webkit-details-marker {
+  display: none;
+}
+
+:focus {
+  outline: none;
+}
+/* Accordion End */

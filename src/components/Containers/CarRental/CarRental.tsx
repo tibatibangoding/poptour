@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useRouter } from 'next/router';
 
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
@@ -6,6 +7,9 @@ import CarCard from './components/CarCard';
 import CarForm from './components/CarForm';
 
 const ContainerCarRental: FC = () => {
+  const router = useRouter();
+  const { product } = router.query;
+
   return (
     <>
       <PageSEO
@@ -18,7 +22,7 @@ const ContainerCarRental: FC = () => {
           {/* HEADING TEXT */}
           <div className="w-full px-4">
             <div className="flex justify-center items-center mt-5 mb-10 md:mt-10 md:mb-20">
-              <h1 className="font-bold text-3xl text-center capitalize">
+              <h1 className="font-bold text-2xl md:text-3xl text-center capitalize">
                 Pilihan Armada Yang Kami Sediakan
               </h1>
             </div>
@@ -27,11 +31,12 @@ const ContainerCarRental: FC = () => {
           {/* GRID CARS AVAILABLE */}
           <div className="w-full px-4 mt-5 mb-10 md:mt-10 md:mb-20">
             <CarCard />
+            <div id="form-rental" className="py-5"></div>
           </div>
 
           {/* FORM RENTAL */}
-          <div className="w-full px-4 ">
-            <CarForm />
+          <div className="w-full px-4">
+            <CarForm product={product} />
           </div>
         </section>
       </main>
