@@ -18,7 +18,7 @@ const ContainerCarRental: FC = () => {
           {/* HEADING TEXT */}
           <div className="w-full px-4">
             <div className="flex justify-center items-center mt-5 mb-10 md:mt-10 md:mb-20">
-              <h1 className="font-bold text-3xl text-center capitalize">
+              <h1 className="font-bold text-2xl md:text-3xl text-center capitalize">
                 Pilihan Armada Yang Kami Sediakan
               </h1>
             </div>
@@ -30,7 +30,7 @@ const ContainerCarRental: FC = () => {
           </div>
 
           {/* FORM RENTAL */}
-          <div className="w-full px-4 ">
+          <div className="w-full px-4">
             <CarForm />
           </div>
         </section>
