@@ -1,10 +1,17 @@
 import { FC } from 'react';
 
-const CarForm: FC = () => {
+type Props = {
+  product?: string | string[];
+};
+
+const CarForm: FC<Props> = ({ product }) => {
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <details className="p-4 rounded-lg shadow-md" open={true}>
+        <details
+          className="p-4 rounded-lg shadow-md"
+          open={product ? true : false}
+        >
           <summary className="font-semibold text-xl leading-5 text-black flex items-center">
             Formulir Pemesanan Rental Mobil
             {/* open svg (plus) */}
@@ -73,17 +80,30 @@ const CarForm: FC = () => {
                 Armada <span className="text-red-500">*</span>
               </label>
 
-              <select
-                name="product"
-                id="product"
-                className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-              >
-                <option selected disabled>
-                  -- Pilih Armada --
-                </option>
-                <option value="1">Avanza</option>
-                <option value="1">Avanza</option>
-              </select>
+              {product ? (
+                <input
+                  name="product"
+                  id="product"
+                  type="text"
+                  disabled={product ? true : false}
+                  value={product}
+                  className={`${
+                    product ? 'cursor-not-allowed' : ''
+                  } w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring`}
+                />
+              ) : (
+                <select
+                  name="product"
+                  id="product"
+                  className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+                >
+                  <option selected disabled>
+                    -- Pilih Armada --
+                  </option>
+                  <option value="1">Avanza</option>
+                  <option value="1">Avanza</option>
+                </select>
+              )}
             </div>
 
             <div>
