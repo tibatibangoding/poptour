@@ -1,24 +1,25 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
+import Link from 'next/link';
+import { FaTimes } from 'react-icons/fa';
 
 type Props = {
   product?: string | string[];
 };
 
 const CarForm: FC<Props> = ({ product }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+
   return (
     <section>
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <details
           className="p-4 rounded-lg shadow-md"
-          open={product ? true : false}
+          open={product ? true : isOpen ? true : false}
         >
           <summary className="font-semibold text-xl leading-5 text-black flex items-center">
             Formulir Pemesanan Rental Mobil
             {/* open svg (plus) */}
-            <button
-              className="ml-auto"
-              // onClick={() => handleClick(_chapter.id)}
-            >
+            <button className="ml-auto" onClick={() => setIsOpen(!isOpen)}>
               <svg
                 className="svg_open fill-current opacity-75 w-4 h-4 -mr-1 text-teal-500 hover:text-teal-600"
                 xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +29,7 @@ const CarForm: FC<Props> = ({ product }) => {
               </svg>
             </button>
             {/* close svg (minus) */}
-            <button>
+            <button onClick={() => setIsOpen(!isOpen)}>
               <svg
                 className="svg_close fill-current opacity-75 w-4 h-4 -mr-1 text-teal-500 hover:text-teal-600"
                 xmlns="http://www.w3.org/2000/svg"
@@ -52,6 +53,7 @@ const CarForm: FC<Props> = ({ product }) => {
                 name="fullName"
                 id="fullName"
                 type="text"
+                placeholder="Masukkan Nama Lengkap"
                 className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
               />
             </div>
@@ -68,6 +70,7 @@ const CarForm: FC<Props> = ({ product }) => {
                 name="email"
                 id="email"
                 type="email"
+                placeholder="Masukkan Alamat Email"
                 className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
               />
             </div>
@@ -81,16 +84,24 @@ const CarForm: FC<Props> = ({ product }) => {
               </label>
 
               {product ? (
-                <input
-                  name="product"
-                  id="product"
-                  type="text"
-                  disabled={product ? true : false}
-                  value={product}
-                  className={`${
-                    product ? 'cursor-not-allowed' : ''
-                  } w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring`}
-                />
+                <div className="flex items-center gap-4">
+                  <input
+                    name="product"
+                    id="product"
+                    type="text"
+                    disabled={product ? true : false}
+                    value={product}
+                    className={`${
+                      product ? 'cursor-not-allowed' : ''
+                    } w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring`}
+                  />
+
+                  <Link href="/car-rental" legacyBehavior>
+                    <a className="bg-red-500 hover:bg-red-600 p-2.5 rounded-md">
+                      <FaTimes className="text-white" />
+                    </a>
+                  </Link>
+                </div>
               ) : (
                 <select
                   name="product"
@@ -148,6 +159,8 @@ const CarForm: FC<Props> = ({ product }) => {
 
               <textarea
                 name="message"
+                id="message"
+                placeholder="Masukkan Pesan Tambahan (opsional)"
                 className="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring resize-none"
               ></textarea>
             </div>

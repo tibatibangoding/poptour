@@ -68,15 +68,20 @@ const Navbar: FC = () => {
             <div className="px-4">
               <Link href="/" legacyBehavior>
                 <a
-                  className="inline-flex items-center gap-2 font-primary font-bold text-xl lg:text-2xl py-6"
+                  className="inline-flex items-center gap-2 py-2"
                   aria-label="logo"
                 >
-                  {/* <img
-                    src="/apple-touch-icon.png"
+                  <img
+                    src="/assets/img/logo/POPTour_4.png"
                     alt="Brand Logo"
-                    className="w-8 h-8 object-cover object-center"
-                  /> */}
-                  Navbar
+                    className="w-14 md:w-16 h-14 md:h-16 object-cover object-center"
+                  />
+                  <div className="flex flex-col">
+                    <p className="font-primary font-semibold text-xl lg:text-2xl -mb-1 tracking-wide">
+                      Pop Tour
+                    </p>
+                    <small className="tracking-wide">Enjoy Your Journey</small>
+                  </div>
                 </a>
               </Link>
             </div>
@@ -110,9 +115,9 @@ const Navbar: FC = () => {
                         <a
                           className={classNames(
                             isMenuActive(a.path)
-                              ? 'text-teal-500'
+                              ? 'text-primary'
                               : 'text-black',
-                            'font-secondary font-semibold text-base py-2 mx-8 lg:mx-2 flex group-hover:text-teal-500 transition duration-300 ease-in-out'
+                            'font-secondary font-semibold text-base py-2 mx-8 lg:mx-2 flex group-hover:text-primary transition duration-300 ease-in-out'
                           )}
                         >
                           {a.title}

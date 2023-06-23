@@ -13,17 +13,16 @@ const ContainerCustomTrip: FC = () => {
         description={siteMetadata.description}
       />
 
-      <main className="py-20">
+      <main className="py-16 md:py-20">
         <section className="max-w-full mx-auto">
-          {/* Carousel Start */}
           <div className="w-full h-max">
             <CarouselTrip />
           </div>
+        </section>
 
-          <div className="w-full px-4 my-28">
-            <div className="flex justify-center items-center">
-              <TripForm />
-            </div>
+        <section className="max-w-6xl mx-auto">
+          <div className="w-full px-4 mt-10 md:mt-24 md:mb-8">
+            <TripForm />
           </div>
         </section>
       </main>

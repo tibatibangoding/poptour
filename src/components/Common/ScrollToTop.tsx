@@ -38,7 +38,7 @@ const ScrollToTop: FC = () => {
           onClick={scrollTop}
           className={classNames(
             isVisible ? 'opacity-100' : 'opacity-0 cursor-default',
-            'flex flex-col justify-center items-center rounded-lg bg-teal-500 p-2 text-white transition-all hover:bg-teal-600'
+            'flex flex-col justify-center items-center rounded-lg bg-primary p-2 text-white transition-all hover:bg-primary/80'
           )}
         >
           <svg
