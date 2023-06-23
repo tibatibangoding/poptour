@@ -12,17 +12,19 @@ const Footer: FC = () => {
   const year = new Date().getFullYear();
 
   const primaryLink = [
-    { title: 'Home', url: '/' },
-    { title: 'About', url: '/about' },
+    { title: 'Beranda', url: '/' },
+    { title: 'Paket Wisata', url: '/tour-packages' },
+    { title: 'Tentang Kami', url: '/about-us' },
   ];
 
   const secondaryLink = [
-    { title: 'Career', url: '/career' },
-    { title: 'Internship', url: '/internship' },
+    { title: 'Kustom Perjalanan', url: '/tour-packages/custom-trip' },
+    { title: 'Rental Mobil', url: '/car-rental' },
+    { title: 'Galeri', url: '/gallery' },
   ];
 
   const tertiaryLink = [
-    { title: 'Contact Us', url: '/contact' },
+    { title: 'Kontak Kami', url: '/contact-us' },
     { title: 'FAQ', url: '/faq' },
   ];
 
@@ -46,15 +48,20 @@ const Footer: FC = () => {
             <div className="mb-4">
               <Link href="/" legacyBehavior>
                 <a
-                  className="inline-flex items-center text-gray-100 font-primary text-xl md:text-2xl font-bold gap-2"
+                  className="inline-flex items-center text-gray-100 gap-2"
                   aria-label="logo"
                 >
-                  {/* <img
-                    src="/apple-touch-icon.png"
+                  <img
+                    src="/assets/img/logo/POPTour_4.png"
                     alt="Brand Logo"
-                    className="w-8 h-8 object-cover object-center"
-                  /> */}
-                  Footer
+                    className="w-14 md:w-16 h-14 md:h-16 object-cover object-center"
+                  />
+                  <div className="flex flex-col">
+                    <p className="font-primary font-semibold text-xl lg:text-2xl -mb-1 tracking-wide">
+                      Pop Tour
+                    </p>
+                    <small className="tracking-wide">Enjoy Your Journey</small>
+                  </div>
                 </a>
               </Link>
             </div>
@@ -79,15 +86,15 @@ const Footer: FC = () => {
           </div>
 
           <div>
-            <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">
-              Company
+            <div className="text-gray-100 font-bold tracking-wide uppercase mb-4">
+              Perusahaan
             </div>
 
             <nav className="flex flex-col gap-4">
               {primaryLink?.map((b, i) => (
                 <div key={i}>
                   <Link href={b.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-teal-500 active:text-teal-600 transition duration-100">
+                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
                       {b.title}
                     </a>
                   </Link>
@@ -97,15 +104,15 @@ const Footer: FC = () => {
           </div>
 
           <div>
-            <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">
-              Others
+            <div className="text-gray-100 font-bold tracking-wide uppercase mb-4">
+              Tautan Lainnya
             </div>
 
             <nav className="flex flex-col gap-4">
               {secondaryLink?.map((c, i) => (
                 <div key={i}>
                   <Link href={c.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-teal-500 active:text-teal-600 transition duration-100">
+                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
                       {c.title}
                     </a>
                   </Link>
@@ -115,15 +122,15 @@ const Footer: FC = () => {
           </div>
 
           <div>
-            <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">
-              Helps
+            <div className="text-gray-100 font-bold tracking-wide uppercase mb-4">
+              Bantuan
             </div>
 
             <nav className="flex flex-col gap-4">
               {tertiaryLink?.map((d, i) => (
                 <div key={i}>
                   <Link href={d.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-teal-500 active:text-teal-600 transition duration-100">
+                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
                       {d.title}
                     </a>
                   </Link>
@@ -133,7 +140,7 @@ const Footer: FC = () => {
           </div>
 
           <div>
-            <div className="text-gray-100 font-bold tracking-widest uppercase mb-4">
+            <div className="text-gray-100 font-bold tracking-wide uppercase mb-4">
               Legal
             </div>
 
@@ -141,7 +148,7 @@ const Footer: FC = () => {
               {legalLink?.map((e, i) => (
                 <div key={i}>
                   <Link href={e.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-teal-500 active:text-teal-600 transition duration-100">
+                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
                       {e.title}
                     </a>
                   </Link>
@@ -152,7 +159,8 @@ const Footer: FC = () => {
         </div>
 
         <div className="text-gray-400 text-sm text-center border-t border-gray-800 py-8">
-          © {year} - Naufal Akbar Nugroho. All rights reserved.
+          <p>© {year} - POP Tour. All rights reserved.</p>
+          <p>Developed by Naufal Akbar Nugroho.</p>
         </div>
       </footer>
     </div>
