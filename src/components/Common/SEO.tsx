@@ -26,6 +26,13 @@ const CommonSEO: FC<SEO> = ({
   return (
     <Head>
       <title>{title}</title>
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport' content='width=device-width, initial-scale=1" />
+      <link
+        rel="shortcut icon"
+        href={siteMetadata.siteLogo}
+        type="image/x-icon"
+      />
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
       <meta
