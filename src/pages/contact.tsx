@@ -1,7 +1,8 @@
-import { FC } from "react";
+import { FC } from 'react';
+import ContainerContact from '@/components/Containers/Contact/Contact';
 
 const contact: FC = () => {
-  return <div>contact</div>;
+  return <ContainerContact />;
 };
 
 export default contact;
