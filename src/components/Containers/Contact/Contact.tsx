@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { PageSEO } from "@/components/Common/SEO";
-import { siteMetadata } from "@/data/siteMetadata";
+import { FC } from 'react';
+import { PageSEO } from '@/components/Common/SEO';
+import { siteMetadata } from '@/data/siteMetadata';
 
 const ContainerContact: FC = () => {
   return (
