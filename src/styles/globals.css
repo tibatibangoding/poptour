@@ -44,3 +44,36 @@ summary::-webkit-details-marker {
   outline: none;
 }
 /* Accordion End */
+
+/* grid */
+.bmc {
+  display: grid;
+  grid: repeat(3, 200px) / repeat(10, 1fr);
+}
+
+.bmc > div:nth-child(1),
+.bmc > div:nth-child(4),
+.bmc > div:nth-child(7) {
+  grid-area: span 2 / span 2;
+}
+
+.bmc > div:nth-child(2),
+.bmc > div:nth-child(5) {
+  grid-column: span 2;
+}
+
+.bmc > div:nth-child(3) {
+  grid-column: 3 / span 2;
+  grid-row: 2;
+}
+
+.bmc > div:nth-child(6) {
+  grid-column: 7 / span 2;
+  grid-row: 2;
+}
+
+.bmc > div:nth-child(8),
+.bmc > div:nth-child(9) {
+  grid-area: -2 / span 5;
+}
+/* grid */
