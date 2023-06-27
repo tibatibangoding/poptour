@@ -15,10 +15,11 @@ const ContainerGallery: FC = () => {
           <div className="min-h-screen bg-white py-10">
             <div className="over container mx-auto w-full md:max-w-7xl px-10 lg:px-0">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 rounded md:border bg-white">
+                {/* vertical */}
                 <div className="border grid row-span-2 overflow-hidden">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/Bromosunset.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -39,10 +40,11 @@ const ContainerGallery: FC = () => {
                   />
                 </div>
 
+                {/* vertical */}
                 <div className="border overflow-hidden grid row-span-2 ">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromosunset.JPG"
+                    src="assets/img/Bromosunset.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -63,10 +65,11 @@ const ContainerGallery: FC = () => {
                   />
                 </div>
 
-                <div className="border overflow-hidden grid row-span-2 ">
+                {/* vertical */}
+                <div className="border overflow-hidden grid row-span-2">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/Bromosunset.jpg"
                     alt="BromoImage"
                   />
                 </div>
