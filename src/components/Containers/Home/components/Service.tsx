@@ -3,11 +3,11 @@ import React from 'react';
 const Service = () => {
   return (
     <div>
-      <div className="mx-10 md:mx-24 lg:mx-40 py-20 ">
-        <h1 className="text-xl md:text-4xl font-semibold ">
+      <div className="mx-10 md:mx-24 lg:mx-40 py-5 md:py-10 ">
+        <h1 className="text-2xl md:text-4xl font-semibold ">
           Produk & Layanan Kami
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
           <div className="w-full h-[50px] md:h-[100px]  rounded-lg relative">
             <img
               src="assets/img/Bromo 1.JPG"
