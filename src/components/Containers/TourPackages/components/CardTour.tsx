@@ -21,10 +21,10 @@ const CardTour = () => {
         </div>
         <div className="w-full h-[200px] p-5">
           <div className="flex gap-2">
-            <div className="bg-blue-700 px-2 ">
+            <div className="bg-blue-700 px-2 rounded-full ">
               <h1 className="text-white text-sm">All in</h1>
             </div>
-            <div className="bg-blue-700 px-2 ">
+            <div className="bg-blue-700 px-2 rounded-full ">
               <h1 className="text-white text-sm">Super Sale</h1>
             </div>
           </div>
