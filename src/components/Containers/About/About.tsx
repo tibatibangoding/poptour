@@ -28,9 +28,9 @@ const ContainerAbout = () => {
               </h2>
 
               <p className="w-full pt-5   mx-auto  ">
-                sahabat wisata dan perjalanan Anda. Nala Tour berpengalaman
+                sahabat wisata dan perjalanan Anda. Pop Tour berpengalaman
                 dalam perencanaa perjalanan wisata ke berbagai destinasi di
-                Indonesia. Di Nala Tour, Kami membantu anda untuk mengeksplor
+                Indonesia. Di Pop Tour, Kami membantu anda untuk mengeksplor
                 dan menjelajahi budaya baru, bersantai di pantai, menikmati
                 keindahan gunung atau memulai petualangan yang belum pernah anda
                 rasakan sebelumnya. Kami bangga dengan perhatian yang kami
