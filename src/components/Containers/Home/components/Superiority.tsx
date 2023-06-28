@@ -15,32 +15,42 @@ const Superiority = () => {
         </h1>
         <div className="mt-10">
           <Swiper
-            slidesPerView={3}
-            spaceBetween={30}
+            slidesPerView={1}
+            spaceBetween={300}
             pagination={{
               clickable: true,
+            }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 50,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+              },
             }}
             modules={[Pagination]}
             className="mySwiper"
           >
             {primacy.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="w-96 h-96 pb-10">
+                <div className="w-72 lg:w-96 h-96 pb-10">
                   <div className="w-full h-full bg-blue-500 relative rounded-lg">
                     <img
                       src="assets/img/carousel-template.jpg"
                       alt=""
                       className="object-cover w-full h-full rounded-lg"
                     />
-                    <div className="absolute top-0 left-0  w-full h-[50px] md:h-full rounded-lg  bg-black opacity-50" />
-                    <div className="absolute top-0 left-0  w-full h-[50px] md:h-full  flex flex-col justify-center items-center gap-4 px-6">
-                      <h1 className="text-white text-sm md:text-4xl font-semibold">
+                    <div className="absolute top-0 left-0  w-full h-full md:h-full rounded-lg  bg-black opacity-50" />
+                    <div className="absolute top-0 left-0  w-full h-full md:h-full  flex flex-col justify-center items-center gap-4 px-6">
+                      <h1 className="text-white text-4xl font-semibold">
                         #{item.no}
                       </h1>
-                      <h2 className="text-white text-sm md:text-xl font-semibold">
+                      <h2 className="text-white text-xl font-semibold">
                         {item.title}
                       </h2>
-                      <p className='text-white text-center'>{item.desc}</p>
+                      <p className="text-white text-center">{item.desc}</p>
                     </div>
                   </div>
                 </div>

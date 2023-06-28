@@ -9,8 +9,8 @@ const TitleLine = () => {
           alt="bg"
           className="object-cover w-full h-full "
         />
-        <div className="absolute top-0 left-0  w-full h-[50px] md:h-[150px]  bg-black opacity-50" />
-        <div className="absolute top-0 left-0  w-full h-[50px] md:h-[150px] rounded-lg flex justify-center items-center">
+        <div className="absolute top-0 left-0  w-full h-full  bg-black opacity-50" />
+        <div className="absolute top-0 left-0  w-full h-full rounded-lg flex justify-center items-center">
           <h1 className="text-white text-xl md:text-4xl font-semibold tracking-wide">
             BUSINESS TRAVEL MANAGEMENT
           </h1>
