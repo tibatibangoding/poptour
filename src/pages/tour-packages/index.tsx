@@ -1,7 +1,12 @@
+import ConatinerTourPackages from '@/components/Containers/TourPackages/TourPackages';
 import React from 'react';
 
 const TourPackages = () => {
-  return <div>index</div>;
+  return (
+    <div>
+      <ConatinerTourPackages />
+    </div>
+  );
 };
 
 export default TourPackages;
