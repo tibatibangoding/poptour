@@ -97,7 +97,7 @@ const CarForm: FC<Props> = ({ product }) => {
                   />
 
                   <Link href="/car-rental" legacyBehavior>
-                    <a className="bg-red-500 hover:bg-red-600 p-2.5 rounded-md">
+                    <a className=" hover:bg-red-600 p-2.5 rounded-md">
                       <FaTimes className="text-white" />
                     </a>
                   </Link>

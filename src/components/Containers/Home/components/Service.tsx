@@ -8,7 +8,7 @@ const Service = () => {
           Produk & Layanan Kami
         </h1>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-10">
-          <div className="w-full h-[50px] md:h-[100px] bg-red-500 rounded-lg relative">
+          <div className="w-full h-[50px] md:h-[100px]  rounded-lg relative">
             <img
               src="assets/img/Bromo 1.JPG"
               alt=""
@@ -16,10 +16,12 @@ const Service = () => {
             />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg bg-black opacity-50" />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg flex justify-center items-center">
-              <h1 className="text-white text-sm md:text-xl font-semibold">Tour</h1>
+              <h1 className="text-white text-sm md:text-xl font-semibold">
+                Tour
+              </h1>
             </div>
           </div>
-          <div className="w-full h-[50px] md:h-[100px] bg-red-500 rounded-lg relative">
+          <div className="w-full h-[50px] md:h-[100px]  rounded-lg relative">
             <img
               src="assets/img/Bromo 1.JPG"
               alt=""
@@ -32,7 +34,7 @@ const Service = () => {
               </h1>
             </div>
           </div>
-          <div className="w-full h-[50px] md:h-[100px] bg-red-500 rounded-lg relative">
+          <div className="w-full h-[50px] md:h-[100px]  rounded-lg relative">
             <img
               src="assets/img/Bromo 1.JPG"
               alt=""
@@ -40,10 +42,12 @@ const Service = () => {
             />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg bg-black opacity-50" />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg flex justify-center items-center">
-              <h1 className="text-white text-sm md:text-xl font-semibold">Cruise</h1>
+              <h1 className="text-white text-sm md:text-xl font-semibold">
+                Cruise
+              </h1>
             </div>
           </div>
-          <div className="w-full h-[50px] md:h-[100px] bg-red-500 rounded-lg relative">
+          <div className="w-full h-[50px] md:h-[100px]  rounded-lg relative">
             <img
               src="assets/img/Bromo 1.JPG"
               alt=""
@@ -51,10 +55,12 @@ const Service = () => {
             />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg bg-black opacity-50" />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg flex justify-center items-center">
-              <h1 className="text-white text-sm md:text-xl font-semibold">Hotel</h1>
+              <h1 className="text-white text-sm md:text-xl font-semibold">
+                Hotel
+              </h1>
             </div>
           </div>
-          <div className="w-full h-[50px] md:h-[100px] bg-red-500 rounded-lg relative">
+          <div className="w-full h-[50px] md:h-[100px]  rounded-lg relative">
             <img
               src="assets/img/Bromo 1.JPG"
               alt=""
@@ -62,10 +68,12 @@ const Service = () => {
             />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg bg-black opacity-50" />
             <div className="absolute top-0 left-0  w-full h-[50px] md:h-[100px] rounded-lg flex justify-center items-center">
-              <h1 className="text-white text-sm md:text-xl font-semibold">Paket Wisata</h1>
+              <h1 className="text-white text-sm md:text-xl font-semibold">
+                Paket Wisata
+              </h1>
             </div>
           </div>
-          <div className="w-full h-[50px] md:h-[100px] bg-red-500 rounded-lg relative">
+          <div className="w-full h-[50px] md:h-[100px]  rounded-lg relative">
             <img
               src="assets/img/Bromo 1.JPG"
               alt=""

@@ -3,7 +3,7 @@ import React from 'react';
 const TitleLine = () => {
   return (
     <div>
-      <div className="w-full h-[150px] bg-red-500 relative">
+      <div className="w-full h-[150px]  relative">
         <img
           src="assets/img/Bromo 1.JPG"
           alt="bg"
