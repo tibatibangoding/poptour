@@ -1,9 +1,10 @@
-import React from 'react';
+import { FC } from 'react';
+
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
 import Features from './components/Features';
 
-const ContainerAbout = () => {
+const ContainerAbout: FC = () => {
   return (
     <>
       <PageSEO

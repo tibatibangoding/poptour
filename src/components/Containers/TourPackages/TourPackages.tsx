@@ -1,10 +1,11 @@
+import { FC } from 'react';
+
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
-import React from 'react';
-import CardTour from './components/CardTour';
 import { dataTourPackages } from '@/data/dataTourPackages';
+import CardTour from './components/CardTour';
 
-const ConatinerTourPackages = () => {
+const ConatinerTourPackages: FC = () => {
   return (
     <>
       <PageSEO
@@ -40,15 +41,17 @@ const ConatinerTourPackages = () => {
               <h1 className="text-[#666] text-center w-40">Gath Perusahaan</h1>
             </button>
           </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
             {dataTourPackages.map((item: any, index: number) => (
               <CardTour
-                addres={item.addres}
+                address={item.addres}
                 tags={item.tags}
                 title={item.title}
                 day={item.day}
                 airport={item.airport}
                 price={item.price}
+                key={index}
               />
             ))}
           </div>

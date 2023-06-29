@@ -1,15 +1,14 @@
-import React from 'react';
+import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// Import Swiper styles
+import { Autoplay, Navigation, Pagination } from 'swiper';
+
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-// import required modules
-import { Autoplay, Navigation, Pagination } from 'swiper';
 import { posterImg } from '@/data/posterImg';
 
-const SlidePoster = () => {
+const SlidePoster: FC = () => {
   return (
     <div>
       <Swiper

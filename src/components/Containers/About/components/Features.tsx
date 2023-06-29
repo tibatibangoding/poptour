@@ -1,6 +1,6 @@
-import Link from 'next/link';
 import { FC } from 'react';
 import { FaJoget } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Features: FC = () => {
   return (

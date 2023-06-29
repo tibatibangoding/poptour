@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-const TitleLine = () => {
+const TitleLine: FC = () => {
   return (
     <div>
       <div className="w-full h-[150px]  relative">

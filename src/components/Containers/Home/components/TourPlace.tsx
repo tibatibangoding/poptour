@@ -1,6 +1,6 @@
-import React from 'react';
+import { FC } from 'react';
 
-const TourPlace = () => {
+const TourPlace: FC = () => {
   return (
     <div>
       <div className="mx-10 md:mx-24 lg:mx-40 py-20 ">
