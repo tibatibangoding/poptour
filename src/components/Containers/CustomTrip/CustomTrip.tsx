@@ -1,7 +1,7 @@
 import { FC } from 'react';
+
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
-
 import CarouselTrip from './components/Carousel/CarouselTrip';
 import TripForm from './components/TripForm';
 

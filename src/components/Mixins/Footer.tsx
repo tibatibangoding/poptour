@@ -67,7 +67,9 @@ const Footer: FC = () => {
             </div>
 
             <p className="text-gray-400 text-justify sm:pr-8 mb-6">
-              about your company, and include information about your products.
+              POP Tour adalah sebuah biro wisata terpercaya yang menyediakan
+              Paket Perjalanan Wisata Malang, Paket Wisata Bromo, Rental Mobil
+              dan Sewa Bus di Malang
             </p>
 
             <div className="flex gap-4">
@@ -75,7 +77,7 @@ const Footer: FC = () => {
                 <a
                   href={f.url}
                   target="_blank"
-                  className="text-gray-400 hover:text-gray-500 active:text-gray-600 transition duration-100"
+                  className="text-gray-400 hover:text-secondary active:text-secondary transition duration-100"
                   rel="noreferrer"
                   key={i}
                 >
@@ -94,7 +96,7 @@ const Footer: FC = () => {
               {primaryLink?.map((b, i) => (
                 <div key={i}>
                   <Link href={b.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
+                    <a className="text-gray-400 hover:text-secondary active:text-secondary/80 transition duration-100">
                       {b.title}
                     </a>
                   </Link>
@@ -112,7 +114,7 @@ const Footer: FC = () => {
               {secondaryLink?.map((c, i) => (
                 <div key={i}>
                   <Link href={c.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
+                    <a className="text-gray-400 hover:text-secondary active:text-secondary/80 transition duration-100">
                       {c.title}
                     </a>
                   </Link>
@@ -130,7 +132,7 @@ const Footer: FC = () => {
               {tertiaryLink?.map((d, i) => (
                 <div key={i}>
                   <Link href={d.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
+                    <a className="text-gray-400 hover:text-secondary active:text-secondary/80 transition duration-100">
                       {d.title}
                     </a>
                   </Link>
@@ -148,7 +150,7 @@ const Footer: FC = () => {
               {legalLink?.map((e, i) => (
                 <div key={i}>
                   <Link href={e.url} legacyBehavior>
-                    <a className="text-gray-400 hover:text-primary active:text-primary/80 transition duration-100">
+                    <a className="text-gray-400 hover:text-secondary active:text-secondary/80 transition duration-100">
                       {e.title}
                     </a>
                   </Link>
@@ -160,7 +162,17 @@ const Footer: FC = () => {
 
         <div className="text-gray-400 text-sm text-center border-t border-gray-800 py-8">
           <p>© {year} - POP Tour. All rights reserved.</p>
-          <p>Developed by Naufal Akbar Nugroho.</p>
+          <p>
+            Developed by{' '}
+            <a
+              href="https://github.com/tibatibangoding"
+              target="_blank"
+              className="text-secondary hover:underline"
+            >
+              Tiba-tiba Ngoding
+            </a>
+            .
+          </p>
         </div>
       </footer>
     </div>
