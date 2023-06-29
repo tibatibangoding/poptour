@@ -49,7 +49,7 @@ const CardTour: FC<Props> = ({ addres, tags, title, day, airport, price }) => {
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-medium text-orange-400">IDR {price}</h1>
             <a
-              href="/tour-packages/custom-trip"
+              href="/tour-packages/detail-tour/asd"
               className="flex items-center gap-2"
             >
               <h1>Lihat Detail</h1>
