@@ -2,6 +2,11 @@ import { FC } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
+import SlidePoster from './components/SlidePoster';
+import Service from './components/Service';
+import TourPlace from './components/TourPlace';
+import TitleLine from './components/TitleLine';
+import Superiority from './components/Superiority';
 
 const ContainerHome: FC = () => {
   return (
@@ -11,10 +16,12 @@ const ContainerHome: FC = () => {
         description={siteMetadata.description}
       />
 
-      <main className="py-24 my-40">
-        <section className="max-w-7xl mx-auto">
-          <h1>HALOOOO</h1>
-        </section>
+      <main className="py-20">
+        <SlidePoster />
+        <Service />
+        <TourPlace />
+        <TitleLine />
+        <Superiority />
       </main>
     </>
   );
