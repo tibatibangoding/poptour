@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
-import Link from 'next/link';
 import { FaTimes } from 'react-icons/fa';
+import Link from 'next/link';
 
 type Props = {
   product?: string | string[];

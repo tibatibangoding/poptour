@@ -1,7 +1,9 @@
-import React from 'react';
+import { FC } from 'react';
 
-const TourPackages = () => {
-  return <div>index</div>;
+import ConatinerTourPackages from '@/components/Containers/TourPackages/TourPackages';
+
+const TourPackages: FC = () => {
+  return <ConatinerTourPackages />;
 };
 
 export default TourPackages;

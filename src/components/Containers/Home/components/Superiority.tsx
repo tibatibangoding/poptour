@@ -1,12 +1,13 @@
-import React from 'react';
+import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper';
 import { primacy } from '@/data/primacy';
 
-const Superiority = () => {
+const Superiority: FC = () => {
   return (
     <div>
       <div className="mx-10 md:mx-24 lg:mx-40 py-20 ">
