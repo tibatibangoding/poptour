@@ -40,7 +40,7 @@ const ConatinerTourPackages = () => {
               <h1 className="text-[#666] text-center w-40">Gath Perusahaan</h1>
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
             {dataTourPackages.map((item: any, index: number) => (
               <CardTour
                 addres={item.addres}

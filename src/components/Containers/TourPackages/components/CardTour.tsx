@@ -6,7 +6,7 @@ import { BsArrowRight } from 'react-icons/bs';
 const CardTour = (props: any) => {
   return (
     <div>
-      <div className="w-full h-[300px] bg-white drop-shadow-lg rounded-lg">
+      <div className="w-full h-full bg-white drop-shadow-lg rounded-lg">
         <div className="w-full h-[100px] relative">
           <img
             src="assets/img/Bromo 1.JPG"
@@ -17,7 +17,7 @@ const CardTour = (props: any) => {
             <h1 className="ml-3 text-white font-bold ">{props.addres}</h1>
           </div>
         </div>
-        <div className="w-full h-[200px] p-5">
+        <div className="w-full h-full p-5">
           <div className="flex gap-2">
             {props.tags?.map((item: any, index: number) => (
               <div className="bg-blue-700 px-2 rounded-full " key={index}>
