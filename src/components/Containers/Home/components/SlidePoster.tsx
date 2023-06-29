@@ -27,7 +27,7 @@ const SlidePoster = () => {
       >
         {posterImg.map((item, index) => (
           <SwiperSlide key={index}>
-            <section className=" w-full "> 
+            <section className=" w-full ">
               <img src={item.img} alt={item.title} />
             </section>
           </SwiperSlide>
