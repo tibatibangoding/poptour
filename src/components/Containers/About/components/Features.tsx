@@ -7,7 +7,7 @@ const Features: FC = () => {
     <>
       <section>
         <h2 className="font-bold text-2xl md:text-3xl text-center capitalize">
-          Kenapa memilih kamu
+          Mengapa Harus Kami?
         </h2>
 
         <div className="grid grid-cols-3 md:grid-cols-3  gap-5 md:gap-28 mt-5">
