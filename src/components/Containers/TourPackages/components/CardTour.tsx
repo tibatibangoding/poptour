@@ -4,12 +4,12 @@ import { LuPlaneTakeoff } from 'react-icons/lu';
 import { BsArrowRight } from 'react-icons/bs';
 
 type Props = {
-  addres: String | any;
-  tags: String | any;
-  title: String | any;
+  addres: string | any;
+  tags: string | any;
+  title: string | any;
   day: number | any;
-  airport: String | any;
-  price: String | any;
+  airport: string | any;
+  price: string | any;
 };
 
 const CardTour: FC<Props> = ({ addres, tags, title, day, airport, price }) => {
