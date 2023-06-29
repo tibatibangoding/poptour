@@ -43,10 +43,10 @@ const CardTour = (props: any) => {
             <h1 className="text-xl font-medium text-orange-400">
               IDR {props.price}
             </h1>
-            <button className="flex items-center gap-2">
+            <a href='/tour-packages/custom-trip' className="flex items-center gap-2">
               <h1>Lihat Detail</h1>
               <BsArrowRight />
-            </button>
+            </a>
           </div>
         </div>
       </div>
