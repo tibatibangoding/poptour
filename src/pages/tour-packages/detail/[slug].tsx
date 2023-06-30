@@ -2,15 +2,19 @@ import { FC } from 'react';
 import type { GetStaticProps, GetStaticPaths } from 'next';
 
 import { TourPackages } from '@/interfaces/tourPackages';
+import { tourPackages } from '@/data/tourPackages';
 import ContainerDetailTourPackages from '@/components/Containers/TourPackages/Detail/DetailTourPackages';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tour-packages`);
-  const data = await res.json();
-
-  const paths = data?.tour?.map((item: TourPackages) => ({
-    params: { slug: item?.slug },
+  const paths = tourPackages.map((a) => ({
+    params: { slug: a.slug },
   }));
+
+  // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tour-packages`);
+  // const data = await res.json();
+  // const paths = data?.tour?.map((item: TourPackages) => ({
+  //   params: { slug: item?.slug },
+  // }));
 
   return { paths, fallback: false };
 };
