@@ -9,12 +9,13 @@ import { primacy } from '@/data/primacy';
 
 const Superiority: FC = () => {
   return (
-    <div>
-      <div className="mx-10 md:mx-24 lg:mx-40 py-20 ">
-        <h1 className="text-xl md:text-4xl font-semibold ">
-          MENGAPA MEMILIH POP TOUR
+    <section>
+      <div className="mx-4 md:mx-10 lg:mx-40 py-5 md:py-10">
+        <h1 className="font-primary font-semibold text-2xl md:text-4xl">
+          Mengapa Memilih Kami?
         </h1>
-        <div className="mt-10  flex items-center justify-center ">
+
+        <div className="mt-5 flex items-center justify-center">
           <Swiper
             slidesPerView={1}
             spaceBetween={0}
@@ -37,14 +38,14 @@ const Superiority: FC = () => {
             {primacy.map((item, index) => (
               <SwiperSlide key={index}>
                 <div className="w-full  h-96 pb-10 ">
-                  <div className="w-full h-full  relative rounded-lg">
+                  <div className="w-full h-full relative rounded-lg">
                     <img
                       src="assets/img/carousel-template.jpg"
                       alt=""
                       className="object-cover w-full h-full rounded-lg"
                     />
-                    <div className="absolute top-0 left-0  w-full h-full md:h-full rounded-lg  bg-black opacity-50" />
-                    <div className="absolute top-0 left-0  w-full h-full md:h-full  flex flex-col justify-center items-center gap-4 px-6">
+                    <div className="absolute top-0 left-0 w-full h-full md:h-full rounded-lg bg-black opacity-50" />
+                    <div className="absolute top-0 left-0 w-full h-full md:h-full flex flex-col justify-center items-center gap-4 px-6">
                       <h1 className="text-white text-4xl font-semibold">
                         #{item.no}
                       </h1>
@@ -60,7 +61,7 @@ const Superiority: FC = () => {
           </Swiper>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

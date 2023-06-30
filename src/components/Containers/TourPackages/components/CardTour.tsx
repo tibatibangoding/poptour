@@ -5,15 +5,24 @@ import { BsArrowRight } from 'react-icons/bs';
 import Link from 'next/link';
 
 type Props = {
-  address: string | any;
-  tags: string | any;
-  title: string | any;
-  day: number | any;
-  airport: string | any;
-  price: string | any;
+  address: string;
+  tags: string[];
+  title: string;
+  day: number;
+  airport: string;
+  price: string;
+  href: string;
 };
 
-const CardTour: FC<Props> = ({ address, tags, title, day, airport, price }) => {
+const CardTour: FC<Props> = ({
+  address,
+  tags,
+  title,
+  day,
+  airport,
+  price,
+  href,
+}) => {
   return (
     <div>
       <div className="w-full h-full bg-white drop-shadow-lg rounded-lg">
@@ -50,7 +59,7 @@ const CardTour: FC<Props> = ({ address, tags, title, day, airport, price }) => {
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-medium text-orange-400">IDR {price}</h1>
 
-            <Link href="/tour-packages/custom-trip" legacyBehavior>
+            <Link href={href} legacyBehavior>
               <a className="flex items-center gap-2">
                 Lihat Detail
                 <BsArrowRight />
