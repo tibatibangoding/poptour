@@ -12,7 +12,6 @@ export const createNewClient: () => AxiosInstance = () => {
     baseURL: BASE_API,
     headers: {
       Accept: 'application/json',
-      AccessControlAllowOrigin: '*',
     },
     httpsAgent,
   });
