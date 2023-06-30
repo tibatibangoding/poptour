@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
+import BannerPromotion from '@/components/Common/BannerPromotion';
 import { siteMetadata } from '@/data/siteMetadata';
-import SlidePoster from './components/SlidePoster';
 import Service from './components/Service';
 import TourPlace from './components/TourPlace';
 import TitleLine from './components/TitleLine';
@@ -17,7 +17,7 @@ const ContainerHome: FC = () => {
       />
 
       <main className="py-[75px]">
-        <SlidePoster />
+        <BannerPromotion />
         <Service />
         <TourPlace />
         <TitleLine />

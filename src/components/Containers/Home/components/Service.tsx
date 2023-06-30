@@ -10,7 +10,7 @@ const Service: FC = () => {
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
         <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/bromo.jpg"
             alt="Bromo"
             loading="lazy"
             className="object-cover w-full h-full rounded-lg"
@@ -25,7 +25,7 @@ const Service: FC = () => {
 
         <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/pantai.jpg"
             alt="Pantai"
             loading="lazy"
             className="object-cover w-full h-full rounded-lg"
@@ -40,7 +40,7 @@ const Service: FC = () => {
 
         <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/batu.jpg"
             alt="Batu"
             loading="lazy"
             className="object-cover w-full h-full rounded-lg"
@@ -55,7 +55,7 @@ const Service: FC = () => {
 
         <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/jogja.jpg"
             alt="Jogja"
             loading="lazy"
             className="object-cover w-full h-full  rounded-lg"
@@ -70,7 +70,7 @@ const Service: FC = () => {
 
         <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/bali.jpeg"
             alt="Bali"
             loading="lazy"
             className="object-cover w-full h-full rounded-lg"
@@ -85,7 +85,7 @@ const Service: FC = () => {
 
         <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/rafting.jpg"
             alt="Atraksi & Hiburan"
             loading="lazy"
             className="object-cover w-full h-full rounded-lg"

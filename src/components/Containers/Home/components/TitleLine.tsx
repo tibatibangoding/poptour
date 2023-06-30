@@ -4,7 +4,7 @@ const TitleLine: FC = () => {
   return (
     <section className="w-full h-[150px] relative z-[-1] my-10">
       <img
-        src="assets/img/Bromo 1.JPG"
+        src="assets/img/bromo.jpg"
         alt="bg"
         className="object-cover w-full h-full"
       />
