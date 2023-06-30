@@ -10,7 +10,7 @@ const TourPlace: FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
         <div className="w-full h-[300px] md:h-[500px] rounded-lg relative overflow-hidden">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/bromo.jpg"
             alt=""
             className="object-cover w-full h-full rounded-lg transition-transform duration-300 hover:scale-110"
           />
@@ -18,7 +18,7 @@ const TourPlace: FC = () => {
 
         <div className="w-full h-[300px] md:h-[500px] rounded-lg relative overflow-hidden">
           <img
-            src="assets/img/Bromo 1.JPG"
+            src="assets/img/bromo.jpg"
             alt=""
             className="object-cover w-full h-full rounded-lg transition-transform duration-300 hover:scale-110"
           />
