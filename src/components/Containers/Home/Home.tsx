@@ -16,7 +16,7 @@ const ContainerHome: FC = () => {
         description={siteMetadata.description}
       />
 
-      <main className="py-20">
+      <main className="py-[75px]">
         <SlidePoster />
         <Service />
         <TourPlace />
