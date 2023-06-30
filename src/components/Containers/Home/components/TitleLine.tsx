@@ -1,13 +1,13 @@
-import React from 'react';
+import { FC } from 'react';
 
-const TitleLine = () => {
+const TitleLine: FC = () => {
   return (
     <div>
-      <div className="w-full h-[150px]  relative">
+      <div className="w-full h-[150px] relative z-[-1]">
         <img
           src="assets/img/Bromo 1.JPG"
           alt="bg"
-          className="object-cover w-full h-full "
+          className="object-cover w-full h-full"
         />
         <div className="absolute top-0 left-0  w-full h-full  bg-black opacity-50" />
         <div className="absolute top-0 left-0  w-full h-full rounded-lg flex justify-center items-center">

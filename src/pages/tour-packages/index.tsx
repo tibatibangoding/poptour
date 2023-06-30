@@ -1,13 +1,9 @@
+import { FC } from 'react';
 
 import ConatinerTourPackages from '@/components/Containers/TourPackages/TourPackages';
-import React from 'react';
 
-const TourPackages = () => {
-  return (
-    <div>
-      <ConatinerTourPackages />
-    </div>
-  );
+const TourPackages: FC = () => {
+  return <ConatinerTourPackages />;
 };
 
 export default TourPackages;

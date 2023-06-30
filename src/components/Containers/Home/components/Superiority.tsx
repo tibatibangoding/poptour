@@ -1,22 +1,23 @@
-import React from 'react';
+import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import { Pagination } from 'swiper';
 import { primacy } from '@/data/primacy';
 
-const Superiority = () => {
+const Superiority: FC = () => {
   return (
     <div>
       <div className="mx-10 md:mx-24 lg:mx-40 py-20 ">
         <h1 className="text-xl md:text-4xl font-semibold ">
           MENGAPA MEMILIH POP TOUR
         </h1>
-        <div className="mt-10">
+        <div className="mt-10  flex items-center justify-center ">
           <Swiper
             slidesPerView={1}
-            spaceBetween={300}
+            spaceBetween={0}
             pagination={{
               clickable: true,
             }}
@@ -31,12 +32,12 @@ const Superiority = () => {
               },
             }}
             modules={[Pagination]}
-            className="mySwiper"
+            className="mySwiper "
           >
             {primacy.map((item, index) => (
               <SwiperSlide key={index}>
-                <div className="w-72 lg:w-96 h-96 pb-10">
-                  <div className="w-full h-full bg-blue-500 relative rounded-lg">
+                <div className="w-full  h-96 pb-10 ">
+                  <div className="w-full h-full  relative rounded-lg">
                     <img
                       src="assets/img/carousel-template.jpg"
                       alt=""

@@ -1,10 +1,11 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { CgCalendarToday } from 'react-icons/cg';
 import { LuPlaneTakeoff } from 'react-icons/lu';
 import { BsArrowRight } from 'react-icons/bs';
+import Link from 'next/link';
 
 type Props = {
-  addres: string | any;
+  address: string | any;
   tags: string | any;
   title: string | any;
   day: number | any;
@@ -12,7 +13,7 @@ type Props = {
   price: string | any;
 };
 
-const CardTour: FC<Props> = ({ addres, tags, title, day, airport, price }) => {
+const CardTour: FC<Props> = ({ address, tags, title, day, airport, price }) => {
   return (
     <div>
       <div className="w-full h-full bg-white drop-shadow-lg rounded-lg">
@@ -23,7 +24,7 @@ const CardTour: FC<Props> = ({ addres, tags, title, day, airport, price }) => {
             className="w-full h-full object-cover rounded-t-lg"
           />
           <div className="absolute bottom-0 left-0 ">
-            <h1 className="ml-3 text-white font-bold ">{addres}</h1>
+            <h1 className="ml-3 text-white font-bold ">{address}</h1>
           </div>
         </div>
         <div className="w-full h-full p-5">
@@ -48,13 +49,13 @@ const CardTour: FC<Props> = ({ addres, tags, title, day, airport, price }) => {
           <p className="my-3 text-[#666]">Mulai dari</p>
           <div className="flex items-center justify-between">
             <h1 className="text-xl font-medium text-orange-400">IDR {price}</h1>
-            <a
-              href="/tour-packages/detail-tour/asd"
-              className="flex items-center gap-2"
-            >
-              <h1>Lihat Detail</h1>
-              <BsArrowRight />
-            </a>
+
+            <Link href="/tour-packages/custom-trip" legacyBehavior>
+              <a className="flex items-center gap-2">
+                Lihat Detail
+                <BsArrowRight />
+              </a>
+            </Link>
           </div>
         </div>
       </div>
