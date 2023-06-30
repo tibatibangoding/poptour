@@ -40,7 +40,7 @@ const ContainerDetailTourPackages: FC<Props> = ({ data }) => {
             <div className="col-span-10 md:col-span-7" key={i}>
               <div className="w-full h-60">
                 <img
-                  src="/assets/img/bromo.jpg"
+                  src={a.img_src}
                   alt={a.title}
                   loading="lazy"
                   className="object-cover w-full h-full rounded-xl"
