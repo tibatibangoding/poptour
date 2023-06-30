@@ -1,9 +1,9 @@
-import React, { FC, useState } from 'react';
+import { FC, useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi';
 
 type Props = {
-  day: number ,
-  title: string,
+  day: number;
+  title: string;
 };
 
 const According: FC<Props> = ({ day, title }) => {
