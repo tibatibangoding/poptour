@@ -24,7 +24,11 @@ const ContainerAbout: FC = () => {
 
             <Features />
 
-            <CallToAction />
+            <CallToAction
+              message="Yuk Liburan Bersama Kami!"
+              href="/tour-packages"
+              action="Lihat Paket Wisata"
+            />
           </div>
         </section>
       </main>

@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, useCallback } from 'react';
+import { FC } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 
@@ -6,25 +6,13 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { useAxios } from '@/hooks/useAxios';
+import { useBanner } from '@/hooks/useBanner';
 import { BannerPromotion } from '@/interfaces/bannerPromotion';
 
-const SlidePoster: FC = () => {
-  const [bannerPromotion, setBannerPromotion] = useState<BannerPromotion[]>();
+const BannerPromotion: FC = () => {
+  const { banner } = useBanner();
 
-  const axios = useAxios();
-
-  const getData = useCallback(async () => {
-    const { data, status } = await axios.get('banner-promotion');
-
-    if (status === 200) {
-      setBannerPromotion(data.banner);
-    }
-  }, [axios]);
-
-  useEffect(() => {
-    getData();
-  }, [getData]);
+  console.log(banner);
 
   return (
     <Swiper
@@ -40,7 +28,7 @@ const SlidePoster: FC = () => {
       modules={[Autoplay, Navigation, Pagination]}
       className="mySwiper"
     >
-      {bannerPromotion?.map((item: BannerPromotion, index: number) => (
+      {banner?.map((item: BannerPromotion, index: number) => (
         <SwiperSlide key={index}>
           <section className="w-full h-[200px] md:h-[300px] lg:h-[400px]">
             <div className="w-full h-full">
@@ -58,4 +46,4 @@ const SlidePoster: FC = () => {
   );
 };
 
-export default SlidePoster;
+export default BannerPromotion;
