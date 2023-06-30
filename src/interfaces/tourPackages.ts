@@ -1,9 +1,11 @@
 export interface TourPackages {
-  address: string;
-  tags: string[] | any;
+  img_src: string;
   title: string;
+  slug: string;
+  tags: string[] | any;
+  address: string;
+  desc?: string;
   day: number;
-  airport: string;
-  price: string;
-  href: string;
+  price: number;
+  airport?: string;
 }

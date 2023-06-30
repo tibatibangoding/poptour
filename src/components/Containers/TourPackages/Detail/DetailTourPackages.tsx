@@ -2,94 +2,111 @@ import { FC } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import { CgCalendarToday } from 'react-icons/cg';
 import { LuPlaneTakeoff } from 'react-icons/lu';
+import Link from 'next/link';
 
+import { TourPackages } from '@/interfaces/tourPackages';
+import { formatCurrency } from '@/lib/formatCurrency';
+import { PageSEO } from '@/components/Common/SEO';
+import { siteMetadata } from '@/data/siteMetadata';
 import According from './components/According';
 
-const ContainerDetailTourPackages: FC = () => {
+type Props = {
+  data: TourPackages[];
+};
+
+const ContainerDetailTourPackages: FC<Props> = ({ data }) => {
+  console.log(data);
+
   return (
-    <div>
-      <div className="mx-10 md:mx-24 lg:mx-40 py-24 ">
-        <div className="w-full relative flex items-center justify-center">
-          <h1 className="text-center md:text-2xl">
-            Super Sale Malaysia + Genting Highland
-          </h1>
-          <button className="hidden md:block  p-2 rounded-lg border-[1px] border-black absolute left-0">
-            <IoIosArrowBack className="text-center" />
-          </button>
-        </div>
+    <>
+      <PageSEO
+        title={siteMetadata.title}
+        description={siteMetadata.description}
+      />
 
-        <div className="w-full py-10 md:grid grid-cols-2 gap-14">
-          <div className="">
-            <div className="w-full h-60 ">
-              <img
-                src="/assets/img/Bromo 1.JPG"
-                alt="foto"
-                loading="lazy"
-                className="object-cover w-full h-full rounded-xl"
-              />
+      <div className="mx-4 md:mx-24 lg:mx-40 pt-24 pb-10 md:pt-28 md:pb-14">
+        <Link href="/tour-packages" legacyBehavior>
+          <a className="w-full relative flex items-center">
+            <div className="block p-1 rounded-lg border-[1px] border-black">
+              <IoIosArrowBack className="text-center" />
             </div>
 
-            <div className="w-full py-5">
-              <div className=" flex gap-5 mb-3">
-                <div className="bg-blue-700 px-5 py-2 rounded-full  ">
-                  <h1 className=" text-white text-sm text-center">All in</h1>
-                </div>
+            <h1 className="text-xl ml-2">Kembali ke halaman Paket Wisata</h1>
+          </a>
+        </Link>
 
-                <div className="bg-blue-700 px-5 py-2 rounded-full  ">
-                  <h1 className=" text-white text-sm "> Suprame</h1>
-                </div>
+        <div className="w-full py-5 grid grid-cols-10 gap-8">
+          {data.map((a, i) => (
+            <div className="col-span-10 md:col-span-7" key={i}>
+              <div className="w-full h-60">
+                <img
+                  src="/assets/img/bromo.jpg"
+                  alt={a.title}
+                  loading="lazy"
+                  className="object-cover w-full h-full rounded-xl"
+                />
               </div>
 
-              <div>
-                <h1 className="text-2xl font-semibold ">
-                  Super Sale Malaysia + HighLand
-                </h1>
-
-                <h1 className="text-xl font-medium text-orange-400">
-                  IDR 5.000.000
-                </h1>
-
-                <div className="my-3">
-                  <p>
-                    Ingin pergi berwisata ke gunung bromo sendirian? atau
-                    rame-rame dengan teman? Berwisata merupakan kebutuhan setiap
-                    individu. ada banyak tempat wisata di Kota Malang yang bagus
-                    untuk dikunjungi. salah satunya adalah wisata alam Gunung
-                    Bromo.
-                  </p>
+              <div className="w-full py-5">
+                <div className="flex gap-5 mb-3">
+                  {a?.tags?.map((b: any, i: number) => (
+                    <div className="bg-primary px-5 py-2 rounded-full" key={i}>
+                      <h1 className=" text-white text-sm text-center">
+                        {b.tag}
+                      </h1>
+                    </div>
+                  ))}
                 </div>
 
-                <div className="flex flex-col  gap-5">
-                  <div className="flex gap-10">
-                    <div className="flex items-center gap-2 ">
-                      <CgCalendarToday className="text-xl" />
-                      <h1 className="text-sm text-[#666]">4 day</h1>
-                    </div>
+                <div>
+                  <h1 className="text-2xl font-semibold">{a.title}</h1>
 
-                    <div className="flex items-center gap-2 ">
-                      <LuPlaneTakeoff className="text-xl" />
-                      <h1 className="text-sm text-[#666]">Soekarna Hatta</h1>
-                    </div>
+                  <h1 className="text-xl font-medium text-orange-400">
+                    {formatCurrency(a.price)}
+                  </h1>
+
+                  <div className="my-3">
+                    <p>
+                      Ingin pergi berwisata ke gunung bromo sendirian? atau
+                      rame-rame dengan teman? Berwisata merupakan kebutuhan
+                      setiap individu. ada banyak tempat wisata di Kota Malang
+                      yang bagus untuk dikunjungi. salah satunya adalah wisata
+                      alam Gunung Bromo.
+                    </p>
                   </div>
 
-                  <div className="flex gap-10">
-                    <div className="flex items-center gap-2 ">
-                      <CgCalendarToday className="text-xl" />
-                      <h1 className="text-sm text-[#666]">4 day</h1>
+                  <div className="flex flex-col gap-5">
+                    <div className="flex gap-10">
+                      <div className="flex items-center gap-2 ">
+                        <CgCalendarToday className="text-xl" />
+                        <h1 className="text-sm text-[#666]">4 day</h1>
+                      </div>
+
+                      <div className="flex items-center gap-2 ">
+                        <LuPlaneTakeoff className="text-xl" />
+                        <h1 className="text-sm text-[#666]">Soekarna Hatta</h1>
+                      </div>
                     </div>
 
-                    <div className="flex items-center gap-2 ">
-                      <LuPlaneTakeoff className="text-xl" />
-                      <h1 className="text-sm text-[#666]">Soekarna Hatta</h1>
+                    <div className="flex gap-10">
+                      <div className="flex items-center gap-2 ">
+                        <CgCalendarToday className="text-xl" />
+                        <h1 className="text-sm text-[#666]">4 day</h1>
+                      </div>
+
+                      <div className="flex items-center gap-2 ">
+                        <LuPlaneTakeoff className="text-xl" />
+                        <h1 className="text-sm text-[#666]">Soekarna Hatta</h1>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
 
-          <div className="">
-            <div className="w-full p-7 bg-[#f6f6f6] drop-shadow-xl rounded-xl flex flex-col gap-3">
+          <div className="col-span-10 md:col-span-3">
+            <div className="w-full p-7 bg-[#f6f6f6] shadow-md rounded-xl flex flex-col gap-3">
               <div className="grid lg:grid-cols-2 gap-3 ">
                 <div>
                   <h3 className="text-lg font-semibold">Nama Lengkap</h3>
@@ -148,6 +165,7 @@ const ContainerDetailTourPackages: FC = () => {
             </div>
           </div>
         </div>
+
         <div className="w-full flex flex-col gap-2">
           <According title="Jakarta - Surabaya" day={1} />
           <According title="Surabaya - Malang" day={2} />
@@ -155,7 +173,7 @@ const ContainerDetailTourPackages: FC = () => {
           <According title="Banyuwangi - Bali" day={4} />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

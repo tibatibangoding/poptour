@@ -48,13 +48,13 @@ const ConatinerTourPackages: FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {tourPackages?.map((item: TourPackages, index: number) => (
                 <CardTour
-                  address={item.address}
-                  tags={item.tags}
+                  img_src={item.img_src}
                   title={item.title}
+                  slug={item.slug}
+                  tags={item.tags}
+                  address={item.address}
                   day={item.day}
-                  airport={item.airport}
                   price={item.price}
-                  href={item.href}
                   key={index}
                 />
               ))}
