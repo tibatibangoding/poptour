@@ -1,11 +1,28 @@
-import { FC } from 'react';
+import { FC, useState, useCallback, useEffect } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
-import { dataTourPackages } from '@/data/dataTourPackages';
+import { TourPackages } from '@/interfaces/tourPackages';
+import { useAxios } from '@/hooks/useAxios';
 import CardTour from './components/CardTour';
 
 const ConatinerTourPackages: FC = () => {
+  const [tourPackages, setTourPackages] = useState<TourPackages[]>();
+
+  const axios = useAxios();
+
+  const getData = useCallback(async () => {
+    const { data, status } = await axios.get('tour-packages');
+
+    if (status === 200) {
+      setTourPackages(data.tour);
+    }
+  }, [axios]);
+
+  useEffect(() => {
+    getData();
+  }, [getData]);
+
   return (
     <>
       <PageSEO
@@ -43,7 +60,7 @@ const ConatinerTourPackages: FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
-            {dataTourPackages.map((item: any, index: number) => (
+            {tourPackages?.map((item: TourPackages, index: number) => (
               <CardTour
                 address={item.address}
                 tags={item.tags}
