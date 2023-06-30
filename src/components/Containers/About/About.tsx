@@ -21,7 +21,7 @@ const ContainerAbout: FC = () => {
             <AboutContent />
 
             <Location />
-            
+
             <Features />
 
             <CallToAction />
