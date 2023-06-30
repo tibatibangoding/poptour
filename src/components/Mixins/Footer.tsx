@@ -169,7 +169,7 @@ const Footer: FC = () => {
               target="_blank"
               className="text-secondary hover:underline"
             >
-              Tiba-tiba Ngoding
+              Tiba Tiba Ngoding
             </a>
             .
           </p>
