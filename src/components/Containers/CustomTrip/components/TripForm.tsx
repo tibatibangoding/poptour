@@ -143,7 +143,10 @@ const TripForm: FC = () => {
                 -- Pilih Hotel --
               </option>
               <option value="1">Bintang 1</option>
-              <option value="1">Bintang 2</option>
+              <option value="2">Bintang 2</option>
+              <option value="3">Bintang 3</option>
+              <option value="4">Bintang 4</option>
+              <option value="5">Bintang 5</option>
             </select>
           </div>
 
@@ -194,7 +197,7 @@ const TripForm: FC = () => {
           </div>
 
           <div className="flex items-center justify-between sm:col-span-2">
-            <button className="w-full rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-primary/50 transition duration-100 hover:bg-primary/80 focus-visible:ring active:bg-primary md:text-base">
+            <button className="w-full rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base">
               Pesan Sekarang
             </button>
           </div>
