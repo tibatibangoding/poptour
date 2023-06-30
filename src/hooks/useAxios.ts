@@ -5,7 +5,8 @@ import https from 'https';
 const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
 export const createNewClient: () => AxiosInstance = () => {
-  const BASE_API = 'http://localhost:3000/api';
+  const BASE_API =
+    process.env.NEXT_PUBLIC_API_URL || 'https://poptour.vercel.app/api';
 
   return axios.create({
     baseURL: BASE_API,
