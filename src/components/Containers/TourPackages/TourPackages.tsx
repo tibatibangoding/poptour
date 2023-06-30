@@ -45,12 +45,13 @@ const ConatinerTourPackages: FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 ">
             {dataTourPackages.map((item: any, index: number) => (
               <CardTour
-                address={item.addres}
+                address={item.address}
                 tags={item.tags}
                 title={item.title}
                 day={item.day}
                 airport={item.airport}
                 price={item.price}
+                href={item.href}
                 key={index}
               />
             ))}
