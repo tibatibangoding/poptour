@@ -2,14 +2,14 @@ import { FC } from 'react';
 
 const TopSection: FC = () => {
   return (
-    <section>
+    <div className="container py-10 lg:py-14">
       <div className="flex flex-col justify-between gap-6 sm:gap-10 md:gap-gap-6 lg:flex-row">
         <div className="w-full px-4 py-10 lg:w-1/2">
           <p className="font-primary font-semibold text-lg xl:text-xl text-primary uppercase mb-3 md:mb-6">
             Kontak Kami
           </p>
 
-          <h1 className=" text-4xl sm:text-5xl md:text-6xl font-bold mb-3 md:mb-12">
+          <h1 className=" text-4xl sm:text-5xl md:text-6xl font-bold mb-3 md:mb-5">
             Kami Butuh Kritik & Saran Anda
           </h1>
 
@@ -22,14 +22,14 @@ const TopSection: FC = () => {
 
         <div className="mb-10 py-10 lg:mb-0 w-full px-4 lg:w-1/2">
           <img
-            src="/assets/svg/undraw_relaxation.svg"
+            src="/assets/svg/hero-contact.svg"
             loading="lazy"
             alt="Hero Illustration"
             className="w-full h-full object-cover object-center"
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

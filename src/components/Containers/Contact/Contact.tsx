@@ -1,9 +1,10 @@
 import { FC } from 'react';
+
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
 import TopSection from './Components/TopSection';
-import Maps from './Components/Maps';
 import Form from './Components/Form';
+import Location from './Components/Location';
 
 const ContainerContact: FC = () => {
   return (
@@ -13,13 +14,11 @@ const ContainerContact: FC = () => {
         description={siteMetadata.description}
       />
 
-      <main className="py-20">
+      <main className="py-[89px]">
         <section className="max-w-7xl mx-auto">
-          <div className="w-full px-4">
-            <TopSection />
-            <Maps />
-            <Form />
-          </div>
+          <TopSection />
+          <Location />
+          <Form />
         </section>
       </main>
     </>
