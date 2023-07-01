@@ -13,7 +13,7 @@ const ContainerCustomTrip: FC = () => {
         description={siteMetadata.description}
       />
 
-      <main className="py-[75px]">
+      <main className="py-[89px]">
         <BannerPromotion />
 
         <section className="max-w-6xl mx-auto">

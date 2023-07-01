@@ -3,6 +3,6 @@ export const headerNavLinks = [
   { title: 'Paket Wisata', path: '/tour-packages' },
   { title: 'Rental Mobil', path: '/car-rental' },
   { title: 'Galeri', path: '/gallery' },
-  { title: 'Tentang Kami', path: '/about-us' },
+  { title: 'Tentang', path: '/about-us' },
   { title: 'Kontak', path: '/contact' },
 ];

@@ -7,7 +7,9 @@ const TourPlace: FC = () => {
         Rekomendasi Paket Wisata
       </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
+      <h1>NEED CARD RECOMENDATION TOUR PACKAGES</h1>
+
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-5">
         <div className="w-full h-[300px] md:h-[500px] rounded-lg relative overflow-hidden">
           <img
             src="assets/img/bromo.jpg"
@@ -23,7 +25,7 @@ const TourPlace: FC = () => {
             className="object-cover w-full h-full rounded-lg transition-transform duration-300 hover:scale-110"
           />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

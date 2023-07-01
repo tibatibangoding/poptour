@@ -77,6 +77,28 @@ const TripForm: FC = () => {
             />
           </div>
 
+          <div className="sm:col-span-2">
+            <label
+              htmlFor="tourDestination"
+              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+            >
+              Tujuan Wisata <span className="text-red-500">*</span>
+            </label>
+            <select
+              name="tourDestination"
+              id="tourDestination"
+              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+            >
+              <option selected disabled>
+                -- Pilih Tujuan Wisata --
+              </option>
+              <option value="bromo">Bromo</option>
+              <option value="batu">Batu</option>
+              <option value="jogja">Jogja</option>
+              <option value="bali">Bali</option>
+            </select>
+          </div>
+
           <div>
             <label
               htmlFor="longTime"

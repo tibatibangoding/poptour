@@ -9,11 +9,12 @@ const ContainerGallery: FC = () => {
         title={siteMetadata.title}
         description={siteMetadata.description}
       />
+
       <main className="py-20">
         <div className="max-w-full md:max-w-7xl mx-auto">
           {/* gallery start */}
           <div className="min-h-screen bg-white py-10">
-            <div className="over container mx-auto w-full md:max-w-7xl px-10 lg:px-0">
+            <div className="over container mx-auto w-full md:max-w-7xl px-4 lg:px-0">
               <div className="grid md:grid-cols-2 lg:grid-cols-3 rounded md:border bg-white">
                 {/* vertical */}
                 <div className="border grid row-span-2 overflow-hidden">
