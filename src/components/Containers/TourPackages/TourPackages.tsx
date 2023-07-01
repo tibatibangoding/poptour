@@ -36,7 +36,7 @@ const ConatinerTourPackages: FC = () => {
         description={siteMetadata.description}
       />
 
-      <div className="py-[75px]">
+      <div className="py-[89px]">
         <BannerPromotion />
 
         <div className="mx-4 md:mx-24 lg:mx-40 py-10 md:py-14">
