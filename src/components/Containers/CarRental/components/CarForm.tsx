@@ -118,7 +118,7 @@ const CarForm: FC = () => {
   return (
     <section>
       <details
-        className="p-4 rounded-lg shadow-xl"
+        className="p-4 rounded-lg shadow-md"
         open={armada ? true : isOpen ? true : false}
       >
         <summary className="font-semibold text-xl leading-5 text-black flex items-center">
@@ -268,8 +268,8 @@ const CarForm: FC = () => {
                   id="armada"
                   className="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 >
-                  <option defaultValue="Pilih Armada" selected>
-                    Pilih armada
+                  <option defaultValue="Pilih Armada" disabled selected>
+                    -- Pilih Armada --
                   </option>
                   <option value="Avanza">Avanza</option>
                   <option value="Supra">Supra</option>
