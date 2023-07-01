@@ -1,3 +1,4 @@
+import { PageSEO } from '@/components/Common/SEO';
 import { useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
@@ -52,49 +53,56 @@ const ContainerFaq = () => {
   };
 
   return (
-    <div className="mt-24 py-20">
-      <div className="max-w-full mx-auto px-4 lg:px-40">
-        <div className="flex flex-col items-center justify-center mb-8 gap-3">
-          <h1 className="text-2xl md:text-3xl font-bold text-center">
-            Frequently Asked Questions
-          </h1>
-          <p className="text-sm md:text-lg text-center font-light">
-            Pertanyaan paling umum tentang cara kerja kami dan apa yang dapat
-            kami lakukan untuk Anda.
-          </p>
-        </div>
-        <div className="space-y-4">
-          {faqs.map((faq, index) => (
-            <div key={index} className="border-2 rounded-lg border-gray-200">
-              <button
-                className="flex items-center justify-between w-full py-2 px-4   focus:outline-none transition-all duration-300"
-                onClick={() => toggleAccordion(index)}
-              >
-                <span
-                  className={`font-medium ${
-                    activeIndex === index ? 'border-b' : ''
-                  }  border-gray-200 w-full text-left py-3`}
+    <>
+      <PageSEO
+        title="FAQ - POP Tour"
+        description="Frequently Asked Questions"
+      />
+
+      <div className="mt-24 py-20">
+        <div className="max-w-full mx-auto px-4 lg:px-40">
+          <div className="flex flex-col items-center justify-center mb-8 gap-3">
+            <h1 className="text-2xl md:text-3xl font-bold text-center">
+              Frequently Asked Questions
+            </h1>
+            <p className="text-sm md:text-lg text-center font-light">
+              Pertanyaan paling umum tentang cara kerja kami dan apa yang dapat
+              kami lakukan untuk Anda.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border-2 rounded-lg border-gray-200">
+                <button
+                  className="flex items-center justify-between w-full py-2 px-4   focus:outline-none transition-all duration-300"
+                  onClick={() => toggleAccordion(index)}
                 >
-                  {faq.question}
-                </span>
-                {activeIndex === index ? (
-                  <FaChevronUp className="h-5 w-5 text-gray-600 transform rotate-180" />
-                ) : (
-                  <FaChevronDown className="h-5 w-5 text-gray-600" />
-                )}
-              </button>
-              <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  activeIndex === index ? 'max-h-96' : 'max-h-0'
-                }`}
-              >
-                <div className="py-2 px-4">{faq.answer}</div>
+                  <span
+                    className={`font-medium ${
+                      activeIndex === index ? 'border-b' : ''
+                    }  border-gray-200 w-full text-left py-3`}
+                  >
+                    {faq.question}
+                  </span>
+                  {activeIndex === index ? (
+                    <FaChevronUp className="h-5 w-5 text-gray-600 transform rotate-180" />
+                  ) : (
+                    <FaChevronDown className="h-5 w-5 text-gray-600" />
+                  )}
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ${
+                    activeIndex === index ? 'max-h-96' : 'max-h-0'
+                  }`}
+                >
+                  <div className="py-2 px-4">{faq.answer}</div>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
