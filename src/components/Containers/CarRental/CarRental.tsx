@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { useRouter } from 'next/router';
 
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
@@ -7,9 +6,6 @@ import CarCard from './components/CarCard';
 import CarForm from './components/CarForm';
 
 const ContainerCarRental: FC = () => {
-  const router = useRouter();
-  const { armada } = router.query;
-
   return (
     <>
       <PageSEO
@@ -36,7 +32,7 @@ const ContainerCarRental: FC = () => {
 
           {/* FORM RENTAL */}
           <div className="w-full px-4">
-            <CarForm product={armada} />
+            <CarForm />
           </div>
         </section>
       </main>
