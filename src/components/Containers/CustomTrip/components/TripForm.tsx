@@ -67,10 +67,10 @@ const TripForm: FC = () => {
         '%0A' +
         walink3 +
         '%0A%0A' +
-        'Name : ' +
+        'Nama Lengkap : ' +
         formData.fullName +
         '%0A' +
-        'Email Address : ' +
+        'Alamat Email : ' +
         formData.emailAddress +
         '%0A' +
         'Berapa Hari : ' +
@@ -149,6 +149,7 @@ const TripForm: FC = () => {
               type="text"
               placeholder="Masukkan Nama Lengkap"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
+              required
             />
           </div>
 
@@ -167,6 +168,7 @@ const TripForm: FC = () => {
               type="email"
               placeholder="Masukkan Alamat Email"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
+              required
             />
           </div>
 
@@ -185,6 +187,7 @@ const TripForm: FC = () => {
               placeholder="Input berapa hari"
               min={1}
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
+              required
             />
           </div>
 
@@ -203,6 +206,7 @@ const TripForm: FC = () => {
               placeholder="Input jumlah peserta"
               min={1}
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
+              required
             />
           </div>
 
@@ -220,6 +224,7 @@ const TripForm: FC = () => {
               type="tel"
               placeholder="Masukkan No. Telepon"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
+              required
             />
           </div>
 
@@ -236,6 +241,7 @@ const TripForm: FC = () => {
               id="date"
               type="date"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
+              required
             />
           </div>
 
@@ -252,6 +258,7 @@ const TripForm: FC = () => {
               name="armada"
               id="product"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              required
             >
               <option defaultValue="Pilih Armada" selected disabled>
                 -- Pilih Armada --
@@ -276,6 +283,7 @@ const TripForm: FC = () => {
               name="hotel"
               id="hotel"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              required
             >
               <option defaultValue="Pilih Hotel" selected disabled>
                 -- Pilih Hotel --
@@ -301,6 +309,7 @@ const TripForm: FC = () => {
               name="paketWisata"
               id="tourDestination"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
+              required
             >
               <option defaultValue="Pilih Tujuan Wisata" selected disabled>
                 -- Pilih Tujuan Wisata --
@@ -332,7 +341,7 @@ const TripForm: FC = () => {
             <button
               className={`${
                 isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
-              } w-full rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base`}
+              } w-full rounded-lg bg-primary font-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base`}
               type="submit"
               disabled={isLoading ? true : false}
             >
