@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const CarCard: FC = () => {
   const hrefTransition = () => {
-    const carForm = document.querySelector('#form-rental');
+    const carForm = document.querySelector('#form-rental') as HTMLFormElement;
     carForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
@@ -55,7 +55,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -109,7 +109,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=haiii#form-rental"
+                href="/car-rental?armada=haiii#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -163,7 +163,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -217,7 +217,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -271,7 +271,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -325,7 +325,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -379,7 +379,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -433,7 +433,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -489,7 +489,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
@@ -543,7 +543,7 @@ const CarCard: FC = () => {
 
             <div className="px-6 pt-1 pb-5">
               <Link
-                href="/car-rental?product=halo#form-rental"
+                href="/car-rental?armada=halo#form-rental"
                 onClick={hrefTransition}
                 legacyBehavior
               >
