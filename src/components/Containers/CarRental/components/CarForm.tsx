@@ -20,7 +20,7 @@ const CarForm: FC<Props> = ({ product }) => {
           {/* open svg (plus) */}
           <button className="ml-auto" onClick={() => setIsOpen(!isOpen)}>
             <svg
-              className="svg_open fill-current opacity-75 w-4 h-4 -mr-1 text-teal-500 hover:text-teal-600"
+              className="svg_open fill-current opacity-75 w-4 h-4 -mr-1 text-blue-500 hover:text-blue-600"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
             >
@@ -30,7 +30,7 @@ const CarForm: FC<Props> = ({ product }) => {
           {/* close svg (minus) */}
           <button onClick={() => setIsOpen(!isOpen)}>
             <svg
-              className="svg_close fill-current opacity-75 w-4 h-4 -mr-1 text-teal-500 hover:text-teal-600"
+              className="svg_close fill-current opacity-75 w-4 h-4 -mr-1 text-blue-500 hover:text-blue-600"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
             >
