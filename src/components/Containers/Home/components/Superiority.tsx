@@ -11,7 +11,7 @@ const Superiority: FC = () => {
   return (
     <section>
       <div className="mx-4 md:mx-10 lg:mx-40 py-5 md:py-10">
-        <h1 className="font-primary font-semibold text-2xl md:text-4xl">
+        <h1 className="font-primary font-semibold text-2xl md:text-3xl">
           Mengapa Memilih Kami?
         </h1>
 

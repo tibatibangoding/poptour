@@ -4,7 +4,7 @@
 }
 
 .hamburgerLine {
-  @apply w-[30px] h-[2px] my-2 block bg-black;
+  @apply w-[30px] h-[2px] my-2 block bg-white;
 }
 
 .hamburgerActive > span:nth-child(1) {

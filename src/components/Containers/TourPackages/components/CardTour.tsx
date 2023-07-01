@@ -15,14 +15,18 @@ const CardTour: FC<TourPackages> = ({
   price,
 }) => {
   return (
-    <div className="w-full h-full bg-white drop-shadow-lg rounded-lg">
+    <div className="w-full h-full bg-white drop-shadow-lg rounded-lg transition-all hover:-translate-y-1">
       <div className="w-full h-[200px] relative">
-        <img
-          src={img_src}
-          alt={title}
-          className="w-full h-full object-cover rounded-t-lg"
-        />
-        {tags?.map((a: any, i: number) => (
+        <Link href={`/tour-packages/detail/${slug}`} legacyBehavior>
+          <a>
+            <img
+              src={img_src}
+              alt={title}
+              className="w-full h-full object-cover rounded-t-lg"
+            />
+          </a>
+        </Link>
+        {tags?.slice(0, 1).map((a: any, i: number) => (
           <div
             className="absolute top-0 left-0 bg-secondary rounded-tl-lg px-3 py-1"
             key={i}
