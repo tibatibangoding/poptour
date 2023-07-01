@@ -31,7 +31,7 @@ const CarCard: FC = () => {
                     legacyBehavior
                   >
                     <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
-                      Sewa
+                      Sewaa
                     </a>
                   </Link>
                 </div>
