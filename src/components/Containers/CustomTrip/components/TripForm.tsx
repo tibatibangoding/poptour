@@ -45,7 +45,7 @@ const TripForm: FC = () => {
       const phone = process.env.NEXT_PUBLIC_WHATSAPP;
       const walink2 = 'Halo POP Tour,';
       const walink3 =
-        'Saya ingin booking custom paket wisata dengan data diri sebagai berikut:';
+        'Saya ingin booking kustom paket wisata dengan data diri sebagai berikut:';
       // const text_yes = 'Terkirim.';
       // const text_no = 'Isi semua Formulir lalu klik Send.';
 
