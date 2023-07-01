@@ -1,19 +1,125 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 
-type Props = {
-  product?: string | string[];
-};
+import { FormPemesananRentalMobil } from '@/interfaces/formPemesanan';
+import { errorToast, successToast } from '@/lib/toastNotify';
 
-const CarForm: FC<Props> = ({ product }) => {
+const CarForm: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [formData, setFormData] = useState<FormPemesananRentalMobil>({
+    fullName: '',
+    emailAddress: '',
+    tglPemesanan: '',
+    tglSelesai: '',
+    armada: '',
+    notes: '',
+  });
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const router = useRouter();
+  const { armada } = router.query;
+
+  useEffect(() => {
+    if (armada) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        armada: armada.toString(),
+      }));
+    } else {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        armada: '',
+      }));
+    }
+  }, [armada]);
+
+  const handleChange = (e: any) => {
+    setFormData((prevalue) => {
+      return {
+        ...prevalue,
+        [e.target.name]: e.target.value,
+      };
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    if (
+      formData.fullName !== '' &&
+      formData.emailAddress !== '' &&
+      formData.tglPemesanan !== '' &&
+      formData.tglSelesai !== '' &&
+      formData.armada !== ''
+    ) {
+      const phone = process.env.NEXT_PUBLIC_WHATSAPP;
+      const walink2 = 'Halo POP Tour,';
+      const walink3 =
+        'Saya ingin Rental Mobil dengan data diri sebagai berikut:';
+
+      let walink = 'https://api.whatsapp.com/send';
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        walink = 'whatsapp://send';
+      }
+
+      const blanter_whatsapp =
+        walink +
+        '?phone=' +
+        phone +
+        '&text=' +
+        walink2 +
+        '%0A' +
+        walink3 +
+        '%0A%0A' +
+        'Nama Lengkap : ' +
+        formData.fullName +
+        '%0A' +
+        'Alamat Email : ' +
+        formData.emailAddress +
+        '%0A' +
+        'Tanggal Pemesanan : ' +
+        formData.tglPemesanan +
+        '%0A' +
+        'Tanggal Selesai : ' +
+        formData.tglSelesai +
+        '%0A' +
+        'Armada : ' +
+        formData.armada +
+        '%0A' +
+        '%0A' +
+        'Catatan : ' +
+        formData.notes +
+        '%0A';
+
+      setIsLoading(false);
+      setFormData({
+        fullName: '',
+        emailAddress: '',
+        tglPemesanan: '',
+        tglSelesai: '',
+        armada: '',
+        notes: '',
+      });
+      window.open(blanter_whatsapp, '_blank');
+      successToast('Pesanan Anda telah diterima!');
+    } else {
+      setIsLoading(false);
+      errorToast('Formulir harus terisi penuh!');
+    }
+  };
 
   return (
     <section>
       <details
         className="p-4 rounded-lg shadow-md"
-        open={product ? true : isOpen ? true : false}
+        open={armada ? true : isOpen ? true : false}
       >
         <summary className="font-semibold text-xl leading-5 text-black flex items-center">
           Formulir Pemesanan Rental Mobil
@@ -38,151 +144,168 @@ const CarForm: FC<Props> = ({ product }) => {
             </svg>
           </button>
         </summary>
-
-        <form className="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2 my-10">
-          <div>
-            <label
-              htmlFor="fullName"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-            >
-              Nama Lengkap <span className="text-red-500">*</span>
-            </label>
-
-            <input
-              name="fullName"
-              id="fullName"
-              type="text"
-              placeholder="Masukkan Nama Lengkap"
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="email"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-            >
-              Alamat Email <span className="text-red-500">*</span>
-            </label>
-
-            <input
-              name="email"
-              id="email"
-              type="email"
-              placeholder="Masukkan Alamat Email"
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-            />
-          </div>
-
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="product"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-            >
-              Armada <span className="text-red-500">*</span>
-            </label>
-
-            {product ? (
-              <div className="flex items-center gap-4">
+        <div className="p-5 md:py-20 md:px-32 rounded-2xl mt-5">
+          <form onSubmit={handleSubmit}>
+            <div className="grid gap-6 mb-6 md:grid-cols-2">
+              <div>
+                <label
+                  htmlFor="nama_lengkap"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Nama Lengkap <span className="text-red-500">*</span>
+                </label>
                 <input
-                  name="product"
-                  id="product"
+                  onChange={handleChange}
+                  name="fullName"
                   type="text"
-                  disabled={product ? true : false}
-                  value={product}
-                  className={`${
-                    product ? 'cursor-not-allowed' : ''
-                  } w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring`}
+                  id="nama_lengkap"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   "
+                  placeholder="Masukkan Nama Lengkap"
+                  required
                 />
-
-                <Link href="/car-rental" legacyBehavior>
-                  <a className="bg-red-500 hover:bg-red-600 p-2.5 rounded-md">
-                    <FaTimes className="text-white" />
-                  </a>
-                </Link>
+              </div>
+              <div>
+                <label
+                  htmlFor="alamat_email"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Alamat Email <span className="text-red-500">*</span>
+                </label>
+                <input
+                  onChange={handleChange}
+                  name="emailAddress"
+                  type="email"
+                  id="alamat_email"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  placeholder="Masukkan Alamat Email"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="tanggal_pesan"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Tanggal Pesan <span className="text-red-500">*</span>
+                </label>
+                <input
+                  onChange={handleChange}
+                  name="tglPemesanan"
+                  type="date"
+                  id="tanggal_pesan"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="tanggal_selesai"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Tanggal Selesai <span className="text-red-500">*</span>
+                </label>
+                <input
+                  onChange={handleChange}
+                  name="tglSelesai"
+                  type="date"
+                  id="tanggal_selesai"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  placeholder="123-45-678"
+                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                  required
+                />
+              </div>
+            </div>
+            {armada ? (
+              <div className="mb-6">
+                <label
+                  htmlFor="armada"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Armada <span className="text-red-500">*</span>
+                </label>
+                <div className="flex items-center gap-4">
+                  <input
+                    onChange={() =>
+                      setFormData((prevValue) => ({
+                        ...prevValue,
+                        armada: armada.toString(),
+                      }))
+                    }
+                    name="armada"
+                    type="text"
+                    id="armada"
+                    className={`${
+                      armada ? 'cursor-not-allowed' : ''
+                    }bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5`}
+                    placeholder="Masukkan Armada"
+                    disabled={armada ? true : false}
+                    value={armada}
+                    required
+                  />
+                  <Link href="/car-rental" legacyBehavior>
+                    <a className="bg-red-600 hover:bg-red-800 p-2.5 rounded-md ">
+                      <FaTimes className="text-white" />
+                    </a>
+                  </Link>
+                </div>
               </div>
             ) : (
-              <select
-                name="product"
-                id="product"
-                className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-              >
-                <option selected disabled>
-                  -- Pilih Armada --
-                </option>
-                <option value="1">Avanza</option>
-                <option value="1">Avanza</option>
-              </select>
+              <div className="mb-6">
+                <label
+                  htmlFor="armada"
+                  className="block mb-2 text-sm font-medium text-gray-900 "
+                >
+                  Armada <span className="text-red-500">*</span>
+                </label>
+                <select
+                  onChange={(e) =>
+                    setFormData((prevValue) => ({
+                      ...prevValue,
+                      armada: e.target.value,
+                    }))
+                  }
+                  id="armada"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                >
+                  <option defaultValue="Pilih Armada" disabled selected>
+                    -- Pilih Armada --
+                  </option>
+                  <option value="Avanza">Avanza</option>
+                  <option value="Supra">Supra</option>
+                  <option value="Mustang">Mustang</option>
+                  <option value="Ferari">Ferari</option>
+                </select>
+              </div>
             )}
-          </div>
+            <div className="mb-8">
+              <label
+                htmlFor="message"
+                className="block mb-2 text-sm font-medium text-gray-900 "
+              >
+                Catatan
+              </label>
+              <textarea
+                id="message"
+                className="h-40 block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
+                placeholder="Masukkan Pesan Tambahan (opsional)"
+                onChange={handleChange}
+                name="notes"
+              />
+            </div>
 
-          <div>
-            <label
-              htmlFor="startDate"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
+            <button
+              className={`${
+                isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
+              } w-full rounded-lg bg-primary font-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base`}
+              type="submit"
+              disabled={isLoading ? true : false}
             >
-              Tanggal Menyewa <span className="text-red-500">*</span>
-            </label>
-
-            <input
-              name="startDate"
-              id="startDate"
-              type="date"
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-            />
-          </div>
-
-          <div>
-            <label
-              htmlFor="endDate"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-            >
-              Tanggal Selesai Menyewa <span className="text-red-500">*</span>
-            </label>
-
-            <input
-              name="endDate"
-              id="endDate"
-              type="date"
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-            />
-          </div>
-
-          <div className="sm:col-span-2">
-            <label
-              htmlFor="message"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-            >
-              Pesan Tambahan
-            </label>
-
-            <textarea
-              name="message"
-              id="message"
-              placeholder="Masukkan Pesan Tambahan (opsional)"
-              className="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring resize-none"
-            ></textarea>
-          </div>
-
-          <div className="flex items-center justify-between sm:col-span-2">
-            <button className="w-full rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
-              Pesan Sekarang
+              {isLoading ? 'Memuat...' : 'Pesan Sekarang'}
             </button>
-          </div>
-
-          <span className="text-sm text-red-500">*Wajib</span>
-
-          {/* <p className="text-xs text-gray-400">
-            By signing up to our newsletter you agree to our{' '}
-            <a
-              href="#"
-              className="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600"
-            >
-              Privacy Policy
-            </a>
-            .
-          </p> */}
-        </form>
+          </form>
+          <div className="text-sm text-red-500 mt-3">*Wajib</div>
+        </div>
       </details>
     </section>
   );
