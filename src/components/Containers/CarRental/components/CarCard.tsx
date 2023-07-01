@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const CarCard: FC = () => {
   const hrefTransition = () => {
-    const carForm = document.querySelector('#form-rental');
+    const carForm = document.querySelector('#form-rental') as HTMLFormElement;
     carForm?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
 
