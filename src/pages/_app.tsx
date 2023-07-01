@@ -1,26 +1,27 @@
-import type { AppProps } from "next/app";
-import { ToastContainer } from "react-toastify";
-import "../styles/globals.css";
+import type { AppProps } from 'next/app';
+import { ToastContainer } from 'react-toastify';
+import '../styles/globals.css';
 
-import Navbar from "@/components/Mixins/Navbar/Navbar";
-import Footer from "@/components/Mixins/Footer";
-import ScrollToTop from "@/components/Common/ScrollToTop";
-import CtaWhatsapp from "@/components/Common/CtaWhatsapp";
+import { BannerProvider } from '@/context/BannerContext';
+import Navbar from '@/components/Mixins/Navbar/Navbar';
+import Footer from '@/components/Mixins/Footer';
+import ScrollToTop from '@/components/Common/ScrollToTop';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Navbar />
+    <BannerProvider>
+      <>
+        <Navbar />
 
-      <ToastContainer autoClose={1500} />
+        <ToastContainer autoClose={1500} />
 
-      <ScrollToTop />
-      <CtaWhatsapp />
+        <ScrollToTop />
 
-      <Component {...pageProps} />
+        <Component {...pageProps} />
 
-      <Footer />
-    </>
+        <Footer />
+      </>
+    </BannerProvider>
   );
 }
 

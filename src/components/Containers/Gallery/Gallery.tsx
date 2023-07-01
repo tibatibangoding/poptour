@@ -19,7 +19,7 @@ const ContainerGallery: FC = () => {
                 <div className="border grid row-span-2 overflow-hidden">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromosunset.jpg"
+                    src="assets/img/bromo-sunset.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -27,7 +27,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/bromo.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -35,7 +35,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden ">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/bromo.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -44,7 +44,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden grid row-span-2 ">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromosunset.jpg"
+                    src="assets/img/bromo-sunset.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -52,7 +52,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden ">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/bromo.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -60,7 +60,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden ">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/bromo.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -69,7 +69,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden grid row-span-2">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromosunset.jpg"
+                    src="assets/img/bromo-sunset.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -77,7 +77,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden ">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/bromo.jpg"
                     alt="BromoImage"
                   />
                 </div>
@@ -85,7 +85,7 @@ const ContainerGallery: FC = () => {
                 <div className="border overflow-hidden ">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/Bromo 1.JPG"
+                    src="assets/img/bromo.jpg"
                     alt="BromoImage"
                   />
                 </div>
