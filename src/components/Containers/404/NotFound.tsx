@@ -47,7 +47,7 @@ const ContainerNotFound: FC = () => {
                     <img
                       src="/assets/svg/undraw_page_not_found.svg"
                       loading="lazy"
-                      alt="Photo by @heydevn"
+                      alt="Photo by undraw.co"
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
