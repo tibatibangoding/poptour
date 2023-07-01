@@ -60,7 +60,7 @@ const Navbar: FC = () => {
     <header
       className={`${
         isAbsolute ? 'absolute' : 'fixed shadow-md'
-      } bg-white top-0 left-0 w-full flex items-center z-10`}
+      } bg-primary top-0 left-0 w-full flex items-center z-10`}
     >
       <div className="container">
         <div className="max-w-7xl mx-auto">
@@ -68,23 +68,18 @@ const Navbar: FC = () => {
             <div className="px-4">
               <Link href="/" legacyBehavior>
                 <a
-                  className="inline-flex items-center gap-2 py-2"
+                  className="inline-flex items-center gap-2 py-1"
                   aria-label="logo"
                 >
                   <img
-                    src="/assets/img/logo/POPTour_4.png"
+                    src="/assets/img/logo/PopTour_Hori.png"
                     alt="Brand Logo"
-                    className="w-14 md:w-16 h-14 md:h-16 object-cover object-center"
+                    className="w-42 h-20 object-cover object-center"
                   />
-                  <div className="flex flex-col">
-                    <p className="font-primary font-semibold text-xl lg:text-2xl -mb-1 tracking-wide">
-                      Pop Tour
-                    </p>
-                    <small className="tracking-wide">Enjoy Your Journey</small>
-                  </div>
                 </a>
               </Link>
             </div>
+
             <div className="flex items-center px-4">
               <button
                 id="hamburger"
@@ -106,7 +101,7 @@ const Navbar: FC = () => {
 
               <nav
                 id="navMenu"
-                className="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+                className="hidden absolute py-5 bg-[#0d5bb3] shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
               >
                 <ul className="block lg:flex">
                   {headerNavLinks?.map((a, i) => (
@@ -115,9 +110,9 @@ const Navbar: FC = () => {
                         <a
                           className={classNames(
                             isMenuActive(a.path)
-                              ? 'text-primary'
-                              : 'text-black',
-                            'font-secondary font-semibold text-base py-2 mx-8 lg:mx-2 flex group-hover:text-primary transition duration-300 ease-in-out'
+                              ? 'text-secondary'
+                              : 'text-white',
+                            'font-secondary font-semibold text-base py-2 mx-8 lg:mx-2 flex group-hover:text-secondary transition duration-300 ease-in-out'
                           )}
                         >
                           {a.title}

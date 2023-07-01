@@ -41,7 +41,7 @@ const Footer: FC = () => {
   ];
 
   return (
-    <div className="bg-slate-800">
+    <div className="bg-[#061c35]">
       <footer className="max-w-7xl px-4 mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 lg:gap-8 pt-10 lg:pt-12 mb-16">
           <div className="col-span-full lg:col-span-2">
@@ -52,16 +52,10 @@ const Footer: FC = () => {
                   aria-label="logo"
                 >
                   <img
-                    src="/assets/img/logo/POPTour_4.png"
+                    src="/assets/img/logo/PopTour_Hori.png"
                     alt="Brand Logo"
-                    className="w-14 md:w-16 h-14 md:h-16 object-cover object-center"
+                    className="w-42 h-20 object-cover object-center"
                   />
-                  <div className="flex flex-col">
-                    <p className="font-primary font-semibold text-xl lg:text-2xl -mb-1 tracking-wide">
-                      Pop Tour
-                    </p>
-                    <small className="tracking-wide">Enjoy Your Journey</small>
-                  </div>
                 </a>
               </Link>
             </div>
