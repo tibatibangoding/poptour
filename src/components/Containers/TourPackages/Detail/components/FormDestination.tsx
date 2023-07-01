@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import { FormPemesanan } from '@/interfaces/formPemesanan';
+import { FormPemesananDestinasi } from '@/interfaces/formPemesanan';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { errorToast, successToast } from '@/lib/toastNotify';
 import InputField from './InputField';
@@ -10,7 +10,7 @@ type FormProps = {
 };
 
 const FormDestination: FC<FormProps> = ({ data }) => {
-  const [formData, setFormData] = useState<FormPemesanan>({
+  const [formData, setFormData] = useState<FormPemesananDestinasi>({
     fullName: '',
     emailAddress: '',
     noWa: '',
@@ -30,7 +30,8 @@ const FormDestination: FC<FormProps> = ({ data }) => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsLoading(true);
 
     if (
@@ -39,10 +40,9 @@ const FormDestination: FC<FormProps> = ({ data }) => {
       formData.noWa !== '' &&
       formData.tglBerangkat !== '' &&
       formData.jumlahPeserta !== '' &&
-      formData.paketWisata !== '' &&
-      formData.notes !== ''
+      formData.paketWisata !== ''
     ) {
-      const phone = '6282245103862';
+      const phone = process.env.NEXT_PUBLIC_WHATSAPP;
       const walink2 = 'Halo POP Tour,';
       const walink3 =
         'Saya ingin booking paket wisata dengan data diri sebagai berikut:';
@@ -67,10 +67,10 @@ const FormDestination: FC<FormProps> = ({ data }) => {
         '%0A' +
         walink3 +
         '%0A%0A' +
-        'Name : ' +
+        'Nama Lengkap : ' +
         formData.fullName +
         '%0A' +
-        'Email Address : ' +
+        'Alamat Email : ' +
         formData.emailAddress +
         '%0A' +
         'Nomor WhatsApp : ' +
@@ -109,9 +109,9 @@ const FormDestination: FC<FormProps> = ({ data }) => {
   };
 
   return (
-    <div className="col-span-10 lg:col-span-3">
-      <div className="w-full p-7 bg-[#f6f6f6] drop-shadow-xl rounded-xl flex flex-col">
-        <div className="grid lg:grid-cols-2 gap-3 ">
+    <form className="col-span-10 lg:col-span-3" onSubmit={handleSubmit}>
+      <div className="w-full p-5 bg-gray-100 drop-shadow-xl rounded-xl flex flex-col">
+        <div className="grid lg:grid-cols-2 gap-3">
           <InputField
             onchange={handleChange}
             title="Nama Lengkap"
@@ -131,7 +131,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
           />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-3 ">
+        <div className="grid lg:grid-cols-2 gap-3">
           <InputField
             onchange={handleChange}
             title="No. Telepon"
@@ -151,7 +151,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
           />
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-3 ">
+        <div className="grid lg:grid-cols-2 gap-3">
           <InputField
             onchange={handleChange}
             title="Banyak Peserta"
@@ -164,7 +164,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
           <div className="mb-6">
             <label
               htmlFor="default-input"
-              className="block mb-2 text-sm font-medium text-gray-900 "
+              className="block mb-2 text-sm font-medium text-gray-900"
             >
               Paket Wisata
             </label>
@@ -184,7 +184,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
         <div>
           <label
             htmlFor="message"
-            className="block mb-2 text-sm font-medium text-gray-900 "
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Catatan
           </label>
@@ -201,15 +201,14 @@ const FormDestination: FC<FormProps> = ({ data }) => {
         <button
           className={`${
             isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
-          } bg-primary hover:bg-secondary py-3 text-lg font-primary font-semibold rounded-xl text-white hover:text-primary transition ease-in-out duration-200 mt-5`}
+          } bg-primary hover:bg-secondary py-3 text-lg font-primary font-semibold rounded-xl text-white hover:text-primary transition ease-in-out duration-200 mt-5 w-full px-8 text-center outline-none ring-primary/50 focus-visible:ring active:bg-secondary/80 md:text-base`}
           type="submit"
-          onClick={handleSubmit}
           disabled={isLoading ? true : false}
         >
           {isLoading ? 'Memuat...' : 'Pesan'}
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
