@@ -39,8 +39,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
       formData.noWa !== '' &&
       formData.tglBerangkat !== '' &&
       formData.jumlahPeserta !== '' &&
-      formData.paketWisata !== '' &&
-      formData.notes !== ''
+      formData.paketWisata !== ''
     ) {
       const phone = '6282245103862';
       const walink2 = 'Halo POP Tour,';

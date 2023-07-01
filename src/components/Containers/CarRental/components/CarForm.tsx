@@ -37,8 +37,7 @@ const CarForm: FC<Props> = ({ product }) => {
       formData.emailAddress !== '' &&
       formData.tglPemesanan !== '' &&
       formData.tglSelesai !== '' &&
-      formData.armada !== '' &&
-      formData.notes !== ''
+      formData.armada !== '' 
     ) {
       const phone = '6282245103862';
       const walink2 = 'Halo POP Tour,';
