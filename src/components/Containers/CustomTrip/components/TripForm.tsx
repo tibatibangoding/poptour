@@ -25,7 +25,8 @@ const TripForm: FC = () => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsLoading(true);
 
     if (
@@ -39,7 +40,7 @@ const TripForm: FC = () => {
       formData.jumlahPeserta !== '' &&
       formData.paketWisata !== ''
     ) {
-      const phone = '6282245103862';
+      const phone = process.env.NEXT_PUBLIC_WHATSAPP;
       const walink2 = 'Halo POP Tour,';
       const walink3 =
         'Saya ingin booking custom paket wisata dengan data diri sebagai berikut:';
@@ -131,7 +132,7 @@ const TripForm: FC = () => {
       </p>
 
       <div className="w-full px-4 md:px-8">
-        <form className="grid gap-4 sm:grid-cols-2">
+        <form className="grid gap-4 sm:grid-cols-2" onSubmit={handleSubmit}>
           <div>
             <label
               htmlFor="fullName"
@@ -180,6 +181,7 @@ const TripForm: FC = () => {
               id="longTime"
               type="number"
               placeholder="Input berapa hari"
+              min={1}
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
             />
           </div>
@@ -197,6 +199,7 @@ const TripForm: FC = () => {
               id="sumPeople"
               type="number"
               placeholder="Input jumlah peserta"
+              min={1}
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
             />
           </div>
@@ -248,10 +251,9 @@ const TripForm: FC = () => {
               id="product"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
             >
-              <option selected disabled>
+              <option defaultValue="Pilih Armada" selected disabled>
                 -- Pilih Armada --
               </option>
-              <option selected>Pilih armada</option>
               <option value="Avanza">Avanza</option>
               <option value="Supra">Supra</option>
               <option value="Mustang">Mustang</option>
@@ -273,10 +275,9 @@ const TripForm: FC = () => {
               id="hotel"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
             >
-              <option selected disabled>
+              <option defaultValue="Pilih Hotel" selected disabled>
                 -- Pilih Hotel --
               </option>
-              <option selected>Pilih Hotel</option>
               <option value="Bintang 1">Bintang 1</option>
               <option value="Bintang 2">Bintang 2</option>
               <option value="Bintang 3">Bintang 3</option>
@@ -299,10 +300,9 @@ const TripForm: FC = () => {
               id="tourDestination"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
             >
-              <option selected disabled>
+              <option defaultValue="Pilih Tujuan Wisata" selected disabled>
                 -- Pilih Tujuan Wisata --
               </option>
-              <option selected>Pilih Wisata</option>
               <option value="Bromo">Bromo</option>
               <option value="Batu">Batu</option>
               <option value="Jogja">Jogja</option>
@@ -328,11 +328,13 @@ const TripForm: FC = () => {
 
           <div className="flex items-center justify-between sm:col-span-2">
             <button
-              className="w-full rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base"
+              className={`${
+                isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
+              } w-full rounded-lg bg-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base`}
               type="submit"
-              onClick={handleSubmit}
+              disabled={isLoading ? true : false}
             >
-              Pesan Sekarang
+              {isLoading ? 'Memuat...' : 'Pesan Sekarang'}
             </button>
           </div>
 

@@ -30,7 +30,8 @@ const FormDestination: FC<FormProps> = ({ data }) => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsLoading(true);
 
     if (
@@ -41,7 +42,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
       formData.jumlahPeserta !== '' &&
       formData.paketWisata !== ''
     ) {
-      const phone = '6282245103862';
+      const phone = process.env.NEXT_PUBLIC_WHATSAPP;
       const walink2 = 'Halo POP Tour,';
       const walink3 =
         'Saya ingin booking paket wisata dengan data diri sebagai berikut:';
@@ -108,8 +109,8 @@ const FormDestination: FC<FormProps> = ({ data }) => {
   };
 
   return (
-    <div className="col-span-10 lg:col-span-3">
-      <div className="w-full p-7 bg-[#f6f6f6] drop-shadow-xl rounded-xl flex flex-col">
+    <form className="col-span-10 lg:col-span-3" onSubmit={handleSubmit}>
+      <div className="w-full p-7 bg-gray-100 drop-shadow-xl rounded-xl flex flex-col">
         <div className="grid lg:grid-cols-2 gap-3 ">
           <InputField
             onchange={handleChange}
@@ -202,13 +203,12 @@ const FormDestination: FC<FormProps> = ({ data }) => {
             isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
           } bg-primary hover:bg-secondary py-3 text-lg font-primary font-semibold rounded-xl text-white hover:text-primary transition ease-in-out duration-200 mt-5`}
           type="submit"
-          onClick={handleSubmit}
           disabled={isLoading ? true : false}
         >
           {isLoading ? 'Memuat...' : 'Pesan'}
         </button>
       </div>
-    </div>
+    </form>
   );
 };
 
