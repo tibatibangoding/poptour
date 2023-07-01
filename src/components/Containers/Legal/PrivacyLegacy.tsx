@@ -1,36 +1,35 @@
 import { FC } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
+
+import { PageSEO } from '@/components/Common/SEO';
 
 const ContainerPrivacyPolicy: FC = () => {
   return (
     <>
-      <Head>
-        <title>Privacy Policy - Brand Klinik</title>
-      </Head>
+      <PageSEO title="Privacy Policy - POP Tour" description="Privacy Policy" />
 
       <main className="pt-20">
-        <section className="pb-4 lg:py-20">
-          <div className="max-w-7xl mx-auto">
-            <div className="container">
+        <section className="pb-4 pt-14 lg:py-20">
+          <div className="container mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="flex flex-wrap items-center justify-start">
                 <div className="w-full px-4">
                   <h1 className="text-2xl lg:text-3xl font-bold mb-3 lg:mb-5">
-                    Privacy Policy for Brand Klinik
+                    Privacy Policy for POP Tour
                   </h1>
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      At Brand Klinik, accessible from{' '}
+                      At POP Tour, accessible from{' '}
                       <Link href="/" legacyBehavior>
                         <a className="text-blue-500 hover:text-blue-600">
-                          https://klinik-next.vercel.app/
+                          https://poptour.vercel.app/
                         </a>
                       </Link>
                       , one of our main priorities is the privacy of our
                       visitors. This Privacy Policy document contains types of
-                      information that is collected and recorded by Brand Klinik
-                      and how we use it.
+                      information that is collected and recorded by POP Tour and
+                      how we use it.
                     </p>
 
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
@@ -46,9 +45,9 @@ const ContainerPrivacyPolicy: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      Brand Klinik follows a standard procedure of using log
-                      files. These files log visitors when they visit websites.
-                      All hosting companies do this and a part of hosting
+                      POP Tour follows a standard procedure of using log files.
+                      These files log visitors when they visit websites. All
+                      hosting companies do this and a part of hosting
                       services&apos; analytics. The information collected by log
                       files include internet protocol (IP) addresses, browser
                       type, Internet Service Provider (ISP), date and time
@@ -67,13 +66,13 @@ const ContainerPrivacyPolicy: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      Like any other website, Brand Klinik uses
-                      &quot;cookies&quot;. These cookies are used to store
-                      information including visitors&apos; preferences, and the
-                      pages on the website that the visitor accessed or visited.
-                      The information is used to optimize the users&apos;
-                      experience by customizing our web page content based on
-                      visitors&apos; browser type and/or other information.
+                      Like any other website, POP Tour uses &quot;cookies&quot;.
+                      These cookies are used to store information including
+                      visitors&apos; preferences, and the pages on the website
+                      that the visitor accessed or visited. The information is
+                      used to optimize the users&apos; experience by customizing
+                      our web page content based on visitors&apos; browser type
+                      and/or other information.
                     </p>
 
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
@@ -97,24 +96,24 @@ const ContainerPrivacyPolicy: FC = () => {
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
                       You may consult this list to find the Privacy Policy for
-                      each of the advertising partners of Brand Klinik.
+                      each of the advertising partners of POP Tour.
                     </p>
 
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
                       Third-party ad servers or ad networks uses technologies
                       like cookies, JavaScript, or Web Beacons that are used in
                       their respective advertisements and links that appear on
-                      Brand Klinik, which are sent directly to users&apos;
-                      browser. They automatically receive your IP address when
-                      this occurs. These technologies are used to measure the
+                      POP Tour, which are sent directly to users&apos; browser.
+                      They automatically receive your IP address when this
+                      occurs. These technologies are used to measure the
                       effectiveness of their advertising campaigns and/or to
                       personalize the advertising content that you see on
                       websites that you visit.
                     </p>
 
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      Note that Brand Klinik has no access to or control over
-                      these cookies that are used by third-party advertisers.
+                      Note that POP Tour has no access to or control over these
+                      cookies that are used by third-party advertisers.
                     </p>
                   </div>
 
@@ -124,7 +123,7 @@ const ContainerPrivacyPolicy: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      Brand Klinik&apos;s Privacy Policy does not apply to other
+                      POP Tour&apos;s Privacy Policy does not apply to other
                       advertisers or websites. Thus, we are advising you to
                       consult the respective Privacy Policies of these
                       third-party ad servers for more detailed information. It
@@ -154,7 +153,7 @@ const ContainerPrivacyPolicy: FC = () => {
                     </p>
 
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      Brand Klinik does not knowingly collect any Personal
+                      POP Tour does not knowingly collect any Personal
                       Identifiable Information from children under the age of
                       13. If you think that your child provided this kind of
                       information on our website, we strongly encourage you to
@@ -171,8 +170,8 @@ const ContainerPrivacyPolicy: FC = () => {
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
                       This Privacy Policy applies only to our online activities
                       and is valid for visitors to our website with regards to
-                      the information that they shared and/or collect in Brand
-                      Klinik. This policy is not applicable to any information
+                      the information that they shared and/or collect in POP
+                      Tour. This policy is not applicable to any information
                       collected offline or via channels other than this website.
                     </p>
                   </div>

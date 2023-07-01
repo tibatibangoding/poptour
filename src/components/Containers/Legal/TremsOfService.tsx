@@ -1,18 +1,20 @@
 import { FC } from 'react';
-import Head from 'next/head';
 import Link from 'next/link';
+
+import { PageSEO } from '@/components/Common/SEO';
 
 const ContainerTermsOfService: FC = () => {
   return (
     <>
-      <Head>
-        <title>Terms Of Service - Brand Klinik</title>
-      </Head>
+      <PageSEO
+        title="Terms of Service - POP Tour"
+        description="Terms of Service"
+      />
 
       <main className="pt-20">
-        <section className="pb-4 lg:py-20">
-          <div className="max-w-7xl mx-auto">
-            <div className="container">
+        <section className="pb-4 pt-14 lg:py-20">
+          <div className="container mx-auto">
+            <div className="max-w-7xl mx-auto">
               <div className="flex flex-wrap items-center justify-start">
                 <div className="w-full px-4">
                   <h1 className="text-2xl lg:text-3xl font-bold mb-3 lg:mb-5">
@@ -28,7 +30,7 @@ const ContainerTermsOfService: FC = () => {
                       By accessing this Website, accessible from{' '}
                       <Link href="/" legacyBehavior>
                         <a className="text-blue-500 hover:text-blue-600">
-                          https://klinik-next.vercel.app/
+                          https://poptour.vercel.app/
                         </a>
                       </Link>
                       , you are agreeing to be bound by these Website Terms and
@@ -47,10 +49,10 @@ const ContainerTermsOfService: FC = () => {
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
                       Permission is granted to temporarily download one copy of
-                      the materials on PT Nama Brand Klinik&apos;s Website for
-                      personal, non-commercial transitory viewing only. This is
-                      the grant of a license, not a transfer of title, and under
-                      this license you may not:
+                      the materials on POP Tour&apos;s Website for personal,
+                      non-commercial transitory viewing only. This is the grant
+                      of a license, not a transfer of title, and under this
+                      license you may not:
                     </p>
 
                     <ul className="list-disc px-4 text-gray-500 mb-5">
@@ -60,8 +62,8 @@ const ContainerTermsOfService: FC = () => {
                         public display;
                       </li>
                       <li>
-                        attempt to reverse engineer any software contained on PT
-                        Nama Brand Klinik&apos;s Website;
+                        attempt to reverse engineer any software contained on
+                        POP Tour&apos;s Website;
                       </li>
                       <li>
                         remove any copyright or other proprietary notations from
@@ -74,11 +76,11 @@ const ContainerTermsOfService: FC = () => {
                     </ul>
 
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      This will let PT Nama Brand Klinik to terminate upon
-                      violations of any of these restrictions. Upon termination,
-                      your viewing right will also be terminated and you should
-                      destroy any downloaded materials in your possession
-                      whether it is printed or electronic format.
+                      This will let POP Tour to terminate upon violations of any
+                      of these restrictions. Upon termination, your viewing
+                      right will also be terminated and you should destroy any
+                      downloaded materials in your possession whether it is
+                      printed or electronic format.
                     </p>
                   </div>
 
@@ -88,14 +90,14 @@ const ContainerTermsOfService: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      All the materials on PT Nama Brand Klinik&apos;s Website
-                      are provided &quot;as is&quot;. PT Nama Brand Klinik makes
-                      no warranties, may it be expressed or implied, therefore
-                      negates all other warranties. Furthermore, PT Nama Brand
-                      Klinik does not make any representations concerning the
-                      accuracy or reliability of the use of the materials on its
-                      Website or otherwise relating to such materials or any
-                      sites linked to this Website.
+                      All the materials on POP Tour&apos;s Website are provided
+                      &quot;as is&quot;. POP Tour makes no warranties, may it be
+                      expressed or implied, therefore negates all other
+                      warranties. Furthermore, POP Tour does not make any
+                      representations concerning the accuracy or reliability of
+                      the use of the materials on its Website or otherwise
+                      relating to such materials or any sites linked to this
+                      Website.
                     </p>
                   </div>
 
@@ -105,14 +107,13 @@ const ContainerTermsOfService: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      PT Nama Brand Klinik or its suppliers will not be hold
-                      accountable for any damages that will arise with the use
-                      or inability to use the materials on PT Nama Brand
-                      Klinik&apos;s Website, even if PT Nama Brand Klinik or an
-                      authorize representative of this Website has been
-                      notified, orally or written, of the possibility of such
-                      damage. Some jurisdiction does not allow limitations on
-                      implied warranties or limitations of liability for
+                      POP Tour or its suppliers will not be hold accountable for
+                      any damages that will arise with the use or inability to
+                      use the materials on POP Tour&apos;s Website, even if POP
+                      Tour or an authorize representative of this Website has
+                      been notified, orally or written, of the possibility of
+                      such damage. Some jurisdiction does not allow limitations
+                      on implied warranties or limitations of liability for
                       incidental damages, these limitations may not apply to
                       you.
                     </p>
@@ -124,13 +125,12 @@ const ContainerTermsOfService: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      The materials appearing on PT Nama Brand Klinik&apos;s
-                      Website may include technical, typographical, or
-                      photographic errors. PT Nama Brand Klinik will not promise
-                      that any of the materials in this Website are accurate,
-                      complete, or current. PT Nama Brand Klinik may change the
-                      materials contained on its Website at any time without
-                      notice. PT Nama Brand Klinik does not make any commitment
+                      The materials appearing on POP Tour&apos;s Website may
+                      include technical, typographical, or photographic errors.
+                      POP Tour will not promise that any of the materials in
+                      this Website are accurate, complete, or current. POP Tour
+                      may change the materials contained on its Website at any
+                      time without notice. POP Tour does not make any commitment
                       to update the materials.
                     </p>
                   </div>
@@ -141,12 +141,11 @@ const ContainerTermsOfService: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      PT Nama Brand Klinik has not reviewed all of the sites
-                      linked to its Website and is not responsible for the
-                      contents of any such linked site. The presence of any link
-                      does not imply endorsement by PT Nama Brand Klinik of the
-                      site. The use of any linked website is at the user&apos;s
-                      own risk.
+                      POP Tour has not reviewed all of the sites linked to its
+                      Website and is not responsible for the contents of any
+                      such linked site. The presence of any link does not imply
+                      endorsement by POP Tour of the site. The use of any linked
+                      website is at the user&apos;s own risk.
                     </p>
                   </div>
 
@@ -156,10 +155,10 @@ const ContainerTermsOfService: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      PT Nama Brand Klinik may revise these Terms of Use for its
-                      Website at any time without prior notice. By using this
-                      Website, you are agreeing to be bound by the current
-                      version of these Terms and Conditions of Use.
+                      POP Tour may revise these Terms of Use for its Website at
+                      any time without prior notice. By using this Website, you
+                      are agreeing to be bound by the current version of these
+                      Terms and Conditions of Use.
                     </p>
                   </div>
 
@@ -184,9 +183,9 @@ const ContainerTermsOfService: FC = () => {
 
                   <div className="mb-3 lg:mb-5 max-w-3xl">
                     <p className="text-gray-500 xl:text-lg leading-relaxed text-justify mb-5">
-                      Any claim related to PT Nama Brand Klinik&apos;s Website
-                      shall be governed by the laws of id without regards to its
-                      conflict of law provisions.
+                      Any claim related to POP Tour&apos;s Website shall be
+                      governed by the laws of id without regards to its conflict
+                      of law provisions.
                     </p>
                   </div>
                 </div>

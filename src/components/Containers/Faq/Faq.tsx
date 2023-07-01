@@ -53,14 +53,14 @@ const ContainerFaq = () => {
 
   return (
     <div className="mt-24 py-20">
-      <div className="max-w-full mx-auto  px-5 md:px-40">
+      <div className="max-w-full mx-auto px-4 lg:px-40">
         <div className="flex flex-col items-center justify-center mb-8 gap-3">
-          <h1 className="text-2xl md:text-3xl font-bold  text-center">
+          <h1 className="text-2xl md:text-3xl font-bold text-center">
             Frequently Asked Questions
           </h1>
           <p className="text-sm md:text-lg text-center font-light">
-            Pertanyaan paling umum tentang cara kerja klinik kami dan apa yang
-            dapat kami lakukan untuk Anda.
+            Pertanyaan paling umum tentang cara kerja kami dan apa yang dapat
+            kami lakukan untuk Anda.
           </p>
         </div>
         <div className="space-y-4">
