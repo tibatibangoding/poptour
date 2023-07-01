@@ -4,7 +4,7 @@ const AboutContent: FC = () => {
   return (
     <div className="container py-10 lg:py-24">
       <div className="flex flex-wrap justify-center items-center">
-        <div className="flex flex-col items-start lg:items-center justify-start lg:justify-center px-4">
+        <div className="flex flex-col items-center justify-center">
           <p className="font-primary font-semibold text-md lg:text-lg text-primary uppercase lg:mb-2">
             Tentang Kami
           </p>
@@ -16,7 +16,7 @@ const AboutContent: FC = () => {
           />
         </div>
 
-        <div>
+        <div className="mt-5">
           <h2 className="font-medium text-lg">Selamat datang di Pop Tour,</h2>
 
           <p className="w-full pt-5 mx-auto">

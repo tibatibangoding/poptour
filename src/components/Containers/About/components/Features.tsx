@@ -1,16 +1,18 @@
 import { FC } from 'react';
-import { FaJoget } from 'react-icons/fa';
-import Link from 'next/link';
+// import { FaJoget } from 'react-icons/fa';
+// import Link from 'next/link';
 
 const Features: FC = () => {
   return (
     <>
       <section>
         <h2 className="font-bold text-2xl md:text-3xl text-center capitalize">
-          Mengapa Harus Kami?
+          Rekomendasi Paket Liburan
         </h2>
 
-        <div className="grid grid-cols-3 md:grid-cols-3  gap-5 md:gap-28 mt-5">
+        <h1>NEED CARD RECOMENDATION TOUR PACKAGES</h1>
+
+        {/* <div className="grid grid-cols-3 md:grid-cols-3  gap-5 md:gap-28 mt-5">
           <div className="shadow-lg rounded-lg hover:-translate-y-1 transition-all ease-in-out duration-200">
             <div className="mx-auto items-center justify-center bg-white rounded-lg p-5">
               <FaJoget className="w-20 h-20 object-cover object-center mx-auto rounded-full" />
@@ -58,7 +60,7 @@ const Features: FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </section>
     </>
   );
