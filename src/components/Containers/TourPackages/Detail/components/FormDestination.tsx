@@ -1,6 +1,6 @@
 import { FC, useState } from 'react';
 
-import { FormPemesanan } from '@/interfaces/formPemesanan';
+import { FormPemesananDestinasi } from '@/interfaces/formPemesanan';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { errorToast, successToast } from '@/lib/toastNotify';
 import InputField from './InputField';
@@ -10,7 +10,7 @@ type FormProps = {
 };
 
 const FormDestination: FC<FormProps> = ({ data }) => {
-  const [formData, setFormData] = useState<FormPemesanan>({
+  const [formData, setFormData] = useState<FormPemesananDestinasi>({
     fullName: '',
     emailAddress: '',
     noWa: '',

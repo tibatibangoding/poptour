@@ -1,8 +1,10 @@
-import { errorToast, successToast } from '@/lib/toastNotify';
 import { FC, useState } from 'react';
 
+import { FormPemesananCustomTrip } from '@/interfaces/formPemesanan';
+import { errorToast, successToast } from '@/lib/toastNotify';
+
 const TripForm: FC = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormPemesananCustomTrip>({
     fullName: '',
     emailAddress: '',
     days: '',
