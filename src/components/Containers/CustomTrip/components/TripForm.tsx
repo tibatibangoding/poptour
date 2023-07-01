@@ -179,6 +179,7 @@ const TripForm: FC = () => {
               name="days"
               id="longTime"
               type="number"
+              placeholder="Input berapa hari"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
             />
           </div>
@@ -195,6 +196,7 @@ const TripForm: FC = () => {
               name="jumlahPeserta"
               id="sumPeople"
               type="number"
+              placeholder="Input jumlah peserta"
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring"
             />
           </div>
@@ -320,15 +322,6 @@ const TripForm: FC = () => {
               placeholder="Masukkan Pesan Tambahan (opsional)"
               className="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-primary/50 transition duration-100 focus:ring resize-none"
             ></textarea>
-          </div>
-
-          <div>
-            <label
-              htmlFor="terms"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-            >
-              Syarat dan Ketentuan <span className="text-red-500">*</span>
-            </label>
           </div>
 
           <div className="flex items-center justify-between sm:col-span-2">
