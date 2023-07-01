@@ -276,6 +276,7 @@ const TripForm: FC = () => {
               <option selected disabled>
                 -- Pilih Hotel --
               </option>
+              <option selected>Pilih Hotel</option>
               <option value="Bintang 1">Bintang 1</option>
               <option value="Bintang 2">Bintang 2</option>
               <option value="Bintang 3">Bintang 3</option>
@@ -301,6 +302,7 @@ const TripForm: FC = () => {
               <option selected disabled>
                 -- Pilih Tujuan Wisata --
               </option>
+              <option selected>Pilih Wisata</option>
               <option value="Bromo">Bromo</option>
               <option value="Batu">Batu</option>
               <option value="Jogja">Jogja</option>
