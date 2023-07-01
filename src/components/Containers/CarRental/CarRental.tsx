@@ -8,7 +8,7 @@ import CarForm from './components/CarForm';
 
 const ContainerCarRental: FC = () => {
   const router = useRouter();
-  const { product } = router.query;
+  const { armada } = router.query;
 
   return (
     <>
@@ -36,7 +36,7 @@ const ContainerCarRental: FC = () => {
 
           {/* FORM RENTAL */}
           <div className="w-full px-4">
-            <CarForm product={product} />
+            <CarForm product={armada} />
           </div>
         </section>
       </main>
