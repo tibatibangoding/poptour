@@ -1,16 +1,14 @@
-import { FC, useState } from 'react';
+import { FC, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
+
+import { FormPemesananRentalMobil } from '@/interfaces/formPemesanan';
 import { errorToast, successToast } from '@/lib/toastNotify';
 
-type Props = {
-  product?: string | string[];
-};
-
-const CarForm: FC<Props> = ({ product }) => {
+const CarForm: FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormPemesananRentalMobil>({
     fullName: '',
     emailAddress: '',
     tglPemesanan: '',
@@ -19,6 +17,23 @@ const CarForm: FC<Props> = ({ product }) => {
     notes: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const router = useRouter();
+  const { armada } = router.query;
+
+  useEffect(() => {
+    if (armada) {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        armada: armada.toString(),
+      }));
+    } else {
+      setFormData((prevFormData) => ({
+        ...prevFormData,
+        armada: '',
+      }));
+    }
+  }, [armada]);
 
   const handleChange = (e: any) => {
     setFormData((prevalue) => {
@@ -29,7 +44,8 @@ const CarForm: FC<Props> = ({ product }) => {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     setIsLoading(true);
 
     if (
@@ -37,9 +53,9 @@ const CarForm: FC<Props> = ({ product }) => {
       formData.emailAddress !== '' &&
       formData.tglPemesanan !== '' &&
       formData.tglSelesai !== '' &&
-      formData.armada !== '' 
+      formData.armada !== ''
     ) {
-      const phone = '6282245103862';
+      const phone = process.env.NEXT_PUBLIC_WHATSAPP;
       const walink2 = 'Halo POP Tour,';
       const walink3 =
         'Saya ingin Rental Mobil dengan data diri sebagai berikut:';
@@ -62,10 +78,10 @@ const CarForm: FC<Props> = ({ product }) => {
         '%0A' +
         walink3 +
         '%0A%0A' +
-        'Name : ' +
+        'Nama Lengkap : ' +
         formData.fullName +
         '%0A' +
-        'Email Address : ' +
+        'Alamat Email : ' +
         formData.emailAddress +
         '%0A' +
         'Tanggal Pemesanan : ' +
@@ -99,13 +115,11 @@ const CarForm: FC<Props> = ({ product }) => {
     }
   };
 
-
-
   return (
     <section>
       <details
         className="p-4 rounded-lg shadow-xl"
-        open={product ? true : isOpen ? true : false}
+        open={armada ? true : isOpen ? true : false}
       >
         <summary className="font-semibold text-xl leading-5 text-black flex items-center">
           Formulir Pemesanan Rental Mobil
@@ -130,15 +144,15 @@ const CarForm: FC<Props> = ({ product }) => {
             </svg>
           </button>
         </summary>
-        <div className="bg-[#f6f6f6] p-5 md:py-20 md:px-32 rounded-2xl mt-5">
-          <form>
+        <div className="p-5 md:py-20 md:px-32 rounded-2xl mt-5">
+          <form onSubmit={handleSubmit}>
             <div className="grid gap-6 mb-6 md:grid-cols-2">
               <div>
                 <label
                   htmlFor="nama_lengkap"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
-                  Nama Lengkap
+                  Nama Lengkap <span className="text-red-500">*</span>
                 </label>
                 <input
                   onChange={handleChange}
@@ -146,7 +160,7 @@ const CarForm: FC<Props> = ({ product }) => {
                   type="text"
                   id="nama_lengkap"
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   "
-                  placeholder="Input Nama Lengkap"
+                  placeholder="Masukkan Nama Lengkap"
                   required
                 />
               </div>
@@ -155,15 +169,15 @@ const CarForm: FC<Props> = ({ product }) => {
                   htmlFor="alamat_email"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
-                  Alamat Email
+                  Alamat Email <span className="text-red-500">*</span>
                 </label>
                 <input
                   onChange={handleChange}
                   name="emailAddress"
                   type="email"
                   id="alamat_email"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   "
-                  placeholder="Input alamat email"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                  placeholder="Masukkan Alamat Email"
                   required
                 />
               </div>
@@ -172,14 +186,14 @@ const CarForm: FC<Props> = ({ product }) => {
                   htmlFor="tanggal_pesan"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
-                  Tanggal Pesan
+                  Tanggal Pesan <span className="text-red-500">*</span>
                 </label>
                 <input
                   onChange={handleChange}
                   name="tglPemesanan"
                   type="date"
                   id="tanggal_pesan"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   "
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   required
                 />
               </div>
@@ -188,40 +202,45 @@ const CarForm: FC<Props> = ({ product }) => {
                   htmlFor="tanggal_selesai"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
-                  Tanggal Selesai
+                  Tanggal Selesai <span className="text-red-500">*</span>
                 </label>
                 <input
                   onChange={handleChange}
                   name="tglSelesai"
                   type="date"
                   id="tanggal_selesai"
-                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   "
+                  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                   placeholder="123-45-678"
                   pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                   required
                 />
               </div>
             </div>
-            {product ? (
+            {armada ? (
               <div className="mb-6">
                 <label
                   htmlFor="armada"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
-                  Armada
+                  Armada <span className="text-red-500">*</span>
                 </label>
                 <div className="flex items-center gap-4">
                   <input
-                    onChange={handleChange}
+                    onChange={() =>
+                      setFormData((prevValue) => ({
+                        ...prevValue,
+                        armada: armada.toString(),
+                      }))
+                    }
                     name="armada"
                     type="text"
                     id="armada"
                     className={`${
-                      product ? 'cursor-not-allowed' : ''
-                    }bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5   `}
-                    placeholder="Input Armada"
-                    disabled={product ? true : false}
-                    value={product}
+                      armada ? 'cursor-not-allowed' : ''
+                    }bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5`}
+                    placeholder="Masukkan Armada"
+                    disabled={armada ? true : false}
+                    value={armada}
                     required
                   />
                   <Link href="/car-rental" legacyBehavior>
@@ -237,7 +256,7 @@ const CarForm: FC<Props> = ({ product }) => {
                   htmlFor="armada"
                   className="block mb-2 text-sm font-medium text-gray-900 "
                 >
-                  Armada
+                  Armada <span className="text-red-500">*</span>
                 </label>
                 <select
                   onChange={(e) =>
@@ -249,7 +268,9 @@ const CarForm: FC<Props> = ({ product }) => {
                   id="armada"
                   className="bg-gray-50 border border-gray-300 text-gray-900 mb-6 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                 >
-                  <option selected>Pilih armada</option>
+                  <option defaultValue="Pilih Armada" selected>
+                    Pilih armada
+                  </option>
                   <option value="Avanza">Avanza</option>
                   <option value="Supra">Supra</option>
                   <option value="Mustang">Mustang</option>
@@ -274,11 +295,13 @@ const CarForm: FC<Props> = ({ product }) => {
             </div>
 
             <button
+              className={`${
+                isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
+              } w-full rounded-lg bg-primary font-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base`}
               type="submit"
-              onClick={handleSubmit}
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg w-full sm:w-full px-5 py-3 text-center "
+              disabled={isLoading ? true : false}
             >
-              Pesan Sekarang
+              {isLoading ? 'Memuat...' : 'Pesan Sekarang'}
             </button>
           </form>
           <div className="text-sm text-red-500 mt-3">*Wajib</div>
