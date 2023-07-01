@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { FaCheckCircle } from 'react-icons/fa';
 import Link from 'next/link';
 
 const CarCard: FC = () => {
