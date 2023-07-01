@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import Link from 'next/link';
 
 const Form: FC = () => {
   return (
@@ -140,9 +139,13 @@ const Form: FC = () => {
                   WhatsApp:
                 </p>
                 <p className="text-gray-500 xl:text-lg place-content-between leading-relaxed">
-                  <Link href="https://wa.me/6282245103862" legacyBehavior>
+                  <a
+                    href="https://wa.me/6282245103862"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     +62 822-4510-3862
-                  </Link>
+                  </a>
                 </p>
               </div>
             </div>
