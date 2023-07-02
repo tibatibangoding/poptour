@@ -1,8 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { BannerPromotion } from '@/interfaces/bannerPromotion';
 
 type Data = {
-  banner: BannerPromotion[];
+  banner?: BannerPromotion[];
+  message?: string;
 };
 
 export default function handler(
@@ -55,6 +57,10 @@ export default function handler(
           title: 'Banner Promotion',
         },
       ],
+    });
+  } else {
+    return res.status(404).json({
+      message: 'Not Found',
     });
   }
 }
