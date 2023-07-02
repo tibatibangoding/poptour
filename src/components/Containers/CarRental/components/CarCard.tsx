@@ -26,43 +26,7 @@ const CarCard: FC = () => {
                     650K/Day
                   </p>
                   <Link
-                    href="/car-rental?product=halo#form-rental"
-                    onClick={hrefTransition}
-                    legacyBehavior
-                  >
-                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
-                      Sewaa
-                    </a>
-                  </Link>
-                </div>
-              </div>
-              <div className="relative ml-16 h-44 w-full shrink-0 justify-end items-center overflow-hidden bg-white md:h-40 md:w-64">
-                <img
-                  src="/assets/img/avanza.png"
-                  loading="lazy"
-                  alt="Photo by Minh Pham"
-                  className=" inset-0 h-20 md:h-28 mt-10 object-cover object-center transition duration-200 group-hover:scale-110"
-                />
-              </div>
-            </div>
-          </div>
-
-          <div className="overflow-hidden flex rounded-lg border ">
-            <div className="flex py-2 px-3">
-              <div className="w-64">
-                <h1 className="font-bold text-2xl text-blue-600">Avanza</h1>
-                <div className="my-2 mr-24 border border-1 border-yellow-300" />
-
-                <p className="font-sans text-gray-500 ">
-                  Include : BBM & Driver
-                  <span className="flex ">exclude : Parkir & Makan Driver</span>
-                </p>
-                <div className="mt-2 flex">
-                  <p className="font-bold text-xl mt-1 text-gray-500">
-                    650K/Day
-                  </p>
-                  <Link
-                    href="/car-rental?product=halo#form-rental"
+                    href="/car-rental?armada=halo#form-rental"
                     onClick={hrefTransition}
                     legacyBehavior
                   >
@@ -98,7 +62,7 @@ const CarCard: FC = () => {
                     650K/Day
                   </p>
                   <Link
-                    href="/car-rental?product=halo#form-rental"
+                    href="/car-rental?armada=halo#form-rental"
                     onClick={hrefTransition}
                     legacyBehavior
                   >
@@ -134,7 +98,7 @@ const CarCard: FC = () => {
                     650K/Day
                   </p>
                   <Link
-                    href="/car-rental?product=halo#form-rental"
+                    href="/car-rental?armada=halo#form-rental"
                     onClick={hrefTransition}
                     legacyBehavior
                   >
@@ -170,7 +134,7 @@ const CarCard: FC = () => {
                     650K/Day
                   </p>
                   <Link
-                    href="/car-rental?product=halo#form-rental"
+                    href="/car-rental?armada=halo#form-rental"
                     onClick={hrefTransition}
                     legacyBehavior
                   >
@@ -206,7 +170,43 @@ const CarCard: FC = () => {
                     650K/Day
                   </p>
                   <Link
-                    href="/car-rental?product=halo#form-rental"
+                    href="/car-rental?armada=halo#form-rental"
+                    onClick={hrefTransition}
+                    legacyBehavior
+                  >
+                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
+                      Sewa
+                    </a>
+                  </Link>
+                </div>
+              </div>
+              <div className="relative ml-16 h-44 w-full shrink-0 justify-end items-center overflow-hidden bg-white md:h-40 md:w-64">
+                <img
+                  src="/assets/img/avanza.png"
+                  loading="lazy"
+                  alt="Photo by Minh Pham"
+                  className=" inset-0 h-20 md:h-28 mt-10 object-cover object-center transition duration-200 group-hover:scale-110"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="overflow-hidden flex rounded-lg border ">
+            <div className="flex py-2 px-3">
+              <div className="w-64">
+                <h1 className="font-bold text-2xl text-blue-600">Avanza</h1>
+                <div className="my-2 mr-24 border border-1 border-yellow-300" />
+
+                <p className="font-sans text-gray-500 ">
+                  Include : BBM & Driver
+                  <span className="flex ">exclude : Parkir & Makan Driver</span>
+                </p>
+                <div className="mt-2 flex">
+                  <p className="font-bold text-xl mt-1 text-gray-500">
+                    650K/Day
+                  </p>
+                  <Link
+                    href="/car-rental?armada=halo#form-rental"
                     onClick={hrefTransition}
                     legacyBehavior
                   >
