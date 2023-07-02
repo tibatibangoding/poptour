@@ -151,6 +151,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.fullName}
               name="fullName"
               id="fullName"
               type="text"
@@ -170,6 +171,7 @@ const TripForm: FC = () => {
 
             <input
               onChange={handleChange}
+              value={formData.emailAddress}
               name="emailAddress"
               id="email"
               type="email"
@@ -188,6 +190,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.days}
               name="days"
               id="longTime"
               type="number"
@@ -207,6 +210,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.jumlahPeserta}
               name="jumlahPeserta"
               id="sumPeople"
               type="number"
@@ -226,6 +230,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.noWa}
               name="noWa"
               id="phone"
               type="tel"
@@ -244,6 +249,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.tglBerangkat}
               name="tglBerangkat"
               id="date"
               type="date"
@@ -337,6 +343,7 @@ const TripForm: FC = () => {
             </label>
             <textarea
               onChange={handleChange}
+              value={formData.notes}
               name="notes"
               id="message"
               placeholder="Masukkan Pesan Tambahan (opsional)"
