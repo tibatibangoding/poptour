@@ -1,6 +1,6 @@
-export interface carRental {
+export interface CarRental {
   img_src: string;
-  merek: string;
+  merk: string;
   include: string;
   exclude: string;
 }
