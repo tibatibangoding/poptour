@@ -17,9 +17,9 @@ const CarCard: FC = () => {
                 <h1 className="font-bold text-2xl text-blue-600">Avanza</h1>
                 <div className="my-2 mr-24 border border-1 border-yellow-300" />
 
-                <p className="font-sans text-gray-500 ">
+                <p className="font-sans text-gray-500">
                   Include : BBM & Driver
-                  <span className="flex ">exclude : Parkir & Makan Driver</span>
+                  <span className="flex">exclude : Parkir & Makan Driver</span>
                 </p>
                 <div className="mt-2 flex">
                   <p className="font-bold text-xl mt-1 text-gray-500">
@@ -30,7 +30,7 @@ const CarCard: FC = () => {
                     onClick={hrefTransition}
                     legacyBehavior
                   >
-                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
+                    <a className="ml-5 bg-blue-600 hover:bg-secondary text-white hover:text-primary transition ease-in-out duration-200 font-semibold py-2 px-3 rounded-lg">
                       Sewa
                     </a>
                   </Link>
@@ -66,7 +66,7 @@ const CarCard: FC = () => {
                     onClick={hrefTransition}
                     legacyBehavior
                   >
-                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
+                    <a className="ml-5 bg-blue-600 hover:bg-secondary text-white hover:text-primary transition ease-in-out duration-200 font-semibold py-2 px-3 rounded-lg">
                       Sewa
                     </a>
                   </Link>
@@ -102,7 +102,7 @@ const CarCard: FC = () => {
                     onClick={hrefTransition}
                     legacyBehavior
                   >
-                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
+                    <a className="ml-5 bg-blue-600 hover:bg-secondary text-white hover:text-primary transition ease-in-out duration-200 font-semibold py-2 px-3 rounded-lg">
                       Sewa
                     </a>
                   </Link>
@@ -138,7 +138,7 @@ const CarCard: FC = () => {
                     onClick={hrefTransition}
                     legacyBehavior
                   >
-                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
+                    <a className="ml-5 bg-blue-600 hover:bg-secondary text-white hover:text-primary transition ease-in-out duration-200 font-semibold py-2 px-3 rounded-lg">
                       Sewa
                     </a>
                   </Link>
@@ -174,7 +174,7 @@ const CarCard: FC = () => {
                     onClick={hrefTransition}
                     legacyBehavior
                   >
-                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
+                    <a className="ml-5 bg-blue-600 hover:bg-secondary text-white hover:text-primary transition ease-in-out duration-200 font-semibold py-2 px-3 rounded-lg">
                       Sewa
                     </a>
                   </Link>
@@ -210,7 +210,7 @@ const CarCard: FC = () => {
                     onClick={hrefTransition}
                     legacyBehavior
                   >
-                    <a className="ml-5 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded-lg">
+                    <a className="ml-5 bg-blue-600 hover:bg-secondary text-white hover:text-primary transition ease-in-out duration-200 font-semibold py-2 px-3 rounded-lg">
                       Sewa
                     </a>
                   </Link>
