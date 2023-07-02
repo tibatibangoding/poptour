@@ -2,7 +2,7 @@ import { FC } from 'react';
 
 const Location: FC = () => {
   return (
-    <div className="container py-10 lg:py-24">
+    <div className="container mx-auto py-10 lg:py-24">
       <div className="flex flex-wrap items-center justify-center">
         <div className="w-full px-4 lg:w-1/2">
           <div className="mb-10 md:mb-16">

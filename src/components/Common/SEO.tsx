@@ -2,16 +2,8 @@ import { FC } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
+import { SEO } from '@/interfaces/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
-
-interface SEO {
-  title?: string;
-  description?: string;
-  ogType?: string;
-  ogImage?: any;
-  twImage?: string;
-  canonicalUrl?: string;
-}
 
 const CommonSEO: FC<SEO> = ({
   title,

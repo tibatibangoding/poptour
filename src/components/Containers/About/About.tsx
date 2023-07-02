@@ -10,7 +10,7 @@ const ContainerAbout: FC = () => {
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title="Tentang Kami - POP Tour"
         description={siteMetadata.description}
       />
 
