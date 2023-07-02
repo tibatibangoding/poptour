@@ -1,8 +1,9 @@
-import { PageSEO } from '@/components/Common/SEO';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-const ContainerFaq = () => {
+import { PageSEO } from '@/components/Common/SEO';
+
+const ContainerFaq: FC = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const faqs = [

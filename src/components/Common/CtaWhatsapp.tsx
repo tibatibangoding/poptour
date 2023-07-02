@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { WhatsAppIcon } from './CustomIcons';
 import { classNames } from '@/lib/classNames';
 import Link from 'next/link';
 
-const CtaWhatsapp = () => {
+const CtaWhatsapp: FC = () => {
   const [isLeft, setIsLeft] = useState<boolean>(false);
 
   const toggleLeft = () => {

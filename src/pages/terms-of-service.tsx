@@ -1,12 +1,9 @@
-import ContainerTermsOfService from '@/components/Containers/Legal/TremsOfService';
-import React from 'react';
+import { FC } from 'react';
 
-const TermsOfServices = () => {
-  return (
-    <div>
-      <ContainerTermsOfService />
-    </div>
-  );
+import ContainerTermsOfService from '@/components/Containers/Legal/TermsOfService';
+
+const TermsOfServices: FC = () => {
+  return <ContainerTermsOfService />;
 };
 
 export default TermsOfServices;

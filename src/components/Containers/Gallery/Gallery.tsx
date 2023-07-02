@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
 
