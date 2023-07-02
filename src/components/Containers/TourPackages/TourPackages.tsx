@@ -40,7 +40,7 @@ const ConatinerTourPackages: FC = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {sortedPackages?.map((item: TourPackages, index: number) => {
-                if (day === '' || item.day === day) {
+                if (day === '' || item.day === day || item.day === day && sortByPrice === 'highest' || item.day === day && sortByPrice === 'lowest'  ) {
                   return (
                     <CardTour
                       img_src={item.img_src}
