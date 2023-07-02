@@ -13,7 +13,7 @@ const CallToAction: FC<Props> = ({ message, href, action }) => {
       <div className="py-6 sm:py-8 lg:py-12">
         <div className="flex flex-col items-center justify-between gap-4 rounded-lg bg-gray-100 p-4 sm:flex-row md:p-8">
           <div>
-            <h2 className="text-xl font-bold text-primary md:text-3xl">
+            <h2 className="font-secondary text-xl font-bold text-primary md:text-3xl">
               {message}
             </h2>
           </div>
