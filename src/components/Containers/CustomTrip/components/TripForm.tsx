@@ -123,11 +123,18 @@ const TripForm: FC = () => {
   return (
     <section className="shadow-md rounded-lg pb-9 bg-white">
       <div className="w-full  flex justify-center items-center">
-        <img src="/assets/img/maps.png" alt="" className="w-56" />
+        <img
+          src="/assets/img/maps.png"
+          alt="illustration"
+          loading="lazy"
+          className="w-56"
+        />
       </div>
+
       <h2 className="font-semibold text-lg md:text-2xl text-center capitalize">
         Formulir Kustom Perjalanan
       </h2>
+
       <p className="max-w-md mx-auto font-normal text-lg md:text-base text-center text-gray-500 capitalize mb-7">
         Silahkan isi formulir dibawah untuk melakukan pemesanan Kustom
         Perjalanan.
@@ -144,6 +151,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.fullName}
               name="fullName"
               id="fullName"
               type="text"
@@ -163,6 +171,7 @@ const TripForm: FC = () => {
 
             <input
               onChange={handleChange}
+              value={formData.emailAddress}
               name="emailAddress"
               id="email"
               type="email"
@@ -181,6 +190,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.days}
               name="days"
               id="longTime"
               type="number"
@@ -200,6 +210,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.jumlahPeserta}
               name="jumlahPeserta"
               id="sumPeople"
               type="number"
@@ -219,6 +230,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.noWa}
               name="noWa"
               id="phone"
               type="tel"
@@ -237,6 +249,7 @@ const TripForm: FC = () => {
             </label>
             <input
               onChange={handleChange}
+              value={formData.tglBerangkat}
               name="tglBerangkat"
               id="date"
               type="date"
@@ -330,6 +343,7 @@ const TripForm: FC = () => {
             </label>
             <textarea
               onChange={handleChange}
+              value={formData.notes}
               name="notes"
               id="message"
               placeholder="Masukkan Pesan Tambahan (opsional)"

@@ -52,7 +52,7 @@ const DestinationDetail: FC<Props> = ({ data }) => {
             {formatCurrency(data.price)}
           </h1> */}
 
-          <div className="my-4 bg-gray-100 p-5 rounded-lg">
+          <div className="my-4 bg-gray-100 shadow-md p-5 rounded-lg">
             <Tab.Group as="div">
               <Tab.List className="flex items-center justify-start overflow-x-auto">
                 <Tab as="button">
