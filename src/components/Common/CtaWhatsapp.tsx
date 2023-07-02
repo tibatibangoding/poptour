@@ -30,7 +30,7 @@ const CtaWhatsapp = () => {
         )}
       >
         <Link href={'https://wa.me/6282245103862'}>
-          <button className="bg-green-400 py-1.5 px-1.5 rounded-xl hover:bg-green-500">
+          <button className="bg-green-400 py-1.5 px-1.5 rounded-xl hover:bg-green-500 text-white">
             <WhatsAppIcon />
           </button>
         </Link>
