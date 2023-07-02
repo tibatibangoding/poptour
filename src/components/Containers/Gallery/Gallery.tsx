@@ -6,7 +6,7 @@ const ContainerGallery: FC = () => {
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title="Galeri - POP Tour"
         description={siteMetadata.description}
       />
 
@@ -21,6 +21,7 @@ const ContainerGallery: FC = () => {
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
                     src="assets/img/bromo-sunset.jpg"
+                    loading="lazy"
                     alt="BromoImage"
                   />
                 </div>
@@ -29,39 +30,16 @@ const ContainerGallery: FC = () => {
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
                     src="assets/img/bromo.jpg"
+                    loading="lazy"
                     alt="BromoImage"
                   />
                 </div>
 
-                <div className="border overflow-hidden ">
+                <div className="border overflow-hidden">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
                     src="assets/img/bromo.jpg"
-                    alt="BromoImage"
-                  />
-                </div>
-
-                {/* vertical */}
-                <div className="border overflow-hidden grid row-span-2 ">
-                  <img
-                    className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/bromo-sunset.jpg"
-                    alt="BromoImage"
-                  />
-                </div>
-
-                <div className="border overflow-hidden ">
-                  <img
-                    className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/bromo.jpg"
-                    alt="BromoImage"
-                  />
-                </div>
-
-                <div className="border overflow-hidden ">
-                  <img
-                    className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
-                    src="assets/img/bromo.jpg"
+                    loading="lazy"
                     alt="BromoImage"
                   />
                 </div>
@@ -71,22 +49,53 @@ const ContainerGallery: FC = () => {
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
                     src="assets/img/bromo-sunset.jpg"
+                    loading="lazy"
                     alt="BromoImage"
                   />
                 </div>
 
-                <div className="border overflow-hidden ">
+                <div className="border overflow-hidden">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
                     src="assets/img/bromo.jpg"
+                    loading="lazy"
                     alt="BromoImage"
                   />
                 </div>
 
-                <div className="border overflow-hidden ">
+                <div className="border overflow-hidden">
                   <img
                     className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
                     src="assets/img/bromo.jpg"
+                    loading="lazy"
+                    alt="BromoImage"
+                  />
+                </div>
+
+                {/* vertical */}
+                <div className="border overflow-hidden grid row-span-2">
+                  <img
+                    className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
+                    src="assets/img/bromo-sunset.jpg"
+                    loading="lazy"
+                    alt="BromoImage"
+                  />
+                </div>
+
+                <div className="border overflow-hidden">
+                  <img
+                    className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
+                    src="assets/img/bromo.jpg"
+                    loading="lazy"
+                    alt="BromoImage"
+                  />
+                </div>
+
+                <div className="border overflow-hidden">
+                  <img
+                    className="w-full h-full bg-cover bg-center hover:scale-105 inset-0 transition duration-200"
+                    src="assets/img/bromo.jpg"
+                    loading="lazy"
                     alt="BromoImage"
                   />
                 </div>

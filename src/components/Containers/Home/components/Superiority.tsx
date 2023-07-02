@@ -42,6 +42,7 @@ const Superiority: FC = () => {
                     <img
                       src="assets/img/carousel-template.jpg"
                       alt=""
+                      loading="lazy"
                       className="object-cover w-full h-full rounded-lg"
                     />
                     <div className="absolute top-0 left-0 w-full h-full md:h-full rounded-lg bg-black opacity-50" />

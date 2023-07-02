@@ -9,7 +9,7 @@ const ContainerCarRental: FC = () => {
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title="Rental Mobil - POP Tour"
         description={siteMetadata.description}
       />
 

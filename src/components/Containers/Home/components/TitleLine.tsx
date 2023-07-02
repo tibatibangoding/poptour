@@ -6,6 +6,7 @@ const TitleLine: FC = () => {
       <img
         src="assets/img/bromo.jpg"
         alt="bg"
+        loading="lazy"
         className="object-cover w-full h-full"
       />
 

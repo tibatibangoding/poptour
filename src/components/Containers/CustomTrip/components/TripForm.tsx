@@ -123,11 +123,18 @@ const TripForm: FC = () => {
   return (
     <section className="shadow-md rounded-lg pb-9 bg-white">
       <div className="w-full  flex justify-center items-center">
-        <img src="/assets/img/maps.png" alt="" className="w-56" />
+        <img
+          src="/assets/img/maps.png"
+          alt="illustration"
+          loading="lazy"
+          className="w-56"
+        />
       </div>
+
       <h2 className="font-semibold text-lg md:text-2xl text-center capitalize">
         Formulir Kustom Perjalanan
       </h2>
+
       <p className="max-w-md mx-auto font-normal text-lg md:text-base text-center text-gray-500 capitalize mb-7">
         Silahkan isi formulir dibawah untuk melakukan pemesanan Kustom
         Perjalanan.

@@ -8,7 +8,7 @@ const ContainerTermsOfService: FC = () => {
     <>
       <PageSEO
         title="Terms of Service - POP Tour"
-        description="Terms of Service"
+        description="Terms of Service for POP Tour"
       />
 
       <main className="pt-20">
