@@ -1,12 +1,9 @@
-import ContainerPrivacyPolicy from '@/components/Containers/Legal/PrivacyLegacy';
-import React from 'react';
+import { FC } from 'react';
 
-const PrivacyPolicy = () => {
-  return (
-    <div>
-      <ContainerPrivacyPolicy />
-    </div>
-  );
+import ContainerPrivacyPolicy from '@/components/Containers/Legal/PrivacyLegacy';
+
+const PrivacyPolicy: FC = () => {
+  return <ContainerPrivacyPolicy />;
 };
 
 export default PrivacyPolicy;

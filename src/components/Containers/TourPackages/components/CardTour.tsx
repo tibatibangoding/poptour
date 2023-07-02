@@ -22,6 +22,7 @@ const CardTour: FC<TourPackages> = ({
             <img
               src={img_src}
               alt={title}
+              loading="lazy"
               className="w-full h-full object-cover rounded-t-lg"
             />
           </a>

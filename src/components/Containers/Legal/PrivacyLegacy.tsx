@@ -6,7 +6,10 @@ import { PageSEO } from '@/components/Common/SEO';
 const ContainerPrivacyPolicy: FC = () => {
   return (
     <>
-      <PageSEO title="Privacy Policy - POP Tour" description="Privacy Policy" />
+      <PageSEO
+        title="Privacy Policy - POP Tour"
+        description="Privacy Policy for POP Tour"
+      />
 
       <main className="pt-20">
         <section className="pb-4 pt-14 lg:py-20">

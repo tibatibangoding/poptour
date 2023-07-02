@@ -10,7 +10,7 @@ const ContainerContact: FC = () => {
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title="Kontak Kami - POP Tour"
         description={siteMetadata.description}
       />
 
