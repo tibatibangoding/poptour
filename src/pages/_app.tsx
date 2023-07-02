@@ -6,22 +6,25 @@ import { BannerProvider } from '@/context/BannerContext';
 import Navbar from '@/components/Mixins/Navbar/Navbar';
 import Footer from '@/components/Mixins/Footer';
 import ScrollToTop from '@/components/Common/ScrollToTop';
+import { PackagesTourProvider } from '@/context/PackagesTourContext';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <BannerProvider>
-      <>
-        <Navbar />
+    <PackagesTourProvider>
+      <BannerProvider>
+        <>
+          <Navbar />
 
-        <ToastContainer autoClose={1500} />
+          <ToastContainer autoClose={1500} />
 
-        <ScrollToTop />
+          <ScrollToTop />
 
-        <Component {...pageProps} />
+          <Component {...pageProps} />
 
-        <Footer />
-      </>
-    </BannerProvider>
+          <Footer />
+        </>
+      </BannerProvider>
+    </PackagesTourProvider>
   );
 }
 

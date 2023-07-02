@@ -1,6 +1,4 @@
 import { FC, useState, useCallback, useEffect } from 'react';
-
-import { useAxios } from '@/hooks/useAxios';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { siteMetadata } from '@/data/siteMetadata';
 import { PageSEO } from '@/components/Common/SEO';
@@ -8,26 +6,21 @@ import BannerPromotion from '@/components/Common/BannerPromotion';
 import CallToAction from '@/components/Common/CallToAction';
 import ButtonGroup from './components/ButtonGroup';
 import CardTour from './components/CardTour';
+import { usePackagesTour } from '@/hooks/usePackagesTour';
 
 const ConatinerTourPackages: FC = () => {
-  const [tourPackages, setTourPackages] = useState<TourPackages[]>();
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [day, setDay] = useState<number | string>('');
+  const [sortByPrice, setSortByPrice] = useState<string>('');
+  const { packages, isLoading } = usePackagesTour();
 
-  const axios = useAxios();
+  const sortedPackages =
+    sortByPrice === 'lowest'
+      ? packages?.slice().sort((a, b) => a.price - b.price)
+      : sortByPrice === 'highest'
+      ? packages?.slice().sort((a, b) => b.price - a.price)
+      : packages;
 
-  const getData = useCallback(async () => {
-    setIsLoading(true);
-    const { data, status } = await axios.get('tour-packages');
-
-    if (status === 200) {
-      setIsLoading(false);
-      setTourPackages(data.tour);
-    }
-  }, [axios]);
-
-  useEffect(() => {
-    getData();
-  }, [getData]);
+  console.log(sortByPrice);
 
   return (
     <>
@@ -39,25 +32,31 @@ const ConatinerTourPackages: FC = () => {
       <div className="py-[89px]">
         <BannerPromotion />
 
-        <div className="mx-4 md:mx-24 lg:mx-40 py-10 md:py-14">
-          <ButtonGroup />
+        <div className="mx-4 md:mx-10 lg:mx-40 py-10 md:py-14">
+          <ButtonGroup setState={setDay} setSelectedPrice={setSortByPrice} />
 
           {isLoading ? (
             <p className="flex items-center justify-center">Memuat Data...</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {tourPackages?.map((item: TourPackages, index: number) => (
-                <CardTour
-                  img_src={item.img_src}
-                  title={item.title}
-                  slug={item.slug}
-                  tags={item.tags}
-                  address={item.address}
-                  day={item.day}
-                  price={item.price}
-                  key={index}
-                />
-              ))}
+              {sortedPackages?.map((item: TourPackages, index: number) => {
+                if (day === '' || item.day === day) {
+                  return (
+                    <CardTour
+                      img_src={item.img_src}
+                      title={item.title}
+                      slug={item.slug}
+                      tags={item.tags}
+                      address={item.address}
+                      day={item.day}
+                      price={item.price}
+                      key={index}
+                    />
+                  );
+                }
+
+                return null;
+              })}
             </div>
           )}
 
