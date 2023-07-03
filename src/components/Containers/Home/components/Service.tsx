@@ -9,7 +9,7 @@ const Service: FC = () => {
       </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
-        <Link href={'/tour-packages?tag=Gunung%20Bromo'}>
+        <Link href={'/tour-packages?tags=Gunung%20Bromo'}>
           <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
               src="assets/img/bromo.jpg"
@@ -26,7 +26,7 @@ const Service: FC = () => {
           </div>
         </Link>
 
-        <Link href={'/tour-packages?tag=Pantai'}>
+        <Link href={'/tour-packages?tags=Pantai'}>
           <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
               src="assets/img/pantai.jpg"
@@ -43,7 +43,7 @@ const Service: FC = () => {
           </div>
         </Link>
 
-        <Link href={'/tour-packages?tag=Air%20Terjun'}>
+        <Link href={'/tour-packages?tags=Air%20Terjun'}>
           <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
               src="assets/img/batu.jpg"
