@@ -17,10 +17,20 @@ const ContainerCarRental: FC = () => {
         <section className="max-w-7xl mx-auto">
           {/* HEADING TEXT */}
           <div className="w-full px-4">
-            <div className="flex justify-center items-center mt-5 mb-10 md:mt-10 md:mb-20">
-              <h1 className="font-bold text-2xl md:text-3xl text-center capitalize">
-                Pilihan Armada Yang Kami Sediakan
-              </h1>
+            <div className="flex flex-col justify-center items-center mt-5 mb-10 md:mt-10 md:mb-14">
+              <p className="font-primary font-semibold text-md lg:text-lg text-primary uppercase mb-2">
+                Rental Mobil
+              </p>
+
+              <div className="">
+                <h1 className="font-primary font-semibold text-xl md:text-3xl text-center capitalize">
+                  Butuh Kendaraan Untuk Perjalanan Anda?
+                </h1>
+
+                <h3 className="font-primary font-medium text-lg md:text-xl text-center text-gray-500 capitalize">
+                  Kami punya banyak pilihan!
+                </h3>
+              </div>
             </div>
           </div>
 
