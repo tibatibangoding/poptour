@@ -110,7 +110,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
 
   return (
     <form className="col-span-10 lg:col-span-3" onSubmit={handleSubmit}>
-      <div className="w-full p-5 bg-gray-100 drop-shadow-xl rounded-xl flex flex-col">
+      <div className="w-full p-5 bg-gray-100 shadow-md rounded-xl flex flex-col">
         <div className="grid lg:grid-cols-2 gap-3">
           <InputField
             onchange={handleChange}

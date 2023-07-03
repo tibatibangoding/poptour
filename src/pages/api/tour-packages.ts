@@ -1,8 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { TourPackages } from '../../interfaces/tourPackages';
 
 type Data = {
-  tour: TourPackages[];
+  tour?: TourPackages[];
+  message?: string;
 };
 
 export default function handler(
@@ -80,6 +82,10 @@ export default function handler(
           price: 9000000,
         },
       ],
+    });
+  } else {
+    res.status(404).json({
+      message: 'Not Found',
     });
   }
 }

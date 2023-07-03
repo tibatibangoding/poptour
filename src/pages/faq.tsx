@@ -1,12 +1,9 @@
-import ContainerFaq from '@/components/Containers/Faq/Faq';
-import React from 'react';
+import { FC } from 'react';
 
-const FAQ = () => {
-  return (
-    <div>
-      <ContainerFaq />
-    </div>
-  );
+import ContainerFaq from '@/components/Containers/Faq/Faq';
+
+const FAQ: FC = () => {
+  return <ContainerFaq />;
 };
 
 export default FAQ;

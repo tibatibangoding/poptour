@@ -2,14 +2,13 @@ import { FC } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
-import BannerPromotion from '@/components/Common/BannerPromotion';
 import TripForm from './components/TripForm';
 
 const ContainerCustomTrip: FC = () => {
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title="Kustom Perjalanan - POP Tour"
         description={siteMetadata.description}
       />
 

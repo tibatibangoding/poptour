@@ -25,7 +25,7 @@ const ConatinerTourPackages: FC = () => {
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title="Paket Wisata - POP Tour"
         description={siteMetadata.description}
       />
 

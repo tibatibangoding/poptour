@@ -1,9 +1,7 @@
 import {
   createContext,
-  Dispatch,
   FC,
   ReactNode,
-  SetStateAction,
   useCallback,
   useEffect,
   useState,
@@ -15,12 +13,10 @@ import { useAxios } from '@/hooks/useAxios';
 type ContextType = {
   banner?: BannerPromotion[];
   isLoading: boolean;
-  setBanner: Dispatch<SetStateAction<BannerPromotion[] | undefined>>;
 };
 
 const defaultValue: ContextType = {
   isLoading: false,
-  setBanner: () => null,
 };
 
 const BannerContext = createContext<ContextType>(defaultValue);
@@ -51,7 +47,7 @@ export const BannerProvider: FC<{ children: ReactNode }> = ({ children }) => {
   }, [getBanner]);
 
   return (
-    <BannerContext.Provider value={{ banner, isLoading, setBanner }}>
+    <BannerContext.Provider value={{ banner, isLoading }}>
       {children}
     </BannerContext.Provider>
   );
