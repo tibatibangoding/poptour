@@ -22,6 +22,7 @@ const CardTour: FC<TourPackages> = ({
             <img
               src={img_src}
               alt={title}
+              loading="lazy"
               className="w-full h-full object-cover rounded-t-lg"
             />
           </a>
@@ -55,7 +56,7 @@ const CardTour: FC<TourPackages> = ({
 
         <p className="mt-3 text-[#666]">Mulai dari</p>
 
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between -mt-2">
           <h1 className="text-xl font-medium text-orange-400">
             {formatCurrency(price)}
           </h1>

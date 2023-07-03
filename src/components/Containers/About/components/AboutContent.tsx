@@ -12,6 +12,7 @@ const AboutContent: FC = () => {
           <img
             src="/assets/img/logo/PopTour_Hori_Black.png"
             alt="Brand Logo"
+            loading="lazy"
             className="w-96 h-40 mx-auto object-cover object-center"
           />
         </div>
@@ -43,7 +44,6 @@ const AboutContent: FC = () => {
               Paket Outbound, Team Building, Adventure, Fun Games & Fun Off Road
             </li>
             <li>Rental Mobil, Elf, Hiace & Bus Pariwisata</li>
-            <li>Reservasi Hotel</li>
           </ul>
 
           <br />

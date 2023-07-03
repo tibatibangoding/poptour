@@ -54,6 +54,7 @@ const Footer: FC = () => {
                   <img
                     src="/assets/img/logo/PopTour_Hori.png"
                     alt="Brand Logo"
+                    loading="lazy"
                     className="w-42 h-20 object-cover object-center"
                   />
                 </a>

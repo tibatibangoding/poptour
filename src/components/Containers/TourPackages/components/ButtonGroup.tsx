@@ -16,9 +16,10 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
     setSelectedPrice(e.target.value);
     setState(0);
   };
+
   return (
     <div className="flex flex-col-reverse lg:flex-row lg:mb-10 justify-between">
-      <div className=" flex gap-3 md:gap-5  overflow-x-auto my-4 lg:my-0">
+      <div className="flex gap-3 md:gap-5  overflow-x-auto my-4 lg:my-0">
         <button
           onClick={() => setState(0)}
           className={`px-3 md:px-5 py-2 rounded-full transition-colors ${
@@ -132,14 +133,18 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
           </h1>
         </button>
       </div>
+
       <div className="flex items-center gap-3 pr-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500">
-        <ImPriceTags className="h-full text-[50px] px-3 border-r border-gray-300 text-blue-500 rounded-l-lg " />
+        <ImPriceTags className="h-full text-[50px] px-3 border-r border-gray-300 text-primary rounded-l-lg" />
+
         <select
           id="large"
           className="block w-full px- py-3 bg-gray-50 rounded-lg text-base text-gray-900"
           onChange={handleSelectByPrice}
         >
-          <option value="">Filter Harga</option>
+          <option value="" selected disabled>
+            Filter Harga
+          </option>
           <option value="lowest">Terendah</option>
           <option value="highest">Termahal</option>
         </select>

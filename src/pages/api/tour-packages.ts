@@ -1,8 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+
 import { TourPackages } from '../../interfaces/tourPackages';
 
 type Data = {
-  tour: TourPackages[];
+  tour?: TourPackages[];
+  message?: string;
 };
 
 export default function handler(
@@ -17,7 +19,7 @@ export default function handler(
         {
           img_src: 'https://poptour.vercel.app/assets/img/tour/bromo.jpg',
           title: 'Paket Wisata Bromo',
-          slug: 'paket-wisata-bromo-day-1',
+          slug: 'paket-wisata-bromo-1-day',
           tags: [{ tag: 'Populer' }, { tag: 'Gunung Bromo' }],
           address: 'Malang, Jawa Timur',
           day: 1,
@@ -26,7 +28,7 @@ export default function handler(
         {
           img_src: 'https://poptour.vercel.app/assets/img/tour/bromo.jpg',
           title: 'Paket Wisata Bromo',
-          slug: 'paket-wisata-bromo-day-6',
+          slug: 'paket-wisata-bromo-6-day',
           tags: [{ tag: 'Populer' }, { tag: 'Gunung Bromo' }],
           address: 'Malang, Jawa Timur',
           day: 6,
@@ -35,7 +37,7 @@ export default function handler(
         {
           img_src: 'https://poptour.vercel.app/assets/img/tour/bromo.jpg',
           title: 'Paket Wisata Bromo',
-          slug: 'paket-wisata-bromo-day-3',
+          slug: 'paket-wisata-bromo-3-day',
           tags: [{ tag: 'Populer' }, { tag: 'Gunung Bromo' }],
           address: 'Malang, Jawa Timur',
           day: 3,
@@ -45,7 +47,7 @@ export default function handler(
           img_src:
             'https://poptour.vercel.app/assets/img/tour/sendang-biru.jpg',
           title: 'Paket Wisata Pantai Sendang Biru',
-          slug: 'paket-wisata-pantai-sendang-biru-day-2',
+          slug: 'paket-wisata-pantai-sendang-biru-2-day',
           tags: [{ tag: 'Populer' }, { tag: 'Pantai' }],
           address: 'Malang, Jawa Timur',
           day: 2,
@@ -55,7 +57,7 @@ export default function handler(
           img_src:
             'https://poptour.vercel.app/assets/img/tour/sendang-biru.jpg',
           title: 'Paket Wisata Pantai Sendang Biru',
-          slug: 'paket-wisata-pantai-sendang-biru-day-4',
+          slug: 'paket-wisata-pantai-sendang-biru-4-day',
           tags: [{ tag: 'Populer' }, { tag: 'Pantai' }],
           address: 'Malang, Jawa Timur',
           day: 4,
@@ -64,7 +66,7 @@ export default function handler(
         {
           img_src: 'https://poptour.vercel.app/assets/img/tour/balekambang.jpg',
           title: 'Paket Wisata Pantai Balekambang',
-          slug: 'paket-wisata-pantai-balekambang-day-5',
+          slug: 'paket-wisata-pantai-balekambang-5-day',
           tags: [{ tag: 'Populer' }, { tag: 'Pantai' }],
           address: 'Malang, Jawa Timur',
           day: 5,
@@ -73,13 +75,17 @@ export default function handler(
         {
           img_src: 'https://poptour.vercel.app/assets/img/tour/balekambang.jpg',
           title: 'Paket Wisata Pantai Balekambang',
-          slug: 'paket-wisata-pantai-balekambang-day-1',
+          slug: 'paket-wisata-pantai-balekambang-1-day',
           tags: [{ tag: 'Populer' }, { tag: 'Pantai' }],
           address: 'Malang, Jawa Timur',
           day: 1,
           price: 9000000,
         },
       ],
+    });
+  } else {
+    res.status(404).json({
+      message: 'Not Found',
     });
   }
 }

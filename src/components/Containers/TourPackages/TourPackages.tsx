@@ -1,4 +1,5 @@
-import { FC, useState, useCallback, useEffect } from 'react';
+/* eslint-disable prettier/prettier */
+import { FC, useState } from 'react';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { siteMetadata } from '@/data/siteMetadata';
 import { PageSEO } from '@/components/Common/SEO';
@@ -11,19 +12,20 @@ import { usePackagesTour } from '@/hooks/usePackagesTour';
 const ConatinerTourPackages: FC = () => {
   const [day, setDay] = useState<number >(0);
   const [sortByPrice, setSortByPrice] = useState<string>('');
+
   const { packages, isLoading } = usePackagesTour();
 
   const sortedPackages =
     sortByPrice === 'lowest'
       ? packages?.slice().sort((a, b) => a.price - b.price)
       : sortByPrice === 'highest'
-      ? packages?.slice().sort((a, b) => b.price - a.price)
-      : packages;
+        ? packages?.slice().sort((a, b) => b.price - a.price)
+        : packages;
 
   return (
     <>
       <PageSEO
-        title={siteMetadata.title}
+        title="Paket Wisata - POP Tour"
         description={siteMetadata.description}
       />
 

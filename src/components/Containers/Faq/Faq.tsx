@@ -1,8 +1,9 @@
-import { PageSEO } from '@/components/Common/SEO';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
 
-const ContainerFaq = () => {
+import { PageSEO } from '@/components/Common/SEO';
+
+const ContainerFaq: FC = () => {
   const [activeIndex, setActiveIndex] = useState(-1);
 
   const faqs = [
@@ -65,16 +66,18 @@ const ContainerFaq = () => {
             <h1 className="text-2xl md:text-3xl font-bold text-center">
               Frequently Asked Questions
             </h1>
+
             <p className="text-sm md:text-lg text-center font-light">
               Pertanyaan paling umum tentang cara kerja kami dan apa yang dapat
               kami lakukan untuk Anda.
             </p>
           </div>
+
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="border-2 rounded-lg border-gray-200">
                 <button
-                  className="flex items-center justify-between w-full py-2 px-4   focus:outline-none transition-all duration-300"
+                  className="flex items-center justify-between w-full py-2 px-4 focus:outline-none transition-all duration-300"
                   onClick={() => toggleAccordion(index)}
                 >
                   <span
