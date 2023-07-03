@@ -1,9 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { carMenu } from '@/interfaces/carMenu';
+import { CarRental } from '@/interfaces/carRental';
 
 type Data = {
-  car?: carMenu[];
+  car?: CarRental[];
   message?: string;
 };
 
@@ -31,6 +31,10 @@ export default function handler(
           exclude: 'Parkir & makan driver',
         },
       ],
+    });
+  } else {
+    return res.status(404).json({
+      message: 'Not Found',
     });
   }
 }
