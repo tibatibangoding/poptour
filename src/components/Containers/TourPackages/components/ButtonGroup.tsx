@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { ImPriceTags } from 'react-icons/im';
 
 type ButtonGroupProps = {
@@ -11,6 +11,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({ setState, setSelectedPrice }) => {
     setSelectedPrice(e.target.value);
     setState('');
   };
+
   return (
     <div className="flex flex-col-reverse lg:flex-row lg:mb-10 justify-between">
       <div className=" flex gap-3 md:gap-5  overflow-x-auto my-4 lg:my-0">
@@ -57,6 +58,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({ setState, setSelectedPrice }) => {
           <h1 className="text-[#666] text-center w-[50px] ">6 Day</h1>
         </button>
       </div>
+
       <div className="flex items-center gap-3 pr-3 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500">
         <ImPriceTags className="h-full text-[50px] px-3 border-r border-gray-300 text-blue-500 rounded-l-lg " />
         <select

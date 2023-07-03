@@ -1,4 +1,5 @@
-import { FC, useState, useCallback, useEffect } from 'react';
+/* eslint-disable prettier/prettier */
+import { FC, useState } from 'react';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { siteMetadata } from '@/data/siteMetadata';
 import { PageSEO } from '@/components/Common/SEO';
@@ -11,16 +12,15 @@ import { usePackagesTour } from '@/hooks/usePackagesTour';
 const ConatinerTourPackages: FC = () => {
   const [day, setDay] = useState<number | string>('');
   const [sortByPrice, setSortByPrice] = useState<string>('');
+
   const { packages, isLoading } = usePackagesTour();
 
   const sortedPackages =
     sortByPrice === 'lowest'
       ? packages?.slice().sort((a, b) => a.price - b.price)
       : sortByPrice === 'highest'
-      ? packages?.slice().sort((a, b) => b.price - a.price)
-      : packages;
-
-  console.log(sortByPrice);
+        ? packages?.slice().sort((a, b) => b.price - a.price)
+        : packages;
 
   return (
     <>
@@ -40,7 +40,12 @@ const ConatinerTourPackages: FC = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {sortedPackages?.map((item: TourPackages, index: number) => {
-                if (day === '' || item.day === day || item.day === day && sortByPrice === 'highest' || item.day === day && sortByPrice === 'lowest'  ) {
+                if (
+                  day === '' ||
+                  item.day === day ||
+                  (item.day === day && sortByPrice === 'highest') ||
+                  (item.day === day && sortByPrice === 'lowest')
+                ) {
                   return (
                     <CardTour
                       img_src={item.img_src}
