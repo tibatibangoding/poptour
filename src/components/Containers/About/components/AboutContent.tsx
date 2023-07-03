@@ -44,7 +44,6 @@ const AboutContent: FC = () => {
               Paket Outbound, Team Building, Adventure, Fun Games & Fun Off Road
             </li>
             <li>Rental Mobil, Elf, Hiace & Bus Pariwisata</li>
-            <li>Reservasi Hotel</li>
           </ul>
 
           <br />
