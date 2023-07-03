@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, Key, useEffect, useState } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
 import Link from 'next/link';
 
@@ -8,12 +8,27 @@ import { siteMetadata } from '@/data/siteMetadata';
 import DestinationDetail from './components/DestionationDetail';
 import FormDestination from './components/FormDestination';
 import According from './components/According';
+import { useRouter } from 'next/router';
+import { usePackagesTour } from '@/hooks/usePackagesTour';
 
-type Props = {
-  data: TourPackages[];
-};
+// type Props = {
+//   data: TourPackages[];
+// };
 
-const ContainerDetailTourPackages: FC<Props> = ({ data }) => {
+const ContainerDetailTourPackages: FC = () => {
+  const router = useRouter();
+  const { slug } = router.query;
+
+  const { packages } = usePackagesTour();
+
+  const [name, setName] = useState<string>('');
+
+  const findData = packages?.find((item) => item.slug === slug);
+
+  console.log(packages);
+  console.log(slug);
+  console.log(findData);
+
   return (
     <>
       <PageSEO
@@ -33,12 +48,12 @@ const ContainerDetailTourPackages: FC<Props> = ({ data }) => {
         </Link>
 
         <div className="w-full py-5 grid grid-cols-10 gap-8">
-          {data.map((a, i) => (
+          {findData && (
             <>
-              <DestinationDetail data={a} key={i} />
-              <FormDestination data={a} />
+              <DestinationDetail data={findData} />
+              <FormDestination data={findData} />
             </>
-          ))}
+          )}
         </div>
 
         <div className="w-full flex flex-col gap-2 mt-5 md:mt-0">

@@ -9,7 +9,7 @@ import CardTour from './components/CardTour';
 import { usePackagesTour } from '@/hooks/usePackagesTour';
 
 const ConatinerTourPackages: FC = () => {
-  const [day, setDay] = useState<number | string>('');
+  const [day, setDay] = useState<number >(0);
   const [sortByPrice, setSortByPrice] = useState<string>('');
   const { packages, isLoading } = usePackagesTour();
 
@@ -19,8 +19,6 @@ const ConatinerTourPackages: FC = () => {
       : sortByPrice === 'highest'
       ? packages?.slice().sort((a, b) => b.price - a.price)
       : packages;
-
-  console.log(sortByPrice);
 
   return (
     <>
@@ -33,14 +31,19 @@ const ConatinerTourPackages: FC = () => {
         <BannerPromotion />
 
         <div className="mx-4 md:mx-10 lg:mx-40 py-10 md:py-14">
-          <ButtonGroup setState={setDay} setSelectedPrice={setSortByPrice} />
+          <ButtonGroup active={day} setState={setDay} setSelectedPrice={setSortByPrice} />
 
           {isLoading ? (
             <p className="flex items-center justify-center">Memuat Data...</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
               {sortedPackages?.map((item: TourPackages, index: number) => {
-                if (day === '' || item.day === day || item.day === day && sortByPrice === 'highest' || item.day === day && sortByPrice === 'lowest'  ) {
+                if (
+                  day === 0 ||
+                  item.day === day ||
+                  (item.day === day && sortByPrice === 'highest') ||
+                  (item.day === day && sortByPrice === 'lowest')
+                ) {
                   return (
                     <CardTour
                       img_src={item.img_src}

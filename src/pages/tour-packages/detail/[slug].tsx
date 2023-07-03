@@ -5,10 +5,10 @@ import { TourPackages } from '@/interfaces/tourPackages';
 import { tourPackages } from '@/data/tourPackages';
 import ContainerDetailTourPackages from '@/components/Containers/TourPackages/Detail/DetailTourPackages';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = tourPackages.map((a) => ({
-    params: { slug: a.slug },
-  }));
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   const paths = tourPackages.map((a) => ({
+//     params: { slug: a.slug },
+//   }));
 
   // const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tour-packages`);
   // const data = await res.json();
@@ -16,26 +16,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
   //   params: { slug: item?.slug },
   // }));
 
-  return { paths, fallback: false };
-};
+//   return { paths, fallback: false };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ params }: any) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tour-packages`);
-  const resJson = await res.json();
+// export const getStaticProps: GetStaticProps = async ({ params }: any) => {
+//   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/tour-packages`);
+//   const resJson = await res.json();
 
-  const data = resJson.tour.filter(
-    (item: TourPackages) => item?.slug === params?.slug
-  );
+//   const data = resJson.tour.filter(
+//     (item: TourPackages) => item?.slug === params?.slug
+//   );
 
-  return {
-    props: {
-      data,
-    },
-  };
-};
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };
 
-const DetailTour: FC = ({ data }: any) => {
-  return <ContainerDetailTourPackages data={data} />;
+const DetailTour: FC = () => {
+  return <ContainerDetailTourPackages  />;
 };
 
 export default DetailTour;
