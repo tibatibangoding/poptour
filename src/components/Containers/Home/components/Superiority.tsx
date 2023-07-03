@@ -11,7 +11,7 @@ const Superiority: FC = () => {
   const [isSmallScreen, setIsSmallScreen] = useState<boolean>(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width:600px)'); // Gantilah '600px' dengan ukuran yang sesuai
+    const mediaQuery = window.matchMedia('(max-width:600px)');
     setIsSmallScreen(mediaQuery.matches);
 
     const handleResize = (e: {
