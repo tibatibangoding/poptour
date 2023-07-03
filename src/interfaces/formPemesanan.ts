@@ -5,6 +5,7 @@ export interface FormPemesananDestinasi {
   tglBerangkat: string;
   jumlahPeserta: string;
   paketWisata: string;
+  lamaWisata: number;
   notes: string;
 }
 
