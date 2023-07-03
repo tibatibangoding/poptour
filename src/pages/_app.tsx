@@ -16,22 +16,21 @@ function MyApp({ Component, pageProps }: AppProps) {
     <PackagesTourProvider>
       <CarProvider>
         <BannerProvider>
-          <BannerProvider>
-            <Navbar />
+          <Navbar />
 
-            <ToastContainer autoClose={1500} />
+          <ToastContainer autoClose={1500} />
 
-            {/* <CtaWhatsapp /> */}
+          {/* <CtaWhatsapp /> */}
 
-            {/* <ScrollToTop /> */}
+          {/* <ScrollToTop /> */}
 
-            <WhatsappWidget />
+          <WhatsappWidget />
 
-            <Component {...pageProps} />
+          <Component {...pageProps} />
 
-            <Footer />
+          <Footer />
 
-            {/* <script
+          {/* <script
           src="https://cdn.jsdelivr.net/npm/react-whatsapp-chat-widget@1.1.6/index.min.js"
           defer
         ></script>
@@ -40,13 +39,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         /> */}
 
-            {/* <div className="elfsight-app-8d3bfe70-28be-45e3-b521-3f6f19842ec6 w-10 h-20"></div> */}
-            {/* <script
+          {/* <div className="elfsight-app-8d3bfe70-28be-45e3-b521-3f6f19842ec6 w-10 h-20"></div> */}
+          {/* <script
           src="https://static.elfsight.com/platform/platform.js"
           data-use-service-core
           defer
         ></script> */}
-          </>
         </BannerProvider>
       </CarProvider>
     </PackagesTourProvider>
