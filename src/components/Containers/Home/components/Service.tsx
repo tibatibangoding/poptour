@@ -46,7 +46,7 @@ const Service: FC = () => {
         <Link href={'/tour-packages?tags=Air%20Terjun'}>
           <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
-              src="assets/img/batu.jpg"
+              src="assets/img/tumpak-sewu.jpg"
               alt="Batu"
               loading="lazy"
               className="object-cover w-full h-full rounded-lg"
@@ -54,7 +54,7 @@ const Service: FC = () => {
             <div className="absolute top-0 left-0 w-full h-[50px] md:h-[100px] rounded-lg bg-black opacity-50" />
             <div className="absolute top-0 left-0 w-full h-[50px] md:h-[100px] rounded-lg flex justify-center items-center">
               <h1 className="text-white text-sm md:text-xl font-semibold">
-                Batu
+                Air Terjun
               </h1>
             </div>
           </div>
