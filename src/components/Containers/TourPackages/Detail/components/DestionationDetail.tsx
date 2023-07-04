@@ -5,6 +5,7 @@ import { FaMapMarkerAlt, FaRegCalendarAlt } from 'react-icons/fa';
 // import { formatCurrency } from '@/lib/formatCurrency';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { classNames } from '@/lib/classNames';
+import { formatCurrency } from '@/lib/formatCurrency';
 
 type Props = {
   data: TourPackages;
@@ -48,9 +49,9 @@ const DestinationDetail: FC<Props> = ({ data }) => {
             </div>
           </div>
 
-          {/* <h1 className="text-xl font-medium text-orange-400">
+          <h1 className="text-xl font-medium text-orange-400">
             {formatCurrency(data.price)}
-          </h1> */}
+          </h1>
 
           <div className="my-4 bg-gray-100 shadow-md p-5 rounded-lg">
             <Tab.Group as="div">
@@ -80,7 +81,7 @@ const DestinationDetail: FC<Props> = ({ data }) => {
                         'font-primary text-base leading-6 mr-8'
                       )}
                     >
-                      Keterangan
+                      Fasilitas
                     </div>
                   )}
                 </Tab>
@@ -95,7 +96,7 @@ const DestinationDetail: FC<Props> = ({ data }) => {
                         'font-primary text-base leading-6 mr-8'
                       )}
                     >
-                      Harga
+                      Destinasi
                     </div>
                   )}
                 </Tab>
@@ -104,21 +105,27 @@ const DestinationDetail: FC<Props> = ({ data }) => {
               <div className="mt-2">
                 <Tab.Panels>
                   <Tab.Panel>
-                    <p>
-                      Ingin pergi berwisata ke gunung bromo sendirian? atau
-                      rame-rame dengan teman? Berwisata merupakan kebutuhan
-                      setiap individu. ada banyak tempat wisata di Kota Malang
-                      yang bagus untuk dikunjungi. salah satunya adalah wisata
-                      alam Gunung Bromo.
-                    </p>
+                    <p>{data.desc}</p>
                   </Tab.Panel>
 
                   <Tab.Panel>
-                    <p>nanti bisa tampilkan image</p>
+                    <ul className="list-disc px-4 mt-2">
+                      {data.facilities.map((a: any, i: number) => (
+                        <li key={i} className="font-secondary">
+                          {a.text}
+                        </li>
+                      ))}
+                    </ul>
                   </Tab.Panel>
 
                   <Tab.Panel>
-                    <p>bisa tampilkan image</p>
+                    <ul className="list-disc px-4 mt-2">
+                      {data.destination.map((a: any, i: number) => (
+                        <li key={i} className="font-secondary">
+                          {a.text}
+                        </li>
+                      ))}
+                    </ul>
                   </Tab.Panel>
                 </Tab.Panels>
               </div>
