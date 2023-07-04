@@ -210,7 +210,7 @@ const Form: FC = () => {
                 </p>
 
                 <p className="text-gray-500 xl:text-lg leading-relaxed">
-                  06:00 - 23:00 WIB
+                  08:00 - 22:00 WIB
                 </p>
               </div>
 
