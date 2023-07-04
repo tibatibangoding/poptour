@@ -4,9 +4,10 @@ import { FiChevronDown } from 'react-icons/fi';
 type Props = {
   day: number;
   title: string;
+  desc: string;
 };
 
-const According: FC<Props> = ({ day, title }) => {
+const According: FC<Props> = ({ day, title, desc }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   function HandleOpen() {
@@ -19,7 +20,7 @@ const According: FC<Props> = ({ day, title }) => {
         onClick={HandleOpen}
       >
         <div className="flex items-center gap-10">
-          <h1 className="text-md font-normal text-[#666]">{day} WIB</h1>
+          <h1 className="text-md font-normal text-blue-500">{day} WIB</h1>
           <h1 className="text-lg font-medium text-orange-400">{title}</h1>
         </div>
         <FiChevronDown
@@ -34,17 +35,7 @@ const According: FC<Props> = ({ day, title }) => {
         } overflow-hidden`}
       >
         <div className=" p-3 mt-2 rounded-lg">
-          <p className="text-[#666]">
-            Hari ini Anda berkumpul di bandara Soekarno – Hatta untuk memulai
-            perjalanan tour menuju ke Kuala Lumpur. Setibanya Anda akan diantar
-            menuju Putrajaya yang merupakan pusat administrasi (pemerintahan
-            federal) yang menggantikan Kuala Lumpur, dimana Anda bisa melihat
-            Putra Mosque, Putra Square, Putra Bridge dan lainnya. Lalu Anda akan
-            diajak untuk city tour Kuala Lumpur dengan melewati / photo stop di
-            Istana Negara, Merdeka Square, Petronas Twin Tower yang merupakan
-            gedung iconic negara Malaysia, dilanjutkan ke Chocolate Factory,
-            Bukit Bintang dan Chinatown.
-          </p>
+          <p className="text-[#666]">{desc}</p>
         </div>
       </div>
     </div>
