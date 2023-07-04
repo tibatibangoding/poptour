@@ -39,10 +39,12 @@ const CardTour: FC<TourPackages> = ({
 
       <div className="p-4">
         <Link href={`/tour-packages/detail/${slug}`} legacyBehavior>
-          <a className="text-xl font-semibold">{title}</a>
+          <a className="text-xl font-semibold">
+            {title.length > 30 ? title.substring(0, 30) + '...' : title}
+          </a>
         </Link>
 
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 mt-1">
           <div className="flex items-center gap-2">
             <FaRegCalendarAlt className="text-lg" />
             <h1 className="text-sm text-[#666]">{day} Hari</h1>
