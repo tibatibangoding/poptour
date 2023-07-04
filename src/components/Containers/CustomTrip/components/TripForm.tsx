@@ -1,7 +1,10 @@
 import { FC, useState } from 'react';
 
+import { usePackagesTour } from '@/hooks/usePackagesTour';
+import { useCar } from '@/hooks/useCar';
 import { FormPemesananCustomTrip } from '@/interfaces/formPemesanan';
 import { errorToast, successToast } from '@/lib/toastNotify';
+import { formatCurrency } from '@/lib/formatCurrency';
 
 const TripForm: FC = () => {
   const [formData, setFormData] = useState<FormPemesananCustomTrip>({
@@ -12,11 +15,13 @@ const TripForm: FC = () => {
     noWa: '',
     tglBerangkat: '',
     armada: '',
-    hotel: '',
     paketWisata: '',
     notes: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const { car } = useCar();
+  const { packages } = usePackagesTour();
 
   const handleChange = (e: any) => {
     setFormData((prevalue) => {
@@ -36,7 +41,6 @@ const TripForm: FC = () => {
       formData.emailAddress !== '' &&
       formData.days !== '' &&
       formData.armada !== '' &&
-      formData.hotel !== '' &&
       formData.noWa !== '' &&
       formData.tglBerangkat !== '' &&
       formData.jumlahPeserta !== '' &&
@@ -88,9 +92,6 @@ const TripForm: FC = () => {
         'Armada : ' +
         formData.armada +
         '%0A' +
-        'Hotel : ' +
-        formData.hotel +
-        '%0A' +
         '%0A' +
         'Paket Wisata : ' +
         formData.paketWisata +
@@ -108,7 +109,6 @@ const TripForm: FC = () => {
         noWa: '',
         tglBerangkat: '',
         armada: '',
-        hotel: '',
         paketWisata: '',
         notes: '',
       });
@@ -221,7 +221,7 @@ const TripForm: FC = () => {
             />
           </div>
 
-          <div className="">
+          <div>
             <label
               htmlFor="phone"
               className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
@@ -240,7 +240,7 @@ const TripForm: FC = () => {
             />
           </div>
 
-          <div className="">
+          <div>
             <label
               htmlFor="date"
               className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
@@ -276,40 +276,15 @@ const TripForm: FC = () => {
               <option defaultValue="Pilih Armada" selected disabled>
                 -- Pilih Armada --
               </option>
-              <option value="Avanza">Avanza</option>
-              <option value="Supra">Supra</option>
-              <option value="Mustang">Mustang</option>
-              <option value="Ferari">Ferari</option>
+              {car?.map((a, i) => (
+                <option value={a.brand} key={i}>
+                  {`${a.brand} => ${a.price}`}
+                </option>
+              ))}
             </select>
           </div>
 
           <div>
-            <label
-              htmlFor="hotel"
-              className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
-            >
-              Hotel <span className="text-red-500">*</span>
-            </label>
-            <select
-              onChange={handleChange}
-              value={formData.hotel || ''}
-              name="hotel"
-              id="hotel"
-              className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
-              required
-            >
-              <option defaultValue="Pilih Hotel" selected disabled>
-                -- Pilih Hotel --
-              </option>
-              <option value="Bintang 1">Bintang 1</option>
-              <option value="Bintang 2">Bintang 2</option>
-              <option value="Bintang 3">Bintang 3</option>
-              <option value="Bintang 4">Bintang 4</option>
-              <option value="Bintang 5">Bintang 5</option>
-            </select>
-          </div>
-
-          <div className="sm:col-span-2">
             <label
               htmlFor="tourDestination"
               className="mb-2 inline-block text-sm text-gray-800 sm:text-base"
@@ -327,10 +302,11 @@ const TripForm: FC = () => {
               <option defaultValue="Pilih Tujuan Wisata" selected disabled>
                 -- Pilih Tujuan Wisata --
               </option>
-              <option value="Bromo">Bromo</option>
-              <option value="Batu">Batu</option>
-              <option value="Jogja">Jogja</option>
-              <option value="Bali">Bali</option>
+              {packages?.map((p, i) => (
+                <option value={p.title} key={i}>
+                  {`${p.title} => ${formatCurrency(p.price)}/pax`}
+                </option>
+              ))}
             </select>
           </div>
 
