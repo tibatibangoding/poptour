@@ -5,7 +5,9 @@ export interface TourPackages {
   tags: string[] | any;
   address: string;
   desc?: string;
+  facilities?: string[] | any;
+  destination?: string[] | any;
+  rundown?: string[] | any;
   day: number;
   price: number;
-  airport?: string;
 }
