@@ -17,7 +17,6 @@ export interface FormPemesananCustomTrip {
   noWa: string;
   tglBerangkat: string;
   armada: string;
-  hotel: string;
   paketWisata: string;
   notes: string;
 }

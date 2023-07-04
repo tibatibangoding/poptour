@@ -14,12 +14,10 @@ import React, {
 type ContextType = {
   packages?: TourPackages[];
   isLoading: boolean;
-  setPackages: Dispatch<SetStateAction<TourPackages[] | undefined>>;
 };
 
 const defaultValue: ContextType = {
   isLoading: false,
-  setPackages: () => null,
 };
 
 const PackagesTourContext = createContext<ContextType>(defaultValue);
@@ -53,7 +51,7 @@ export const PackagesTourProvider: FC<{ children: ReactNode }> = ({
   }, [getPackagesTour]);
 
   return (
-    <PackagesTourContext.Provider value={{ packages, isLoading, setPackages }}>
+    <PackagesTourContext.Provider value={{ packages, isLoading }}>
       {children}
     </PackagesTourContext.Provider>
   );
