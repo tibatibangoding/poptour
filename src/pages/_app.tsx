@@ -7,14 +7,15 @@ import { CarProvider } from '@/context/CarContext';
 import Navbar from '@/components/Mixins/Navbar/Navbar';
 import Footer from '@/components/Mixins/Footer';
 import WhatsappWidget from '@/components/Common/WhatsappWidget';
+import { PackagesTourProvider } from '@/context/PackagesTourContext';
 // import CtaWhatsapp from '@/components/Common/CtaWhatsapp';
 // import ScrollToTop from '@/components/Common/ScrollToTop';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <CarProvider>
-      <BannerProvider>
-        <>
+    <PackagesTourProvider>
+      <CarProvider>
+        <BannerProvider>
           <Navbar />
 
           <ToastContainer autoClose={1500} />
@@ -44,9 +45,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           data-use-service-core
           defer
         ></script> */}
-        </>
-      </BannerProvider>
-    </CarProvider>
+        </BannerProvider>
+      </CarProvider>
+    </PackagesTourProvider>
   );
 }
 

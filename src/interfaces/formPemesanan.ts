@@ -5,6 +5,7 @@ export interface FormPemesananDestinasi {
   tglBerangkat: string;
   jumlahPeserta: string;
   paketWisata: string;
+  lamaWisata: number;
   notes: string;
 }
 
@@ -16,7 +17,6 @@ export interface FormPemesananCustomTrip {
   noWa: string;
   tglBerangkat: string;
   armada: string;
-  hotel: string;
   paketWisata: string;
   notes: string;
 }

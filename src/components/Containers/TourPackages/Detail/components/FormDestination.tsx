@@ -17,6 +17,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
     tglBerangkat: '',
     jumlahPeserta: '',
     paketWisata: data.title,
+    lamaWisata: data.day,
     notes: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -81,6 +82,11 @@ const FormDestination: FC<FormProps> = ({ data }) => {
         '%0A' +
         'Jumlah Peserta : ' +
         formData.jumlahPeserta +
+        ' Orang' +
+        '%0A' +
+        'Lama Wisata : ' +
+        formData.lamaWisata +
+        ' Hari' +
         '%0A' +
         '%0A' +
         'Paket Wisata : ' +
@@ -98,6 +104,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
         tglBerangkat: '',
         jumlahPeserta: '',
         paketWisata: data.title,
+        lamaWisata: data.day,
         notes: '',
       });
       window.open(blanter_whatsapp, '_blank');
@@ -161,7 +168,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
             value={formData.jumlahPeserta}
           />
 
-          <div className="mb-6">
+          <div className="mb-4">
             <label
               htmlFor="default-input"
               className="block mb-2 text-sm font-medium text-gray-900"
@@ -179,6 +186,25 @@ const FormDestination: FC<FormProps> = ({ data }) => {
               className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed"
             />
           </div>
+        </div>
+
+        <div className="mb-4">
+          <label
+            htmlFor="lamaWisata"
+            className="block mb-2 text-sm font-medium text-gray-900"
+          >
+            Lama Wisata
+          </label>
+          <input
+            placeholder="Lama Wisata"
+            type="text"
+            name="lamaWisata"
+            id="default-input"
+            value={`${formData.lamaWisata} Hari`}
+            required
+            disabled
+            className="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 cursor-not-allowed"
+          />
         </div>
 
         <div>

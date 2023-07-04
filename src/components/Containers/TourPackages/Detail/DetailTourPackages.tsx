@@ -1,25 +1,29 @@
 import { FC } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { TourPackages } from '@/interfaces/tourPackages';
+import { usePackagesTour } from '@/hooks/usePackagesTour';
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
 import DestinationDetail from './components/DestionationDetail';
 import FormDestination from './components/FormDestination';
 import According from './components/According';
 
-type Props = {
-  data: TourPackages[];
-};
+const ContainerDetailTourPackages: FC = () => {
+  const router = useRouter();
+  const { slug } = router.query;
 
-const ContainerDetailTourPackages: FC<Props> = ({ data }) => {
+  const { packages } = usePackagesTour();
+
+  const findData = packages?.find((item) => item.slug === slug);
+
   return (
     <>
-      {data.map((a, i) => (
+      {findData && (
         <>
           <PageSEO
-            title={`${a.title} - POP Tour`}
+            title={`${findData.title} - POP Tour`}
             description={siteMetadata.description}
           />
 
@@ -35,8 +39,8 @@ const ContainerDetailTourPackages: FC<Props> = ({ data }) => {
             </Link>
 
             <div className="w-full py-5 grid grid-cols-10 gap-8">
-              <DestinationDetail data={a} key={i} />
-              <FormDestination data={a} />
+              <DestinationDetail data={findData} />
+              <FormDestination data={findData} />
             </div>
 
             <div className="w-full flex flex-col gap-2 mt-5 md:mt-0">
@@ -48,7 +52,7 @@ const ContainerDetailTourPackages: FC<Props> = ({ data }) => {
             </div>
           </div>
         </>
-      ))}
+      )}
     </>
   );
 };

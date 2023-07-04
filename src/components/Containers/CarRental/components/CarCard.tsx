@@ -83,7 +83,7 @@ const CarCard: FC = () => {
             sekitar Rp 50.000/hari untuk mobil dan belum termasuk biaya tambahan
             BBM.
           </li>
-          <li>Pemakaian per hari maksimal sampai pukul 22.00 WIB.</li>
+          <li>Pemakaian per 8 jam maksimal sampai pukul 22.00 WIB.</li>
           <li>Harga sewa bisa berubah sewaktu-waktu sesuai dengan keadaan.</li>
         </ul>
       </div>

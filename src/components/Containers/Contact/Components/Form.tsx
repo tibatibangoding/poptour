@@ -165,7 +165,7 @@ const Form: FC = () => {
                   htmlFor="notes"
                   className="text-gray-500 xl:text-lg leading-relaxed"
                 >
-                  Kritik dan Saran <span className="text-red-500">*</span>
+                  Pesan <span className="text-red-500">*</span>
                 </label>
 
                 <textarea
@@ -175,7 +175,7 @@ const Form: FC = () => {
                   id="notes"
                   cols={8}
                   rows={8}
-                  placeholder="Masukkan Kritik dan Saran"
+                  placeholder="Masukkan Kritik atau Saran Anda"
                   className="w-full border border-gray-300 rounded p-2 focus:outline-none focus:ring focus:ring-primary/70 my-2"
                 />
               </div>
@@ -206,15 +206,15 @@ const Form: FC = () => {
             <div className="flex flex-col">
               <div className="flex flex-row items-center justify-between mb-2">
                 <p className="text-gray-500 xl:text-lg leading-relaxed">
-                  Senin - Sabtu
+                  Senin - Minggu
                 </p>
 
                 <p className="text-gray-500 xl:text-lg leading-relaxed">
-                  07:00 - 21:00 WIB
+                  06:00 - 23:00 WIB
                 </p>
               </div>
 
-              <div className="border mb-2" />
+              {/* <div className="border mb-2" />
 
               <div className="flex flex-row items-center justify-between mb-5">
                 <p className="text-gray-500 xl:text-lg leading-relaxed">
@@ -224,7 +224,7 @@ const Form: FC = () => {
                 <p className="text-gray-500 xl:text-lg leading-relaxed">
                   Tutup
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
 
