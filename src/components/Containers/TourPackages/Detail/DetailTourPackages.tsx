@@ -51,7 +51,7 @@ const ContainerDetailTourPackages: FC = () => {
             <div className="w-full flex flex-col gap-2 mt-5 md:mt-0">
               <h1 className="text-2xl font-semibold">Rundown Wisata</h1>
               {findData.rundown.map((a: any, i: number) => (
-                <According title={a.text} day={a.time} key={i} />
+                <According title={a.text} day={a.time} desc={a.desc} key={i} />
               ))}
             </div>
 
