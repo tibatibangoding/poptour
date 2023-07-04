@@ -3,11 +3,11 @@ import { useRouter } from 'next/router';
 import { FaTimes } from 'react-icons/fa';
 import Link from 'next/link';
 
+import { useCar } from '@/hooks/useCar';
 import { FormPemesananRentalMobil } from '@/interfaces/formPemesanan';
 import { errorToast, successToast } from '@/lib/toastNotify';
 
 const CarForm: FC = () => {
-  // const [carMenu];
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormPemesananRentalMobil>({
     fullName: '',
@@ -18,6 +18,8 @@ const CarForm: FC = () => {
     notes: '',
   });
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const { car } = useCar();
 
   const router = useRouter();
   const { armada } = router.query;
@@ -278,10 +280,11 @@ const CarForm: FC = () => {
                   <option defaultValue="Pilih Armada" disabled selected>
                     -- Pilih Armada --
                   </option>
-                  <option value="Avanza">Avanza</option>
-                  <option value="Supra">Supra</option>
-                  <option value="Mustang">Mustang</option>
-                  <option value="Ferari">Ferari</option>
+                  {car?.map((a, i) => (
+                    <option key={i} value={a.brand}>
+                      {`${a.brand} => ${a.price}`}
+                    </option>
+                  ))}
                 </select>
               </div>
             )}
