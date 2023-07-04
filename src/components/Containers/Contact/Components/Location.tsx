@@ -11,8 +11,9 @@ const Location: FC = () => {
             </h2>
 
             <p className="max-w-screen-md text-gray-500 md:text-lg mx-auto">
-              Kunjungi Biro Wisata POP Tour di Jl. Panji Suroso Kompleks Araya
-              Business Center Kav.2-4, Kota Malang 65126
+              Kunjungi Biro Wisata POP Tour di Jl. Titan Asri X / Blok I - 11,
+              Kel. Pandanwangi, Kec. Blimbing, Kota Malang, Jawa Timur,
+              Indonesia 65124
             </p>
           </div>
         </div>
