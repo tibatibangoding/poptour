@@ -1,19 +1,14 @@
-import { FC, Key, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { IoIosArrowBack } from 'react-icons/io';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
 
-import { TourPackages } from '@/interfaces/tourPackages';
+import { usePackagesTour } from '@/hooks/usePackagesTour';
 import { PageSEO } from '@/components/Common/SEO';
 import { siteMetadata } from '@/data/siteMetadata';
 import DestinationDetail from './components/DestionationDetail';
 import FormDestination from './components/FormDestination';
 import According from './components/According';
-import { useRouter } from 'next/router';
-import { usePackagesTour } from '@/hooks/usePackagesTour';
-
-// type Props = {
-//   data: TourPackages[];
-// };
 
 const ContainerDetailTourPackages: FC = () => {
   const router = useRouter();
@@ -22,10 +17,6 @@ const ContainerDetailTourPackages: FC = () => {
   const { packages } = usePackagesTour();
 
   const findData = packages?.find((item) => item.slug === slug);
-
-  console.log(packages);
-  console.log(slug);
-  console.log(findData);
 
   return (
     <>

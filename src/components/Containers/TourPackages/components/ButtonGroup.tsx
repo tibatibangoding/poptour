@@ -28,13 +28,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
               : 'bg-[#f6f6f6] border-[1px] border-[#ccc] text-[#666]'
           }`}
         >
-          <h1
-            className={`${
-              active == 0 ? '' : ''
-            } w-[50px]`}
-          >
-            All
-          </h1>
+          <h1 className={`${active == 0 ? '' : ''} w-[50px]`}>All</h1>
         </button>
         <button
           onClick={() => setState(1)}
@@ -44,13 +38,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
               : 'bg-[#f6f6f6] border-[1px] border-[#ccc] text-[#666]'
           }`}
         >
-          <h1
-            className={`${
-              active == 1 ? '' : ''
-            } w-[50px]`}
-          >
-            1 Day
-          </h1>
+          <h1 className={`${active == 1 ? '' : ''} w-[50px]`}>1 Day</h1>
         </button>
         <button
           onClick={() => setState(2)}
@@ -60,13 +48,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
               : 'bg-[#f6f6f6] border-[1px] border-[#ccc] text-[#666]'
           }`}
         >
-          <h1
-            className={`${
-              active == 2 ? '' : ''
-            } w-[50px]`}
-          >
-            2 Day
-          </h1>
+          <h1 className={`${active == 2 ? '' : ''} w-[50px]`}>2 Day</h1>
         </button>
         <button
           onClick={() => setState(3)}
@@ -76,13 +58,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
               : 'bg-[#f6f6f6] border-[1px] border-[#ccc] text-[#666]'
           }`}
         >
-          <h1
-            className={`${
-              active == 3 ? '' : ''
-            } w-[50px]`}
-          >
-            3 Day
-          </h1>
+          <h1 className={`${active == 3 ? '' : ''} w-[50px]`}>3 Day</h1>
         </button>
         <button
           onClick={() => setState(4)}
@@ -92,13 +68,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
               : 'bg-[#f6f6f6] border-[1px] border-[#ccc] text-[#666]'
           }`}
         >
-          <h1
-            className={`${
-              active == 4 ? '' : ''
-            } w-[50px]`}
-          >
-            4 Day
-          </h1>
+          <h1 className={`${active == 4 ? '' : ''} w-[50px]`}>4 Day</h1>
         </button>
         <button
           onClick={() => setState(5)}
@@ -108,13 +78,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
               : 'bg-[#f6f6f6] border-[1px] border-[#ccc] text-[#666]'
           }`}
         >
-          <h1
-            className={`${
-              active == 5 ? '' : ''
-            } w-[50px]`}
-          >
-            5 Day
-          </h1>
+          <h1 className={`${active == 5 ? '' : ''} w-[50px]`}>5 Day</h1>
         </button>
         <button
           onClick={() => setState(6)}
@@ -124,13 +88,7 @@ const ButtonGroup: FC<ButtonGroupProps> = ({
               : 'bg-[#f6f6f6] border-[1px] border-[#ccc] text-[#666]'
           }`}
         >
-          <h1
-            className={`${
-              active == 6 ? '' : ''
-            } w-[50px]`}
-          >
-            6 Day
-          </h1>
+          <h1 className={`${active == 6 ? '' : ''} w-[50px]`}>6 Day</h1>
         </button>
       </div>
 

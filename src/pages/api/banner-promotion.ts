@@ -36,26 +36,6 @@ export default function handler(
           img_src: 'https://poptour.vercel.app/assets/img/poster/5.png',
           title: 'Banner Promotion',
         },
-        {
-          img_src: 'https://poptour.vercel.app/assets/img/poster/6.png',
-          title: 'Banner Promotion',
-        },
-        {
-          img_src: 'https://poptour.vercel.app/assets/img/poster/7.png',
-          title: 'Banner Promotion',
-        },
-        {
-          img_src: 'https://poptour.vercel.app/assets/img/poster/9.png',
-          title: 'Banner Promotion',
-        },
-        {
-          img_src: 'https://poptour.vercel.app/assets/img/poster/10.jpeg',
-          title: 'Banner Promotion',
-        },
-        {
-          img_src: 'https://poptour.vercel.app/assets/img/poster/11.jpeg',
-          title: 'Banner Promotion',
-        },
       ],
     });
   } else {
