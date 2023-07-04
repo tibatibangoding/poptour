@@ -19,7 +19,7 @@ const According: FC<Props> = ({ day, title }) => {
         onClick={HandleOpen}
       >
         <div className="flex items-center gap-10">
-          <h1 className="text-md font-normal text-[#666]">Day {day}</h1>
+          <h1 className="text-md font-normal text-[#666]">{day} WIB</h1>
           <h1 className="text-lg font-medium text-orange-400">{title}</h1>
         </div>
         <FiChevronDown

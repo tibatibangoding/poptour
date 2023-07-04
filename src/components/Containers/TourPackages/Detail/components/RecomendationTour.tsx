@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { formatCurrency } from '@/lib/formatCurrency';
 
-const CardTour: FC<TourPackages> = ({
+const RecomendationTour: FC<TourPackages> = ({
   img_src,
   title,
   slug,
@@ -74,4 +74,4 @@ const CardTour: FC<TourPackages> = ({
   );
 };
 
-export default CardTour;
+export default RecomendationTour;

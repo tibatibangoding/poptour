@@ -9,6 +9,7 @@ import { siteMetadata } from '@/data/siteMetadata';
 import DestinationDetail from './components/DestionationDetail';
 import FormDestination from './components/FormDestination';
 import According from './components/According';
+import RecomendationTour from './components/RecomendationTour';
 
 const ContainerDetailTourPackages: FC = () => {
   const router = useRouter();
@@ -17,6 +18,10 @@ const ContainerDetailTourPackages: FC = () => {
   const { packages } = usePackagesTour();
 
   const findData = packages?.find((item) => item.slug === slug);
+
+  const recomendedPackages = packages?.filter(
+    (item) => item.tags[1].tag === findData?.tags[1].tag && item.slug !== slug
+  );
 
   return (
     <>
@@ -45,10 +50,27 @@ const ContainerDetailTourPackages: FC = () => {
 
             <div className="w-full flex flex-col gap-2 mt-5 md:mt-0">
               <h1 className="text-2xl font-semibold">Rundown Wisata</h1>
-              <According title="Jakarta - Surabaya" day={1} />
-              <According title="Surabaya - Malang" day={2} />
-              <According title="Malang - Banyuwangi" day={3} />
-              <According title="Banyuwangi - Bali" day={4} />
+              {findData.rundown.map((a: any, i: number) => (
+                <According title={a.text} day={a.time} key={i} />
+              ))}
+            </div>
+
+            <div className="flex flex-col mt-5 md:mt-5">
+              <h1 className="text-2xl font-semibold">Paket Wisata Lainnya</h1>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">
+                {recomendedPackages?.map((a, i) => (
+                  <RecomendationTour
+                    img_src={a.img_src}
+                    title={a.title}
+                    slug={a.slug}
+                    tags={a.tags}
+                    address={a.address}
+                    day={a.day}
+                    price={a.price}
+                    key={i}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </>
