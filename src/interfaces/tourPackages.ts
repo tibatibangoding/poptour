@@ -2,7 +2,8 @@ export interface TourPackages {
   img_src: string;
   title: string;
   slug: string;
-  tags: string[] | any;
+  isPopular?: boolean;
+  tags?: string[] | any;
   address: string;
   desc?: string;
   facilities?: string[] | any;
