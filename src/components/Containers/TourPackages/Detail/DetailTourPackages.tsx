@@ -20,7 +20,7 @@ const ContainerDetailTourPackages: FC = () => {
   const findData = packages?.find((item) => item.slug === slug);
 
   const recomendedPackages = packages?.filter(
-    (item) => item.tags[1].tag === findData?.tags[1].tag && item.slug !== slug
+    (item) => item.tags[0].tag === findData?.tags[0].tag && item.slug !== slug
   );
 
   return (

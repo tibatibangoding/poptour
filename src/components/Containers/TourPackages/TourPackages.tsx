@@ -82,16 +82,16 @@ const ConatinerTourPackages: FC = () => {
                 return null;
               })} */}
 
-              {sortedPackages?.map((item: TourPackages, index: number) => (
+              {sortedPackages?.map((a: TourPackages, i: number) => (
                 <CardTour
-                  img_src={item.img_src}
-                  title={item.title}
-                  slug={item.slug}
-                  tags={item.tags}
-                  address={item.address}
-                  day={item.day}
-                  price={item.price}
-                  key={index}
+                  img_src={a.img_src}
+                  title={a.title}
+                  slug={a.slug}
+                  isPopular={a.isPopular}
+                  address={a.address}
+                  day={a.day}
+                  price={a.price}
+                  key={i}
                 />
               ))}
             </div>

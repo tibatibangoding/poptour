@@ -8,7 +8,7 @@ const Service: FC = () => {
         Mau Kemana Hari Ini?
       </h1>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-5">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
         <Link href={'/tour-packages?tags=Gunung%20Bromo'}>
           <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
