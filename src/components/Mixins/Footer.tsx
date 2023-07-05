@@ -4,8 +4,8 @@ import Link from 'next/link';
 import {
   FacebookIcon,
   InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
+  TiktokIcon,
+  YoutubeIcon,
 } from '../Common/CustomIcons';
 
 const Footer: FC = () => {
@@ -35,9 +35,21 @@ const Footer: FC = () => {
 
   const socialLink = [
     { title: 'Facebook', icon: <FacebookIcon />, url: '/' },
-    { title: 'Instagram', icon: <InstagramIcon />, url: '/' },
-    { title: 'Twitter', icon: <TwitterIcon />, url: '/' },
-    { title: 'LinkedIn', icon: <LinkedInIcon />, url: '/' },
+    {
+      title: 'Instagram',
+      icon: <InstagramIcon />,
+      url: 'https://www.instagram.com/poptour.id/',
+    },
+    {
+      title: 'Tiktok',
+      icon: <TiktokIcon />,
+      url: 'https://www.tiktok.com/@poptour_id',
+    },
+    {
+      title: 'Youtube',
+      icon: <YoutubeIcon />,
+      url: 'https://www.youtube.com/@poptour_id',
+    },
   ];
 
   return (
