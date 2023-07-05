@@ -47,7 +47,7 @@ const Service: FC = () => {
           <a className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
               src="assets/img/tumpak-sewu.jpg"
-              alt="Batu"
+              alt="Air Terjun"
               loading="lazy"
               className="object-cover w-full h-full rounded-lg"
             />
