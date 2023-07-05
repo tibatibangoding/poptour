@@ -9,8 +9,8 @@ const Service: FC = () => {
       </h1>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-8">
-        <Link href={'/tour-packages?tags=Gunung%20Bromo'}>
-          <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
+        <Link href="/tour-packages?tags=Gunung%20Bromo" legacyBehavior>
+          <a className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
               src="assets/img/bromo.jpg"
               alt="Bromo"
@@ -23,11 +23,11 @@ const Service: FC = () => {
                 Bromo
               </h1>
             </div>
-          </div>
+          </a>
         </Link>
 
-        <Link href={'/tour-packages?tags=Pantai'}>
-          <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
+        <Link href="/tour-packages?tags=Pantai" legacyBehavior>
+          <a className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
               src="assets/img/pantai.jpg"
               alt="Pantai"
@@ -40,11 +40,11 @@ const Service: FC = () => {
                 Pantai
               </h1>
             </div>
-          </div>
+          </a>
         </Link>
 
-        <Link href={'/tour-packages?tags=Air%20Terjun'}>
-          <div className="w-full h-[50px] md:h-[100px] rounded-lg relative">
+        <Link href="/tour-packages?tags=Air%20Terjun" legacyBehavior>
+          <a className="w-full h-[50px] md:h-[100px] rounded-lg relative">
             <img
               src="assets/img/tumpak-sewu.jpg"
               alt="Batu"
@@ -57,7 +57,7 @@ const Service: FC = () => {
                 Air Terjun
               </h1>
             </div>
-          </div>
+          </a>
         </Link>
         {/* 
         <Link>
