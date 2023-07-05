@@ -17,10 +17,11 @@ export default function handler(
     res.status(200).json({
       tour: [
         {
-          img_src: 'https://poptour.vercel.app/assets/img/tour/bromo.jpg',
+          img_src: '/assets/img/tour/bromo.jpg',
           title: 'Paket Wisata Bromo Open Trip',
           slug: 'paket-wisata-bromo-1-day-open',
-          tags: [{ tag: 'Populer' }, { tag: 'Gunung Bromo' }],
+          isPopular: true,
+          tags: [{ tag: 'Gunung' }, { tag: 'Gunung Bromo' }],
           address: 'Malang, Jawa Timur',
           desc: 'Gunung Bromo adalah gunung berapi aktif yang terletak di Taman Nasional Bromo Tengger Semeru, Jawa Timur, Indonesia. Dikenal karena keindahan lanskapnya yang menakjubkan, Gunung Bromo menawarkan pemandangan yang memukau dengan kawahnya yang mengeluarkan asap putih tebal. Perjalanan ke Gunung Bromo akan membawa Anda melintasi padang pasir, gunung berapi kecil, dan bukit-bukit eksotis. Puncak bukit Penanjakan adalah tempat yang populer untuk menyaksikan matahari terbit yang spektakuler, sementara kawah Bromo memungkinkan Anda untuk merasakan keunikan keberadaan gunung berapi yang masih aktif. Dalam tur kami, kami memastikan Anda menikmati pengalaman tak terlupakan, dengan panduan berpengetahuan luas yang akan memandu Anda sepanjang perjalanan.',
           facilities: [
@@ -69,10 +70,11 @@ export default function handler(
           price: 250000,
         },
         {
-          img_src: 'https://poptour.vercel.app/assets/img/tour/bromo.jpg',
+          img_src: '/assets/img/tour/bromo.jpg',
           title: 'Paket Wisata Bromo Private Trip',
           slug: 'paket-wisata-bromo-1-day-private',
-          tags: [{ tag: 'Populer' }, { tag: 'Gunung Bromo' }],
+          isPopular: false,
+          tags: [{ tag: 'Gunung' }, { tag: 'Gunung Bromo' }],
           address: 'Malang, Jawa Timur',
           desc: 'Gunung Bromo adalah gunung berapi aktif yang terletak di Taman Nasional Bromo Tengger Semeru, Jawa Timur, Indonesia. Dikenal karena keindahan lanskapnya yang menakjubkan, Gunung Bromo menawarkan pemandangan yang memukau dengan kawahnya yang mengeluarkan asap putih tebal. Perjalanan ke Gunung Bromo akan membawa Anda melintasi padang pasir, gunung berapi kecil, dan bukit-bukit eksotis. Puncak bukit Penanjakan adalah tempat yang populer untuk menyaksikan matahari terbit yang spektakuler, sementara kawah Bromo memungkinkan Anda untuk merasakan keunikan keberadaan gunung berapi yang masih aktif. Dalam tur kami, kami memastikan Anda menikmati pengalaman tak terlupakan, dengan panduan berpengetahuan luas yang akan memandu Anda sepanjang perjalanan.',
           facilities: [
@@ -121,10 +123,11 @@ export default function handler(
           price: 1500000,
         },
         {
-          img_src: 'https://poptour.vercel.app/assets/img/tour/tiga-warna.jpg',
+          img_src: '/assets/img/tour/tiga-warna.jpg',
           title: 'Paket Wisata Pantai 3 Warna Open Trip',
           slug: 'paket-wisata-pantai-3-warna-1-day-open',
-          tags: [{ tag: 'Populer' }, { tag: 'Pantai' }],
+          isPopular: true,
+          tags: [{ tag: 'Pantai' }, { tag: 'Pantai 3 Warna' }],
           address: 'Malang, Jawa Timur',
           desc: 'Nikmati pesona indah Pantai 3 Warna dengan paket tur travel kami. Dalam perjalanan ini, Anda akan menikmati keindahan pantai dengan air yang berubah warna menjadi biru, hijau, dan putih. Anda akan dipandu oleh pemandu wisata berpengetahuan, memiliki waktu senggang untuk beraktivitas di pantai, dan disediakan makanan ringan. Bergabunglah dengan paket tour ini untuk pengalaman liburan yang tak terlupakan di destinasi pantai yang menakjubkan.',
           facilities: [
@@ -171,10 +174,11 @@ export default function handler(
           price: 8000000,
         },
         {
-          img_src: 'https://poptour.vercel.app/assets/img/tour/tiga-warna.jpg',
+          img_src: '/assets/img/tour/tiga-warna.jpg',
           title: 'Paket Wisata Pantai 3 Warna Private Trip',
           slug: 'paket-wisata-pantai-3-warna-1-day-private',
-          tags: [{ tag: 'Populer' }, { tag: 'Pantai' }],
+          isPopular: false,
+          tags: [{ tag: 'Pantai' }, { tag: 'Pantai 3 Warna' }],
           address: 'Malang, Jawa Timur',
           desc: 'Nikmati pesona indah Pantai 3 Warna dengan paket tur travel kami. Dalam perjalanan ini, Anda akan menikmati keindahan pantai dengan air yang berubah warna menjadi biru, hijau, dan putih. Anda akan dipandu oleh pemandu wisata berpengetahuan, memiliki waktu senggang untuk beraktivitas di pantai, dan disediakan makanan ringan. Bergabunglah dengan paket tour ini untuk pengalaman liburan yang tak terlupakan di destinasi pantai yang menakjubkan.',
           facilities: [
@@ -221,10 +225,11 @@ export default function handler(
           price: 8000000,
         },
         {
-          img_src: 'https://poptour.vercel.app/assets/img/tour/tumpak-sewu.jpg',
+          img_src: '/assets/img/tour/tumpak-sewu.jpg',
           title: 'Paket Wisata Tumpak Sewu Open Trip',
           slug: 'paket-wisata-tumpak-sewu-1-day-open',
-          tags: [{ tag: 'Populer' }, { tag: 'Air Terjun' }],
+          isPopular: true,
+          tags: [{ tag: 'Air Terjun' }, { tag: 'Air Terjun Tumpak Sewu' }],
           address: 'Malang, Jawa Timur',
           desc: 'Nikmati pesona Air Terjun Tumpak Sewu dengan paket tur travel kami. Dapatkan pengalaman memukau di air terjun seribu ini. Kami menyediakan transportasi, pemandu wisata, dan waktu senggang untuk menikmati keindahan alam sekitar. Bergabunglah dengan paket ini untuk petualangan yang tak terlupakan di salah satu air terjun paling spektakuler di Indonesia.',
           facilities: [
@@ -265,14 +270,15 @@ export default function handler(
               desc: 'Setelah menikmati waktu yang spektakuler di Air Terjun Tumpak Sewu, kami akan membawa Anda kembali ke lokasi penjemputan dengan membawa pulang kenangan indah dari liburan Anda.',
             },
           ],
-          day: 6,
+          day: 1,
           price: 2000000,
         },
         {
-          img_src: 'https://poptour.vercel.app/assets/img/tour/tumpak-sewu.jpg',
+          img_src: '/assets/img/tour/tumpak-sewu.jpg',
           title: 'Paket Wisata Tumpak Sewu Private Trip',
           slug: 'paket-wisata-tumpak-sewu-1-day-private',
-          tags: [{ tag: 'Populer' }, { tag: 'Air Terjun' }],
+          isPopular: false,
+          tags: [{ tag: 'Air Terjun' }, { tag: 'Air Terjun Tumpak Sewu' }],
           address: 'Malang, Jawa Timur',
           desc: 'Nikmati pesona Air Terjun Tumpak Sewu dengan paket tur travel kami. Dapatkan pengalaman memukau di air terjun seribu ini. Kami menyediakan transportasi, pemandu wisata, dan waktu senggang untuk menikmati keindahan alam sekitar. Bergabunglah dengan paket ini untuk petualangan yang tak terlupakan di salah satu air terjun paling spektakuler di Indonesia.',
           facilities: [
@@ -313,7 +319,7 @@ export default function handler(
               desc: 'Setelah menikmati waktu yang spektakuler di Air Terjun Tumpak Sewu, kami akan membawa Anda kembali ke lokasi penjemputan dengan membawa pulang kenangan indah dari liburan Anda.',
             },
           ],
-          day: 6,
+          day: 1,
           price: 2000000,
         },
       ],
