@@ -9,7 +9,7 @@ const RecomendationTour: FC<TourPackages> = ({
   img_src,
   title,
   slug,
-  tags,
+  isPopular,
   address,
   day,
   price,
@@ -27,14 +27,11 @@ const RecomendationTour: FC<TourPackages> = ({
             />
           </a>
         </Link>
-        {tags?.slice(0, 1).map((a: any, i: number) => (
-          <div
-            className="absolute top-0 left-0 bg-secondary rounded-tl-lg px-3 py-1"
-            key={i}
-          >
-            <h1 className="text-black text-sm">{a.tag}</h1>
+        {isPopular && (
+          <div className="absolute top-0 left-0 bg-secondary rounded-tl-lg px-3 py-1">
+            <h1 className="text-black text-sm">Populer</h1>
           </div>
-        ))}
+        )}
       </div>
 
       <div className="p-4">

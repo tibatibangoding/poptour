@@ -90,19 +90,21 @@ const Superiority: FC = () => {
           </div>
 
           <div className="grid gap-8 grid-cols-2 md:gap-12 xl:grid-cols-3 xl:gap-16">
-            {primacy.map((item, index) => (
-              <div className="flex gap-4 md:gap-6" key={index}>
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
-                  <img src={item.icon} alt="Icons" className="py-3 px-3" />
-                </div>
+            {primacy.map((a, i) => (
+              <div className="col-span-3 md:col-span-1" key={i}>
+                <div className="flex items-center md:items-start gap-4 md:gap-6">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-600 text-white shadow-lg md:h-14 md:w-14 md:rounded-xl">
+                    <img src={a.icon} alt="Icons" className="py-3 px-3" />
+                  </div>
 
-                <div>
-                  <h3 className="mb-2 py-3 md:py-0 text-lg font-semibold md:text-xl">
-                    {item.title}
-                  </h3>
-                  {!isSmallScreen && (
-                    <p className="mb-2 text-gray-500">{item.desc}</p>
-                  )}
+                  <div>
+                    <h3 className="mb-2 py-3 md:py-0 text-lg font-semibold md:text-xl">
+                      {a.title}
+                    </h3>
+                    {!isSmallScreen && (
+                      <p className="mb-2 text-gray-500">{a.desc}</p>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

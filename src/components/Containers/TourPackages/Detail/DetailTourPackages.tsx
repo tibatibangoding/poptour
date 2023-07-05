@@ -55,15 +55,15 @@ const ContainerDetailTourPackages: FC = () => {
               ))}
             </div>
 
-            <div className="flex flex-col mt-5 md:mt-5">
+            <div className="flex flex-col mt-5 md:mt-8">
               <h1 className="text-2xl font-semibold">Paket Wisata Lainnya</h1>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-8">
                 {recomendedPackages?.map((a, i) => (
                   <RecomendationTour
                     img_src={a.img_src}
                     title={a.title}
                     slug={a.slug}
-                    tags={a.tags}
+                    isPopular={a.isPopular}
                     address={a.address}
                     day={a.day}
                     price={a.price}
