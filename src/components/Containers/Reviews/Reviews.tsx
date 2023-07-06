@@ -1,11 +1,13 @@
+import { FC, useEffect, useRef, useState, useCallback } from 'react';
+
+import { useAxios } from '@/hooks/useAxios';
 import { usePackagesTour } from '@/hooks/usePackagesTour';
 import { TourPackages } from '@/interfaces/tourPackages';
+import { PageSEO } from '@/components/Common/SEO';
+import { siteMetadata } from '@/data/siteMetadata';
 import { errorToast, successToast } from '@/lib/toastNotify';
 
-import Head from 'next/head';
-import React, { use, useEffect, useRef, useState } from 'react';
-
-const ContainerReviews = () => {
+const ContainerReviews: FC = () => {
   const [data, setData] = useState<any>([]);
   const [formData, setFormData] = useState<any>({
     name: '',
@@ -13,8 +15,10 @@ const ContainerReviews = () => {
     paketWisata: '',
   });
   const [image, setImage] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(true);
+  const [loading, setLoading] = useState<boolean>(false);
   const { packages } = usePackagesTour();
+
+  const axios = useAxios();
 
   const fileInputRef = useRef<any>(null);
 
@@ -26,15 +30,10 @@ const ContainerReviews = () => {
       dataImg.append('file', file);
       dataImg.append('upload_preset', 'poptour-img');
 
-      const response = await fetch(
-        `https://api.cloudinary.com/v1_1/dekcrxcff/image/upload`,
-        {
-          method: 'POST',
-          body: dataImg,
-        }
-      );
+      const BASE_API = process.env.NEXT_PUBLIC_API_CLOUDINARY_URL;
 
-      const data = await response.json();
+      const { data } = await axios.post(BASE_API + '/image/upload', dataImg);
+
       setImage(data.secure_url);
     }
   };
@@ -48,60 +47,110 @@ const ContainerReviews = () => {
     });
   };
 
-  const handleSubmit = () => {
-    fetch('/api/add-review', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        review: formData.review,
-        image: image,
-        paket_wisata: formData.paketWisata,
-      }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        successToast('Berhasil Riview!');
-      })
-      .catch((err) => {
-        errorToast('Gagal Review!');
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const dataSubmit = {
+      name: formData.name,
+      review: formData.review,
+      image: image,
+      paket_wisata: formData.paketWisata,
+    };
+
+    const res = await axios.post('add-review', dataSubmit);
+
+    const { status } = res;
+
+    if (status === 200) {
+      setFormData({
+        name: '',
+        review: '',
+        paketWisata: '',
       });
+      setImage('');
+      getData();
+      successToast('Hore! Ulasan Anda telah kami terima!');
+    } else {
+      setFormData({
+        name: '',
+        review: '',
+        paketWisata: '',
+      });
+      setImage('');
+      errorToast('Opps! Terjadi kesalahan.');
+    }
   };
 
-  const getData = () => {
-    fetch('/api/get-review', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
+  const getData = useCallback(async () => {
+    setLoading(true);
+
+    try {
+      const { data, status } = await axios.get('get-review');
+
+      if (status === 200) {
         setData(data.reviews);
-      })
-      .catch((err) => {
         setLoading(false);
-      });
-  };
+      } else {
+        setLoading(false);
+      }
+    } catch (error) {
+      setLoading(false);
+    } finally {
+      setLoading(false);
+    }
+  }, [axios]);
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [getData]);
 
   return (
-    <div>
-      <Head>
-        <script
-          src="https://upload-widget.cloudinary.com/global/all.js"
-          type="text/javascript"
-        />
-      </Head>
+    <>
+      <PageSEO
+        title="Ulasan - POP Tour"
+        description={siteMetadata.description}
+      />
 
       <div className="py-24 px-5 md:px-10 lg:px-32 bg-[#f6f6f6]">
-        
-        <div className="w-full  bg-white rounded-xl drop-shadow-xl mt-10 p-5 md:p-20">
+        {loading ? (
+          <p className="flex items-center justify-center text-black text-4xl">
+            Memuat Data...
+          </p>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+            {data.map((a: any, i: number) => {
+              return (
+                <div
+                  className="flex flex-col items-center bg-white rounded-xl drop-shadow-xl p-10"
+                  key={i}
+                >
+                  <div className=" mb-5">
+                    <img
+                      className="w-32 h-32 rounded-full"
+                      src={
+                        a.image
+                          ? a.image
+                          : 'https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png'
+                      }
+                      alt="ChitChat Logo"
+                    />
+                  </div>
+                  <div className="flex  flex-col items-center mb-6">
+                    <p className="text-gray-900 leading-none text-lg font-semibold mb-3">
+                      {a.name}
+                    </p>
+                    <p className="text-gray-500 leading-none  font-medium mb-3 text-center">
+                      {a.paket_wisata}
+                    </p>
+                  </div>
+                  <p className="text-gray-600 text-center">{a.review}</p>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        <div className="w-full bg-white rounded-xl drop-shadow-xl mt-10 p-5 md:p-20">
           <div className="w-full  flex justify-center items-center mb-5">
             <img
               src="/assets/img/review-ils.png"
@@ -116,10 +165,11 @@ const ContainerReviews = () => {
           </h2>
 
           <p className="max-w-md mx-auto font-normal text-lg md:text-base text-center text-gray-500 capitalize mb-7">
-            Silahkan isi formulir dibawah untuk mengngungkapkan pengalaman anda saat
-            Perjalanan.
+            Silahkan isi formulir dibawah untuk mengngungkapkan pengalaman anda
+            saat Perjalanan.
           </p>
-          <form>
+
+          <form onSubmit={handleSubmit}>
             <div className="mb-6">
               <label
                 className="block mb-2 text-sm font-medium text-gray-900 "
@@ -140,27 +190,27 @@ const ContainerReviews = () => {
                 htmlFor="name"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                Username
+                Nama Lengkap
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
-                placeholder="name@flowbite.com"
+                placeholder="Masukkan Nama Lengkap"
                 onChange={handleChange}
                 required
               />
             </div>
             <div className="mb-6">
               <label
-                htmlFor="countries"
+                htmlFor="paketWisata"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                paket wisata
+                Paket Wisata
               </label>
               <select
-                id="countries"
+                id="paketWisata"
                 name="paketWisata"
                 onChange={handleChange}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -180,7 +230,7 @@ const ContainerReviews = () => {
                 htmlFor="review"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                Your Review
+                Pesan
               </label>
               <textarea
                 id="review"
@@ -194,49 +244,14 @@ const ContainerReviews = () => {
 
             <button
               type="submit"
-              onClick={handleSubmit}
               className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
             >
               Submit
             </button>
           </form>
         </div>
-        {loading ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
-            {data.map((item: any) => {
-              return (
-                <div className="flex flex-col items-center bg-white rounded-xl drop-shadow-xl p-10">
-                  <div className=" mb-5">
-                    <img
-                      className="w-32 h-32 rounded-full"
-                      src={
-                        item.image
-                          ? item.image
-                          : 'https://cdn3.iconfinder.com/data/icons/vector-icons-6/96/256-512.png'
-                      }
-                      alt="ChitChat Logo"
-                    />
-                  </div>
-                  <div className="flex  flex-col items-center mb-6">
-                    <p className="text-gray-900 leading-none text-lg font-semibold mb-3">
-                      {item.name}
-                    </p>
-                    <p className="text-gray-500 leading-none  font-medium mb-3 text-center">
-                      {item.paket_wisata}
-                    </p>
-                  </div>
-                  <p className="text-gray-600 text-center">{item.review}</p>
-                </div>
-              );
-            })}
-          </div>
-        ) : (
-          <p className="flex items-center justify-center text-black text-4xl">
-            Memuat Data...
-          </p>
-        )}
       </div>
-    </div>
+    </>
   );
 };
 
