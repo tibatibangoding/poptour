@@ -4,5 +4,6 @@ export const headerNavLinks = [
   { title: 'Rental Mobil', path: '/car-rental' },
   { title: 'Galeri', path: '/gallery' },
   { title: 'Tentang', path: '/about-us' },
+  { title: 'Reviews', path: '/reviews' },
   { title: 'Kontak', path: '/contact' },
 ];
