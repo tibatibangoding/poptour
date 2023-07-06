@@ -15,7 +15,7 @@ const ContainerReviews: FC = () => {
     paketWisata: '',
   });
   const [image, setImage] = useState<string>('');
-  const [loading, setLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { packages } = usePackagesTour();
 
   const axios = useAxios();
@@ -49,6 +49,7 @@ const ContainerReviews: FC = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true);
 
     const dataSubmit = {
       name: formData.name,
@@ -82,21 +83,21 @@ const ContainerReviews: FC = () => {
   };
 
   const getData = useCallback(async () => {
-    setLoading(true);
+    setIsLoading(true);
 
     try {
       const { data, status } = await axios.get('get-review');
 
       if (status === 200) {
         setData(data.reviews);
-        setLoading(false);
+        setIsLoading(false);
       } else {
-        setLoading(false);
+        setIsLoading(false);
       }
     } catch (error) {
-      setLoading(false);
+      setIsLoading(false);
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   }, [axios]);
 
@@ -111,22 +112,38 @@ const ContainerReviews: FC = () => {
         description={siteMetadata.description}
       />
 
-      <div className="py-24 px-5 md:px-10 lg:px-32 bg-[#f6f6f6]">
-        {loading ? (
-          <p className="flex items-center justify-center text-black text-4xl">
+      <div className="py-24 px-4 md:px-10 lg:px-32 bg-[#f6f6f6]">
+        <div className="flex flex-col justify-center items-center mt-5 mb-10 md:mt-10 md:mb-14">
+          <p className="font-primary font-semibold text-md lg:text-lg text-primary uppercase mb-2">
+            Ulasan
+          </p>
+
+          <div>
+            <h1 className="font-primary font-semibold text-xl md:text-3xl text-center capitalize">
+              Masih ragu untuk liburan bersama kami?
+            </h1>
+
+            <h3 className="font-primary font-medium text-lg md:text-xl text-center text-gray-500 capitalize">
+              Yuk dengerin apa kata pelanggan kami!
+            </h3>
+          </div>
+        </div>
+
+        {isLoading ? (
+          <p className="flex items-center justify-center text-center text-xl mt-5">
             Memuat Data...
           </p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
             {data.map((a: any, i: number) => {
               return (
                 <div
-                  className="flex flex-col items-center bg-white rounded-xl drop-shadow-xl p-10"
+                  className="flex flex-col items-center bg-white rounded-xl drop-shadow-xl px-5 py-8"
                   key={i}
                 >
                   <div className=" mb-5">
                     <img
-                      className="w-32 h-32 rounded-full"
+                      className="w-20 h-20 rounded-full"
                       src={
                         a.image
                           ? a.image
@@ -135,15 +152,17 @@ const ContainerReviews: FC = () => {
                       alt="ChitChat Logo"
                     />
                   </div>
-                  <div className="flex  flex-col items-center mb-6">
-                    <p className="text-gray-900 leading-none text-lg font-semibold mb-3">
+                  <div className="flex flex-col items-center mb-2">
+                    <p className="text-gray-900 leading-none text-lg font-semibold mb-2">
                       {a.name}
                     </p>
-                    <p className="text-gray-500 leading-none  font-medium mb-3 text-center">
+                    <p className="text-gray-500 leading-none font-medium text-sm text-center">
                       {a.paket_wisata}
                     </p>
                   </div>
-                  <p className="text-gray-600 text-center">{a.review}</p>
+                  <p className="text-gray-600 text-sm text-center italic">
+                    &quot;{a.review}&quot;
+                  </p>
                 </div>
               );
             })}
@@ -175,7 +194,7 @@ const ContainerReviews: FC = () => {
                 className="block mb-2 text-sm font-medium text-gray-900 "
                 htmlFor="file_input"
               >
-                Photo Profile
+                Foto Profil
               </label>
               <input
                 className=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
@@ -183,6 +202,7 @@ const ContainerReviews: FC = () => {
                 type="file"
                 ref={fileInputRef}
                 onChange={handleUpload}
+                value={image}
               />
             </div>
             <div className="mb-6">
@@ -190,7 +210,7 @@ const ContainerReviews: FC = () => {
                 htmlFor="name"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                Nama Lengkap
+                Nama Lengkap <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -199,6 +219,7 @@ const ContainerReviews: FC = () => {
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
                 placeholder="Masukkan Nama Lengkap"
                 onChange={handleChange}
+                value={formData.name}
                 required
               />
             </div>
@@ -207,12 +228,13 @@ const ContainerReviews: FC = () => {
                 htmlFor="paketWisata"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                Paket Wisata
+                Paket Wisata <span className="text-red-500">*</span>
               </label>
               <select
                 id="paketWisata"
                 name="paketWisata"
                 onChange={handleChange}
+                value={formData.paketWisata}
                 className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               >
                 <option selected disabled>
@@ -230,7 +252,7 @@ const ContainerReviews: FC = () => {
                 htmlFor="review"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                Pesan
+                Pesan <span className="text-red-500">*</span>
               </label>
               <textarea
                 id="review"
@@ -239,16 +261,21 @@ const ContainerReviews: FC = () => {
                 className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
                 placeholder="Write your thoughts here..."
                 onChange={handleChange}
+                value={formData.review}
               ></textarea>
             </div>
 
             <button
               type="submit"
-              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center "
+              className={`${
+                isLoading ? 'cursor-not-allowed' : ''
+              } rounded-lg bg-primary font-primary px-5 py-2.5 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base`}
+              disabled={isLoading ? true : false}
             >
-              Submit
+              {isLoading ? 'Memuat...' : 'Kirim'}
             </button>
           </form>
+          <div className="text-sm text-red-500 mt-3">*Wajib</div>
         </div>
       </div>
     </>
