@@ -185,8 +185,8 @@ const Form: FC = () => {
               <button
                 type="submit"
                 className={`${
-                  isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
-                } w-full bg-primary hover:bg-secondary active:bg-secondary/70 focus-visible:ring ring-primary/30 text-white hover:text-primary text-sm md:text-base font-semibold text-center rounded-lg outline-none transition duration-200 px-5 py-3`}
+                  isLoading ? 'cursor-not-allowed' : ''
+                } w-full bg-primary hover:bg-secondary active:bg-secondary/70 focus-visible:ring ring-primary/30 text-white hover:text-primary text-sm md:text-base font-primary font-semibold text-center rounded-lg outline-none transition duration-200 px-5 py-3`}
                 disabled={isLoading ? true : false}
               >
                 {isLoading ? 'Memuat...' : 'Kirim'}
