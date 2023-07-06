@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://poptour-id-s-workspace-u7gmbh.us-east-1.xata.sh/db/poptour",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}
