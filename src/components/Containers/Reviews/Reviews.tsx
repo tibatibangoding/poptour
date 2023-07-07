@@ -92,9 +92,11 @@ const ContainerReviews: FC = () => {
         setData(data.reviews);
         setIsLoading(false);
       } else {
+        errorToast('Oops! Terjadi kesalahan!');
         setIsLoading(false);
       }
     } catch (error) {
+      errorToast('Oops! Terjadi kesalahan!');
       setIsLoading(false);
     } finally {
       setIsLoading(false);
