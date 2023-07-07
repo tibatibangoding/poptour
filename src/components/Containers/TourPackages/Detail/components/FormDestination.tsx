@@ -226,7 +226,7 @@ const FormDestination: FC<FormProps> = ({ data }) => {
 
         <button
           className={`${
-            isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
+            isLoading ? 'cursor-not-allowed' : ''
           } bg-primary hover:bg-secondary py-3 text-lg font-primary font-semibold rounded-xl text-white hover:text-primary transition ease-in-out duration-200 mt-5 w-full px-8 text-center outline-none ring-primary/50 focus-visible:ring active:bg-secondary/80 md:text-base`}
           type="submit"
           disabled={isLoading ? true : false}

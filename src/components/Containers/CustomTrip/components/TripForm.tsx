@@ -330,7 +330,7 @@ const TripForm: FC = () => {
           <div className="flex items-center justify-between sm:col-span-2">
             <button
               className={`${
-                isLoading ? 'cursor-not-allowed' : 'cursor-pointer'
+                isLoading ? 'cursor-not-allowed' : ''
               } w-full rounded-lg bg-primary font-primary px-8 py-3 text-center text-sm font-semibold text-white hover:text-primary outline-none ring-primary/50 transition duration-100 hover:bg-secondary focus-visible:ring active:bg-secondary/80 md:text-base`}
               type="submit"
               disabled={isLoading ? true : false}

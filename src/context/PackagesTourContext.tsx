@@ -1,10 +1,8 @@
 import { useAxios } from '@/hooks/useAxios';
 import { TourPackages } from '@/interfaces/tourPackages';
 import React, {
-  Dispatch,
   FC,
   ReactNode,
-  SetStateAction,
   createContext,
   useCallback,
   useEffect,
