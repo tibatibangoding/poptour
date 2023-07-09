@@ -4,7 +4,6 @@ import { usePackagesTour } from '@/hooks/usePackagesTour';
 import { useCar } from '@/hooks/useCar';
 import { FormPemesananCustomTrip } from '@/interfaces/formPemesanan';
 import { errorToast, successToast } from '@/lib/toastNotify';
-import { formatCurrency } from '@/lib/formatCurrency';
 
 const TripForm: FC = () => {
   const [formData, setFormData] = useState<FormPemesananCustomTrip>({
@@ -276,9 +275,10 @@ const TripForm: FC = () => {
               <option defaultValue="Pilih Armada" selected disabled>
                 -- Pilih Armada --
               </option>
+              <option selected>-- Pilih Armada --</option>
               {car?.map((a, i) => (
                 <option value={a.brand} key={i}>
-                  {`${a.brand} => ${a.price}`}
+                  {a.brand}
                 </option>
               ))}
             </select>
@@ -299,12 +299,10 @@ const TripForm: FC = () => {
               className="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"
               required
             >
-              <option defaultValue="Pilih Tujuan Wisata" selected disabled>
-                -- Pilih Tujuan Wisata --
-              </option>
+              <option selected>-- Pilih Tujuan Wisata --</option>
               {packages?.map((p, i) => (
                 <option value={p.title} key={i}>
-                  {`${p.title} => ${formatCurrency(p.price)}/pax`}
+                  {p.title}
                 </option>
               ))}
             </select>
