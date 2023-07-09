@@ -17,23 +17,15 @@ export default function handler(
     return res.status(200).json({
       banner: [
         {
-          img_src: '/assets/img/poster/1.png',
+          img_src: '/assets/img/poster/1.jpg',
           title: 'Banner Promotion',
         },
         {
-          img_src: '/assets/img/poster/2.png',
+          img_src: '/assets/img/poster/2.jpg',
           title: 'Banner Promotion',
         },
         {
-          img_src: '/assets/img/poster/3.png',
-          title: 'Banner Promotion',
-        },
-        {
-          img_src: '/assets/img/poster/4.png',
-          title: 'Banner Promotion',
-        },
-        {
-          img_src: '/assets/img/poster/5.png',
+          img_src: '/assets/img/poster/3.jpg',
           title: 'Banner Promotion',
         },
       ],
