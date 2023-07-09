@@ -1,14 +1,13 @@
 import { FC } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
-import { siteMetadata } from '@/data/siteMetadata';
 
 const ContainerGallery: FC = () => {
   return (
     <>
       <PageSEO
         title="Galeri - POP Tour"
-        description={siteMetadata.description}
+        description="Nikmati keindahan destinasi wisata paling menakjubkan melalui Galeri POP Tour. Dalam halaman Galeri kami, Anda akan menemukan koleksi foto-foto yang memukau, memperlihatkan panorama alam yang menawan, budaya yang kaya, dan momen-momen berharga dari perjalanan pelanggan kami."
       />
 
       <main className="py-20">

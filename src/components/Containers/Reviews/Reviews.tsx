@@ -4,7 +4,6 @@ import { useAxios } from '@/hooks/useAxios';
 import { usePackagesTour } from '@/hooks/usePackagesTour';
 import { TourPackages } from '@/interfaces/tourPackages';
 import { PageSEO } from '@/components/Common/SEO';
-import { siteMetadata } from '@/data/siteMetadata';
 import { errorToast, successToast } from '@/lib/toastNotify';
 
 const ContainerReviews: FC = () => {
@@ -111,7 +110,7 @@ const ContainerReviews: FC = () => {
     <>
       <PageSEO
         title="Ulasan - POP Tour"
-        description={siteMetadata.description}
+        description="Dapatkan wawasan dari pengalaman wisata tak terduga melalui halaman Review POP Tour. Di halaman ini, Anda akan menemukan beragam ulasan dari pelanggan kami yang telah menjelajahi destinasi wisata dengan layanan kami."
       />
 
       <div className="py-24 px-4 md:px-10 lg:px-32 bg-[#f6f6f6]">

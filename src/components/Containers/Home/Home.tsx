@@ -13,7 +13,7 @@ const ContainerHome: FC = () => {
     <>
       <PageSEO
         title={siteMetadata.title}
-        description={siteMetadata.description}
+        description="Selamat datang di Beranda POP Tour, pintu gerbang menuju petualangan dan pengalaman wisata yang mengesankan. Di halaman Beranda kami, Anda akan menemukan beragam pilihan destinasi wisata yang menakjubkan, paket tur yang menarik, serta layanan rental mobil yang handal."
       />
 
       <main className="py-[89px]">

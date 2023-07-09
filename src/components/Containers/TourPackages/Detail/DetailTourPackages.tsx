@@ -5,7 +5,6 @@ import Link from 'next/link';
 
 import { usePackagesTour } from '@/hooks/usePackagesTour';
 import { PageSEO } from '@/components/Common/SEO';
-import { siteMetadata } from '@/data/siteMetadata';
 import DestinationDetail from './components/DestionationDetail';
 import FormDestination from './components/FormDestination';
 import According from './components/According';
@@ -29,7 +28,7 @@ const ContainerDetailTourPackages: FC = () => {
         <>
           <PageSEO
             title={`${findData.title} - POP Tour`}
-            description={siteMetadata.description}
+            description={findData.desc}
           />
 
           <div className="mx-4 md:mx-24 lg:mx-40 pt-24 pb-10 md:pt-28 md:pb-14">

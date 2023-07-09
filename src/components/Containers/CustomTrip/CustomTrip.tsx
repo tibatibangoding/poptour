@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
-import { siteMetadata } from '@/data/siteMetadata';
 import TripForm from './components/TripForm';
 
 const ContainerCustomTrip: FC = () => {
@@ -9,7 +8,7 @@ const ContainerCustomTrip: FC = () => {
     <>
       <PageSEO
         title="Kustom Perjalanan - POP Tour"
-        description={siteMetadata.description}
+        description="Ingin menjalani pengalaman perjalanan yang unik dan sesuai dengan keinginan Anda? Temukan layanan Kustom Trip yang menghadirkan perjalanan yang didesain khusus untuk memenuhi impian wisata Anda di POP Tour."
       />
 
       <main className="py-10 bg-[#f6f6f6]">

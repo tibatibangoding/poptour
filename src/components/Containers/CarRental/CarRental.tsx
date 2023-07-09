@@ -1,7 +1,6 @@
 import { FC } from 'react';
 
 import { PageSEO } from '@/components/Common/SEO';
-import { siteMetadata } from '@/data/siteMetadata';
 import CarCard from './components/CarCard';
 import CarForm from './components/CarForm';
 
@@ -10,7 +9,7 @@ const ContainerCarRental: FC = () => {
     <>
       <PageSEO
         title="Rental Mobil - POP Tour"
-        description={siteMetadata.description}
+        description="Cari layanan rental mobil terbaik untuk perjalanan Anda? POP Tour adalah tempat terpercaya untuk kebutuhan rental mobil yang memenuhi segala kebutuhan perjalanan Anda. Dengan flotilla mobil yang berkualitas dan beragam pilihan kendaraan, kami menawarkan solusi transportasi yang nyaman dan terjangkau."
       />
 
       <main className="py-24">

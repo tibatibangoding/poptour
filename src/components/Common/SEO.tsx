@@ -28,6 +28,10 @@ const CommonSEO: FC<SEO> = ({
       <meta name="robots" content="follow, index" />
       <meta name="description" content={description} />
       <meta
+        name="keyword"
+        content="Biro Wisata Terpercaya, Agen Tur, Agen Tur Terpercaya, Gunung Bromo, Pantai 3 Warna, Air Terjun Tumpak Sewu, Kota Malang, Rental Mobil, Agen Wisata Terpercaya, Agen Wisata, Harga Terjangkau, Liburan, Wisata Murah"
+      />
+      <meta
         property="og:url"
         content={`${siteMetadata.siteUrl}${router.asPath}`}
       />
@@ -64,7 +68,7 @@ export const PageSEO = ({
   description,
 }: {
   title: string;
-  description: string;
+  description: string | any;
 }) => {
   const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;
   const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner;

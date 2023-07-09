@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { FC } from 'react';
 import { TourPackages } from '@/interfaces/tourPackages';
-import { siteMetadata } from '@/data/siteMetadata';
 import { PageSEO } from '@/components/Common/SEO';
 import BannerPromotion from '@/components/Common/BannerPromotion';
 import CallToAction from '@/components/Common/CallToAction';
@@ -41,7 +40,7 @@ const ConatinerTourPackages: FC = () => {
     <>
       <PageSEO
         title="Paket Wisata - POP Tour"
-        description={siteMetadata.description}
+        description="Dapatkan pengalaman perjalanan yang tak terlupakan melalui halaman Paket Wisata POP Tour. Menawarkan beragam pilihan destinasi menarik dan itinerary yang terperinci, kami menghadirkan paket wisata yang dirancang untuk memenuhi kebutuhan dan impian perjalanan Anda."
       />
 
       <div className="py-[89px]">
