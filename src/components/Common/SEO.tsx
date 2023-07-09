@@ -29,7 +29,7 @@ const CommonSEO: FC<SEO> = ({
       <meta name="description" content={description} />
       <meta
         name="keyword"
-        content="Biro Wisata Terpercaya, Agen Tur, Agen Tur Terpercaya, Gunung Bromo, Pantai 3 Warna, Air Terjun Tumpak Sewu, Kota Malang, Rental Mobil, Agen Wisata Terpercaya, Agen Wisata, Harga Terjangkau, Liburan, Wisata Murah"
+        content="Biro Wisata Terpercaya, Agen Tur, Agen Tur Terpercaya, Gunung Bromo, Pantai 3 Warna, Air Terjun Tumpak Sewu, Kota Malang, Rental Mobil, Agen Wisata Terpercaya, Agen Wisata, Harga Terjangkau, Liburan, Wisata Murah, Wisata Bromo, Wisata Pantai 3 Warna, Wisata Air Terjun Tumpak Sewu"
       />
       <meta
         property="og:url"
