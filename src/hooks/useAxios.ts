@@ -6,7 +6,7 @@ const httpsAgent = new https.Agent({ rejectUnauthorized: false });
 
 export const createNewClient: () => AxiosInstance = () => {
   const BASE_API =
-    process.env.NEXT_PUBLIC_API_URL || 'https://poptour.vercel.app/api/';
+    process.env.NEXT_PUBLIC_API_URL || 'https://poptour.netlify.app/api/';
 
   return axios.create({
     baseURL: BASE_API,
