@@ -237,12 +237,12 @@ const Form: FC = () => {
                   WhatsApp:
                 </p>
                 <a
-                  href="https://wa.me/62817383226"
+                  href="https://wa.me/6281232742262"
                   target="_blank"
                   rel="noreferrer"
                   className="text-gray-500 xl:text-lg place-content-between leading-relaxed"
                 >
-                  +62 817-383-226
+                  +62 812-3274-2262
                 </a>
               </div>
             </div>
